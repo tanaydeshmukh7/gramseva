@@ -70,7 +70,7 @@ export const DEFAULT_SYNC_SETTINGS: SyncSettings = {
     'मा. सदस्य, ग्रामपंचायत गोहगावची मासिक सभा दि. {date} रोजी {time} वाजता {venue} येथे आयोजित केली आहे. तरी उपस्थित राहावे ही नम्र विनंती. - ग्रामसेवक/सरपंच, ग्रा.पं. गोहगाव.',
   spreadsheet_id: '17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk',
   spreadsheet_url: 'https://docs.google.com/spreadsheets/d/17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk/edit',
-  webhook_secret: 'gramseva_gohgaon_secure_sync_token_2026',
+  webhook_secret: process.env.GRAMSEVA_WEBHOOK_SECRET || '',
   gas_web_app_url: '',
   sync_direction: 'two_way',
   conflict_policy: 'admin_review',
@@ -149,15 +149,22 @@ export function slugToSheetName(slug: string): string {
 
 // 2. Settings Management
 export function getSyncSettings(): SyncSettings {
+  const envSecret = process.env.GRAMSEVA_WEBHOOK_SECRET || '';
   if (!fs.existsSync(SETTINGS_FILE)) {
-    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(DEFAULT_SYNC_SETTINGS, null, 2), 'utf-8');
-    return DEFAULT_SYNC_SETTINGS;
+    const initial = { ...DEFAULT_SYNC_SETTINGS, webhook_secret: envSecret };
+    fs.writeFileSync(SETTINGS_FILE, JSON.stringify(initial, null, 2), 'utf-8');
+    return initial;
   }
   try {
     const raw = fs.readFileSync(SETTINGS_FILE, 'utf-8');
-    return { ...DEFAULT_SYNC_SETTINGS, ...JSON.parse(raw) };
+    const parsed = JSON.parse(raw);
+    return {
+      ...DEFAULT_SYNC_SETTINGS,
+      ...parsed,
+      webhook_secret: envSecret || parsed.webhook_secret || '',
+    };
   } catch (e) {
-    return DEFAULT_SYNC_SETTINGS;
+    return { ...DEFAULT_SYNC_SETTINGS, webhook_secret: envSecret };
   }
 }
 

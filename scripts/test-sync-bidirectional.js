@@ -71,7 +71,7 @@ async function runTests() {
   assert(baselineFormulas === 18340, 'Baseline formula integrity verified (18,340 formula definitions)');
 
   const settings = JSON.parse(fs.readFileSync(settingsFile, 'utf-8'));
-  const webhookSecret = settings.webhook_secret || 'gramseva_gohgaon_secure_sync_token_2026';
+  const webhookSecret = process.env.GRAMSEVA_WEBHOOK_SECRET || settings.webhook_secret || 'gramseva_gohgaon_secure_sync_token_2026';
 
   // --------------------------------------------------------------------------
   // 1. Inbound Webhook Health & Security

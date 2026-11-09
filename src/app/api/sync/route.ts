@@ -20,7 +20,7 @@ export async function GET() {
       connected: true,
       spreadsheet_id: settings.spreadsheet_id,
       spreadsheet_url: settings.spreadsheet_url,
-      webhook_secret: settings.webhook_secret,
+      webhook_secret_configured: !!settings.webhook_secret,
       gas_web_app_url: settings.gas_web_app_url,
       sync_direction: settings.sync_direction,
       conflict_policy: settings.conflict_policy,

@@ -16,9 +16,10 @@ import {
   Check,
   Eye,
   EyeOff,
-  Code2,
   Radio,
   Save,
+  KeyRound,
+  AlertTriangle,
 } from "lucide-react";
 
 export default function SyncPage() {
@@ -27,11 +28,9 @@ export default function SyncPage() {
   const [conflictPolicy, setConflictPolicy] = useState<"admin_review" | "sheets_wins" | "app_wins">("admin_review");
   const [lastSyncTime, setLastSyncTime] = useState<string>("पडताळणी चालू...");
   const [gasWebAppUrl, setGasWebAppUrl] = useState<string>("");
-  const [webhookSecret, setWebhookSecret] = useState<string>("gramseva_gohgaon_secure_sync_token_2026");
-  const [showSecret, setShowSecret] = useState(false);
+  const [newSecretInput, setNewSecretInput] = useState<string>("");
+  const [isSecretConfigured, setIsSecretConfigured] = useState<boolean>(true);
   const [copiedWebhook, setCopiedWebhook] = useState(false);
-  const [copiedSecret, setCopiedSecret] = useState(false);
-  const [copiedCode, setCopiedCode] = useState(false);
   const [isTestingWebhook, setIsTestingWebhook] = useState(false);
   const [isSavingConfig, setIsSavingConfig] = useState(false);
   const [logs, setLogs] = useState<any[]>([]);
@@ -55,8 +54,8 @@ export default function SyncPage() {
           const dateObj = new Date(data.last_sync_timestamp);
           setLastSyncTime(dateObj.toLocaleString("mr-IN"));
         }
-        if (data.gas_web_app_url) setGasWebAppUrl(data.gas_web_app_url);
-        if (data.webhook_secret) setWebhookSecret(data.webhook_secret);
+        if (data.gas_web_app_url !== undefined) setGasWebAppUrl(data.gas_web_app_url || "");
+        if (data.webhook_secret_configured !== undefined) setIsSecretConfigured(data.webhook_secret_configured);
         if (data.sync_direction) setSyncDirection(data.sync_direction);
         if (data.conflict_policy) setConflictPolicy(data.conflict_policy);
 
@@ -80,6 +79,13 @@ export default function SyncPage() {
 
   useEffect(() => {
     fetchSyncData();
+
+    // Client-side automatic reconciliation polling every 5 minutes
+    const intervalTimer = setInterval(() => {
+      fetchSyncData();
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(intervalTimer);
   }, []);
 
   // Save Config
@@ -87,21 +93,28 @@ export default function SyncPage() {
     setIsSavingConfig(true);
     setNotification(null);
     try {
+      const payloadConfig: any = {
+        gas_web_app_url: gasWebAppUrl.trim(),
+        sync_direction: syncDirection,
+        conflict_policy: conflictPolicy,
+      };
+
+      if (newSecretInput.trim()) {
+        payloadConfig.webhook_secret = newSecretInput.trim();
+      }
+
       const res = await fetch("/api/sync", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           action: "SAVE_CONFIG",
-          config: {
-            gas_web_app_url: gasWebAppUrl,
-            webhook_secret: webhookSecret,
-            sync_direction: syncDirection,
-            conflict_policy: conflictPolicy,
-          },
+          config: payloadConfig,
         }),
       });
+
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "सेटिंग्ज सेव्ह करता आल्या नाहीत.");
+      setNewSecretInput("");
       setNotification({
         type: "success",
         message: "सिंक्रोनायझेशन सेटिंग्ज यशस्वीरित्या सुरक्षितपणे जतन केल्या आहेत.",
@@ -154,7 +167,7 @@ export default function SyncPage() {
       if (res.ok && data.status === "WEBHOOK_READY") {
         setNotification({
           type: "success",
-          message: "✓ Gramसेवा इनबाउंड वेबबुक सक्रिय आहे व Google Apps Script संदेश स्वीकारण्यास सज्ज आहे.",
+          message: "✓ Gramसेवा इनबाउंड वेबबुक सक्रिय आहे व संदेश स्वीकारण्यास सज्ज आहे.",
         });
       } else {
         throw new Error(data.error || "वेबबुक प्रतिसाद मिळाला नाही.");
@@ -171,6 +184,8 @@ export default function SyncPage() {
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
+
+  const isLocalhost = webhookUrl.includes("localhost") || webhookUrl.includes("127.0.0.1");
 
   return (
     <div className="p-6 max-w-5xl mx-auto space-y-6">
@@ -193,6 +208,46 @@ export default function SyncPage() {
           <span>{notification.message}</span>
         </div>
       )}
+
+      {/* Production Readiness Diagnostics Banner */}
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-2 text-xs text-amber-900">
+        <div className="flex items-center gap-2 font-bold text-sm text-amber-800">
+          <AlertTriangle className="w-4 h-4 text-amber-700" />
+          <span>लाइव्ह Google Spreadsheet सिंक्रोनायझेशन स्थिती (Production Verification Status)</span>
+        </div>
+        <p className="text-[12px] text-amber-800 leading-relaxed">
+          Gramसेवा मधील अंतर्गत आर्किटेक्चर, वेबबुक रिसीव्हर, आणि सूत्र-संरक्षण (Formula Preservation) पूर्णपणे तयार आहेत.
+          थेट गुगल स्प्रेडशीटशी रिअल-टाइम द्वि-मार्गी जोडणी सक्रिय करण्यासाठी खालील ३ गोष्टींची आवश्यकता आहे:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+          <div className="p-2.5 bg-white/80 rounded border border-amber-200 space-y-1">
+            <span className="font-bold text-[11px] block">१. सार्वजनिक HTTPS URL</span>
+            <p className="text-[11px] text-gray-700">
+              {isLocalhost ? (
+                <span className="text-rose-700 font-semibold">⚠ सध्या `localhost` वापरत आहे. Google Apps Script ला जोडण्यासाठी Cloudflare Tunnel / Public Domain आवश्यक आहे.</span>
+              ) : (
+                <span className="text-[#2E7D32] font-semibold">✓ सार्वजनिक URL सक्रिय आहे.</span>
+              )}
+            </p>
+          </div>
+          <div className="p-2.5 bg-white/80 rounded border border-amber-200 space-y-1">
+            <span className="font-bold text-[11px] block">२. Apps Script Triggers</span>
+            <p className="text-[11px] text-gray-700">
+              `Code.gs` गुगल शीटमध्ये पेस्ट करून `installTriggers()` चालवणे आवश्यक आहे.
+            </p>
+          </div>
+          <div className="p-2.5 bg-white/80 rounded border border-amber-200 space-y-1">
+            <span className="font-bold text-[11px] block">३. Apps Script Web App URL</span>
+            <p className="text-[11px] text-gray-700">
+              {gasWebAppUrl ? (
+                <span className="text-[#2E7D32] font-semibold truncate block" title={gasWebAppUrl}>✓ जोडलेली आहे: {gasWebAppUrl.slice(0, 20)}...</span>
+              ) : (
+                <span className="text-amber-800 font-semibold">प्रलंबित — खाली Web App URL प्रविष्ट करा.</span>
+              )}
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* Top Header */}
       <div className="bg-white border border-[#E1E5E1] rounded-lg p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs">
@@ -275,33 +330,26 @@ export default function SyncPage() {
           <div className="text-[11px] font-mono bg-[#F6F7F5] p-1.5 rounded border border-[#E1E5E1] truncate text-[#252A27]" title={webhookUrl}>
             {webhookUrl}
           </div>
-          <p className="text-[10px] text-[#747C76]">Google Apps Script onEdit ट्रिगर या URL वर संदेश पाठवतो.</p>
+          <p className="text-[10px] text-[#747C76]">Google Apps Script ट्रिगर या एंडपॉइंटवर संदेश पाठवतो.</p>
         </div>
 
         {/* Secret Token & Last Sync */}
         <div className="bg-white border border-[#E1E5E1] rounded-lg p-4 space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-semibold text-[#747C76] flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#245C45]" />
-              <span>सुरक्षित सीक्रेट टोकन (Auth Secret)</span>
+              <KeyRound className="w-3.5 h-3.5 text-[#245C45]" />
+              <span>सुरक्षा टोकन (Auth Secret Status)</span>
             </span>
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => setShowSecret(!showSecret)}
-                className="text-[10px] text-[#747C76] hover:text-[#252A27]"
-              >
-                {showSecret ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
-              </button>
-              <button
-                onClick={() => copyToClipboard(webhookSecret, setCopiedSecret)}
-                className="text-[10px] text-[#245C45] hover:underline flex items-center gap-0.5"
-              >
-                {copiedSecret ? <Check className="w-3 h-3 text-[#2E7D32]" /> : <Copy className="w-3 h-3" />}
-              </button>
-            </div>
+            <span
+              className={`text-[10px] font-semibold px-2 py-0.5 rounded ${
+                isSecretConfigured ? "bg-[#E8F5E9] text-[#2E7D32]" : "bg-red-50 text-red-700"
+              }`}
+            >
+              {isSecretConfigured ? "कन्फिगर केलेले आहे" : "प्रलंबित"}
+            </span>
           </div>
-          <div className="text-[11px] font-mono bg-[#F6F7F5] p-1.5 rounded border border-[#E1E5E1] truncate text-[#252A27]">
-            {showSecret ? webhookSecret : "••••••••••••••••••••••••••••••"}
+          <div className="text-[11px] font-mono bg-[#F6F7F5] p-1.5 rounded border border-[#E1E5E1] text-[#747C76]">
+            •••••••••••••••••••••••• (सुरक्षित)
           </div>
           <div className="flex items-center justify-between text-[11px] pt-0.5">
             <span className="text-[#747C76]">शेवटचा सिंक:</span>
@@ -322,7 +370,7 @@ export default function SyncPage() {
           </span>
         </div>
 
-        <div className="space-y-3 text-xs">
+        <div className="space-y-4 text-xs">
           <div>
             <label className="font-semibold text-[#252A27] block mb-1">
               Google Apps Script Web App URL (Deploy as Web App URL)
@@ -330,23 +378,40 @@ export default function SyncPage() {
             <p className="text-[11px] text-[#747C76] mb-2">
               Google Spreadsheet मध्ये `Code.gs` वेब ॲप म्हणून उपयोजित (Deploy) केल्यावर मिळालेला URL येथे प्रविष्ट करा.
             </p>
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="https://script.google.com/macros/s/AKfycbx.../exec"
-                value={gasWebAppUrl}
-                onChange={(e) => setGasWebAppUrl(e.target.value)}
-                className="flex-1 px-3 py-2 border border-[#E1E5E1] rounded text-xs font-mono focus:outline-none focus:border-[#245C45]"
-              />
-              <button
-                onClick={handleSaveConfig}
-                disabled={isSavingConfig}
-                className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-semibold shadow-xs disabled:opacity-75 shrink-0"
-              >
-                <Save className="w-3.5 h-3.5" />
-                <span>{isSavingConfig ? "जतन होत आहे..." : "सेटिंग्ज जतन करा"}</span>
-              </button>
-            </div>
+            <input
+              type="text"
+              placeholder="https://script.google.com/macros/s/AKfycb.../exec"
+              value={gasWebAppUrl}
+              onChange={(e) => setGasWebAppUrl(e.target.value)}
+              className="w-full px-3 py-2 border border-[#E1E5E1] rounded text-xs font-mono focus:outline-none focus:border-[#245C45]"
+            />
+          </div>
+
+          <div>
+            <label className="font-semibold text-[#252A27] block mb-1">
+              सुरक्षा टोकन बदला (Update Auth Secret — पर्यायी)
+            </label>
+            <p className="text-[11px] text-[#747C76] mb-1">
+              टोकन बदलल्यास Apps Script च्या ScriptProperties मधील `WEBHOOK_SECRET` देखील समान असावे.
+            </p>
+            <input
+              type="password"
+              placeholder="नवीन गुप्त टोकन प्रविष्ट करा (रिकामे ठेवल्यास पूर्वीचेच राहील)"
+              value={newSecretInput}
+              onChange={(e) => setNewSecretInput(e.target.value)}
+              className="w-full px-3 py-2 border border-[#E1E5E1] rounded text-xs font-mono focus:outline-none focus:border-[#245C45]"
+            />
+          </div>
+
+          <div className="flex justify-end pt-1">
+            <button
+              onClick={handleSaveConfig}
+              disabled={isSavingConfig}
+              className="flex items-center gap-1.5 px-4 py-2 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-semibold shadow-xs disabled:opacity-75"
+            >
+              <Save className="w-3.5 h-3.5" />
+              <span>{isSavingConfig ? "जतन होत आहे..." : "सेटिंग्ज जतन करा"}</span>
+            </button>
           </div>
         </div>
       </div>
@@ -355,7 +420,7 @@ export default function SyncPage() {
       <div className="bg-white border border-[#E1E5E1] rounded-lg p-5 space-y-4 shadow-xs">
         <h3 className="text-sm font-bold text-[#252A27] flex items-center gap-2">
           <ArrowRightLeft className="w-4 h-4 text-[#245C45]" />
-          <span>सिंक्रोनायझेशन धोरणे व संघर्ष हाताळणी (Sync & Conflict Policies)</span>
+          <span>सिंक्रोनायझेशन धोरणे व नियम (Sync Policies)</span>
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">

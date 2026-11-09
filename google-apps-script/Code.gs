@@ -13,16 +13,15 @@
  */
 
 // ----------------------------------------------------------------------------
-// Configuration (Can also be stored in ScriptProperties)
+// Configuration (Stored securely in Google ScriptProperties)
 // ----------------------------------------------------------------------------
 var CONFIG = {
-  // Replace with your Gramसेवा public deployment URL or webhook tunnel
-  WEBHOOK_URL: 'http://localhost:3000/api/webhook/google-sheets',
+  // NOTE FOR PRODUCTION: Google cloud servers CANNOT reach 'http://localhost:3000'.
+  // Set this to your public HTTPS domain (e.g. https://your-domain.com/api/webhook/google-sheets)
+  // or a secure tunnel (e.g. https://xxxx.trycloudflare.com/api/webhook/google-sheets).
+  DEFAULT_WEBHOOK_URL: 'https://YOUR_PUBLIC_GRAMSEVA_DOMAIN/api/webhook/google-sheets',
   
-  // Shared secure authentication token (matches settings.webhook_secret)
-  WEBHOOK_SECRET: 'gramseva_gohgaon_secure_sync_token_2026',
-  
-  // Master Spreadsheet ID
+  // Master Spreadsheet ID for Gram Panchayat Gohgaon
   SPREADSHEET_ID: '17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk',
   
   // Maximum retries on network error
@@ -30,16 +29,33 @@ var CONFIG = {
 };
 
 /**
- * Get active configuration, overriding from ScriptProperties if set
+ * Get active configuration from ScriptProperties (Never expose secrets in source code)
  */
 function getActiveConfig() {
   var props = PropertiesService.getScriptProperties().getProperties();
   return {
-    WEBHOOK_URL: props.WEBHOOK_URL || CONFIG.WEBHOOK_URL,
-    WEBHOOK_SECRET: props.WEBHOOK_SECRET || CONFIG.WEBHOOK_SECRET,
+    WEBHOOK_URL: props.WEBHOOK_URL || CONFIG.DEFAULT_WEBHOOK_URL,
+    WEBHOOK_SECRET: props.WEBHOOK_SECRET || '',
     SPREADSHEET_ID: props.SPREADSHEET_ID || CONFIG.SPREADSHEET_ID,
     MAX_RETRIES: CONFIG.MAX_RETRIES,
   };
+}
+
+/**
+ * Helper to securely store credentials inside Google ScriptProperties (Run once)
+ * @param {string} publicWebhookUrl - e.g. "https://xxxx.trycloudflare.com/api/webhook/google-sheets"
+ * @param {string} webhookSecret - Your shared secret token
+ */
+function setupCredentials(publicWebhookUrl, webhookSecret) {
+  if (!publicWebhookUrl || !webhookSecret) {
+    Logger.log('ERROR: Both publicWebhookUrl and webhookSecret are required.');
+    return;
+  }
+  PropertiesService.getScriptProperties().setProperties({
+    WEBHOOK_URL: publicWebhookUrl.trim(),
+    WEBHOOK_SECRET: webhookSecret.trim(),
+  });
+  Logger.log('SUCCESS: Production credentials stored securely in Google ScriptProperties.');
 }
 
 // ----------------------------------------------------------------------------
@@ -407,7 +423,52 @@ function installTriggers() {
     .onChange()
     .create();
 
-  Logger.log('Gramसेवा triggers installed successfully!');
+  // Install Periodic Fallback Reconciliation Trigger (Every 10 minutes)
+  ScriptApp.newTrigger('periodicReconcileTrigger')
+    .timeBased()
+    .everyMinutes(10)
+    .create();
+
+  Logger.log('Gramसेवा triggers (onEdit, onChange, and 10-minute periodic reconciliation) installed successfully!');
+}
+
+/**
+ * Periodic Time-Driven Trigger: Automatically reconciles all 26 worksheets every 10 minutes
+ */
+function periodicReconcileTrigger() {
+  var config = getActiveConfig();
+  if (!config.WEBHOOK_SECRET || !config.WEBHOOK_URL) {
+    Logger.log('Periodic reconciliation skipped: credentials not yet configured.');
+    return;
+  }
+
+  try {
+    var ss = SpreadsheetApp.openById(config.SPREADSHEET_ID);
+    var sheets = ss.getSheets();
+    var summary = [];
+
+    for (var i = 0; i < sheets.length; i++) {
+      summary.push({
+        name: sheets[i].getName(),
+        rows: sheets[i].getLastRow(),
+        cols: sheets[i].getLastColumn(),
+      });
+    }
+
+    var reconcilePayload = {
+      action: 'FULL_SYNC',
+      secret: config.WEBHOOK_SECRET,
+      sheetName: 'सर्व २६ वर्कशीट्स',
+      totalSheets: sheets.length,
+      sheetsSummary: summary,
+      timestamp: new Date().toISOString(),
+    };
+
+    dispatchWebhook(config.WEBHOOK_URL, reconcilePayload, config.WEBHOOK_SECRET);
+    Logger.log('Periodic fallback reconciliation dispatched successfully.');
+  } catch (err) {
+    Logger.log('Error in periodicReconcileTrigger: ' + err.toString());
+  }
 }
 
 /**

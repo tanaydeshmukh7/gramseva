@@ -1,5 +1,265 @@
 [
   {
+    "id": 1794254037774,
+    "timestamp": "2026-11-09T19:53:57.774Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794254037759,
+    "timestamp": "2026-11-09T19:53:57.759Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज व धोरणे यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review)"
+  },
+  {
+    "id": 1794254037743,
+    "timestamp": "2026-11-09T19:53:57.743Z",
+    "source": "Gramसेवा ॲप -> Google Sheets",
+    "action": "द्वि-मार्गी सिंक यशस्वी (Sync Pushed)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 18 मधील बदल गुगल स्प्रेडशीटमध्ये यशस्वीरित्या अद्ययावत केले."
+  },
+  {
+    "id": 1794254037523,
+    "timestamp": "2026-11-09T19:53:57.523Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज व धोरणे यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review)"
+  },
+  {
+    "id": 1794254037476,
+    "timestamp": "2026-11-09T19:53:57.476Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद हटवली (Record Deleted)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 758 गुगल शीट्समधील बदलानुसार Gramसेवा मधून कायमस्वरूपी हटवली."
+  },
+  {
+    "id": 1794254037407,
+    "timestamp": "2026-11-09T19:53:57.407Z",
+    "source": "Google Sheets Trigger",
+    "action": "डुप्लिकेट प्रतिबंध व अद्ययावत (Deduplicated)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "डुप्लिकेट नोंद आढळली — ओळ 758 पुनर्नोंदणी न करता अद्ययावत केली."
+  },
+  {
+    "id": 1794254037334,
+    "timestamp": "2026-11-09T19:53:57.334Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नवीन नोंद समाविष्ट (New Record Added)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 758 वर नवीन नोंद गुगल शीट्सवरून यशस्वीरित्या जोडली गेली."
+  },
+  {
+    "id": 1794254037252,
+    "timestamp": "2026-11-09T19:53:57.252Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद अद्ययावत (Record Updated)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14 मधील माहिती गुगल शीट्सवरून यशस्वीरित्या अद्ययावत झाली."
+  },
+  {
+    "id": 1794254036798,
+    "timestamp": "2026-11-09T19:53:56.798Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद अद्ययावत (Record Updated)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14 मधील माहिती गुगल शीट्सवरून यशस्वीरित्या अद्ययावत झाली."
+  },
+  {
+    "id": 1794254036535,
+    "timestamp": "2026-11-09T19:53:56.535Z",
+    "source": "Google Sheets Webhook",
+    "action": "अनाधिकृत प्रवेश प्रयत्न (Unauthorized Attempt)",
+    "sheet": "नमुना ८",
+    "records_processed": 0,
+    "status": "ERROR",
+    "details": "वेबबुक सीक्रेट टोकन अमान्य आहे (Invalid Webhook Secret)."
+  },
+  {
+    "id": 1794253891615,
+    "timestamp": "2026-11-09T19:51:31.615Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253890024,
+    "timestamp": "2026-11-09T19:51:30.024Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253749106,
+    "timestamp": "2026-11-09T19:49:09.107Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253717453,
+    "timestamp": "2026-11-09T19:48:37.453Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253708382,
+    "timestamp": "2026-11-09T19:48:28.382Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253674678,
+    "timestamp": "2026-11-09T19:47:54.679Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253577228,
+    "timestamp": "2026-11-09T19:46:17.228Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 4386,
+    "status": "SUCCESS",
+    "details": "26 वर्कशीट्स व 4386 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794253577218,
+    "timestamp": "2026-11-09T19:46:17.218Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज व धोरणे यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review)"
+  },
+  {
+    "id": 1794253577205,
+    "timestamp": "2026-11-09T19:46:17.205Z",
+    "source": "Gramसेवा ॲप -> Google Sheets",
+    "action": "द्वि-मार्गी सिंक यशस्वी (Sync Pushed)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 18 मधील बदल गुगल स्प्रेडशीटमध्ये यशस्वीरित्या अद्ययावत केले."
+  },
+  {
+    "id": 1794253577011,
+    "timestamp": "2026-11-09T19:46:17.011Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज व धोरणे यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review)"
+  },
+  {
+    "id": 1794253576976,
+    "timestamp": "2026-11-09T19:46:16.976Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद हटवली (Record Deleted)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 758 गुगल शीट्समधील बदलानुसार Gramसेवा मधून कायमस्वरूपी हटवली."
+  },
+  {
+    "id": 1794253576903,
+    "timestamp": "2026-11-09T19:46:16.903Z",
+    "source": "Google Sheets Trigger",
+    "action": "डुप्लिकेट प्रतिबंध व अद्ययावत (Deduplicated)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "डुप्लिकेट नोंद आढळली — ओळ 758 पुनर्नोंदणी न करता अद्ययावत केली."
+  },
+  {
+    "id": 1794253576834,
+    "timestamp": "2026-11-09T19:46:16.834Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नवीन नोंद समाविष्ट (New Record Added)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 758 वर नवीन नोंद गुगल शीट्सवरून यशस्वीरित्या जोडली गेली."
+  },
+  {
+    "id": 1794253576765,
+    "timestamp": "2026-11-09T19:46:16.765Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद अद्ययावत (Record Updated)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14 मधील माहिती गुगल शीट्सवरून यशस्वीरित्या अद्ययावत झाली."
+  },
+  {
+    "id": 1794253576340,
+    "timestamp": "2026-11-09T19:46:16.340Z",
+    "source": "Google Sheets Trigger (Real-Time)",
+    "action": "नोंद अद्ययावत (Record Updated)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14 मधील माहिती गुगल शीट्सवरून यशस्वीरित्या अद्ययावत झाली."
+  },
+  {
+    "id": 1794253576039,
+    "timestamp": "2026-11-09T19:46:16.039Z",
+    "source": "Google Sheets Webhook",
+    "action": "अनाधिकृत प्रवेश प्रयत्न (Unauthorized Attempt)",
+    "sheet": "नमुना ८",
+    "records_processed": 0,
+    "status": "ERROR",
+    "details": "वेबबुक सीक्रेट टोकन अमान्य आहे (Invalid Webhook Secret)."
+  },
+  {
     "id": 1794253487567,
     "timestamp": "2026-11-09T19:44:47.567Z",
     "source": "द्वि-मार्गी सिंक (Two-Way Sync)",

@@ -13,5 +13,5 @@
   "sync_direction": "two_way",
   "conflict_policy": "admin_review",
   "auto_sync_interval_mins": 5,
-  "last_sync_timestamp": "2026-11-09T19:44:47.567Z"
+  "last_sync_timestamp": "2026-11-09T19:53:57.774Z"
 }
