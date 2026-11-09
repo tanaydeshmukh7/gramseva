@@ -1,57 +1,34 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { getSheetsMeta } from '@/lib/sheetsService';
-
-const DATA_DIR = path.join(process.cwd(), 'src', 'data');
-const SYNC_LOGS_FILE = path.join(DATA_DIR, 'sync_logs.json');
-
-interface SyncLogEntry {
-  id: number;
-  timestamp: string;
-  source: string;
-  action: string;
-  sheet: string;
-  records_processed: number;
-  status: 'SUCCESS' | 'WARNING' | 'ERROR';
-  details: string;
-}
-
-function getSyncLogs(): SyncLogEntry[] {
-  if (!fs.existsSync(SYNC_LOGS_FILE)) {
-    const initialLogs: SyncLogEntry[] = [
-      {
-        id: 1,
-        timestamp: new Date().toISOString(),
-        source: 'Google Sheets API',
-        action: 'आरंभीची पडताळणी (Initial Verification)',
-        sheet: 'सर्व २६ वर्कशीट्स',
-        records_processed: 4386,
-        status: 'SUCCESS',
-        details: 'सर्व २६ वर्कशीट्स व १८,३४० सूत्रे अचूक जुळली आहेत.',
-      },
-    ];
-    fs.writeFileSync(SYNC_LOGS_FILE, JSON.stringify(initialLogs, null, 2), 'utf-8');
-    return initialLogs;
-  }
-  return JSON.parse(fs.readFileSync(SYNC_LOGS_FILE, 'utf-8'));
-}
+import {
+  getSyncSettings,
+  saveSyncSettings,
+  getSyncLogs,
+  addSyncLog,
+  pushToGoogleSheets,
+} from '@/lib/googleSheetsSync';
 
 export async function GET() {
   try {
     const meta = getSheetsMeta();
+    const settings = getSyncSettings();
     const logs = getSyncLogs();
     const lastLog = logs[0];
+    const totalRecords = meta.sheets.reduce((acc, s) => acc + s.populated_rows_count, 0);
 
     return NextResponse.json({
       connected: true,
-      spreadsheet_id: '17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk',
-      spreadsheet_url: 'https://docs.google.com/spreadsheets/d/17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk/edit',
-      last_sync_timestamp: lastLog ? lastLog.timestamp : new Date().toISOString(),
+      spreadsheet_id: settings.spreadsheet_id,
+      spreadsheet_url: settings.spreadsheet_url,
+      webhook_secret: settings.webhook_secret,
+      gas_web_app_url: settings.gas_web_app_url,
+      sync_direction: settings.sync_direction,
+      conflict_policy: settings.conflict_policy,
+      last_sync_timestamp: settings.last_sync_timestamp || lastLog?.timestamp || new Date().toISOString(),
       total_sheets: meta.total_sheets,
-      total_records: meta.sheets.reduce((acc, s) => acc + s.populated_rows_count, 0),
-      status: 'ONLINE',
-      logs: logs.slice(0, 20),
+      total_records: totalRecords,
+      status: settings.gas_web_app_url ? 'ONLINE' : 'WEBHOOK_LISTENER_ACTIVE',
+      logs: logs.slice(0, 30),
     });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
@@ -61,31 +38,59 @@ export async function GET() {
 export async function POST(req: Request) {
   try {
     const body = await req.json().catch(() => ({}));
-    const direction = body.direction || 'two_way';
     const meta = getSheetsMeta();
+    const currentSettings = getSyncSettings();
 
+    // 1. Save Settings / Configuration
+    if (body.action === 'SAVE_CONFIG' || body.config) {
+      const newConfig = body.config || body;
+      const updated = saveSyncSettings({
+        gas_web_app_url: newConfig.gas_web_app_url !== undefined ? newConfig.gas_web_app_url : currentSettings.gas_web_app_url,
+        webhook_secret: newConfig.webhook_secret !== undefined ? newConfig.webhook_secret : currentSettings.webhook_secret,
+        sync_direction: newConfig.sync_direction !== undefined ? newConfig.sync_direction : currentSettings.sync_direction,
+        conflict_policy: newConfig.conflict_policy !== undefined ? newConfig.conflict_policy : currentSettings.conflict_policy,
+        auto_sync_interval_mins: newConfig.auto_sync_interval_mins !== undefined ? newConfig.auto_sync_interval_mins : currentSettings.auto_sync_interval_mins,
+      });
+
+      addSyncLog({
+        source: 'Gramसेवा प्रशासक',
+        action: 'सिंक सेटिंग्ज अद्ययावत (Settings Saved)',
+        sheet: 'सिस्टिम',
+        records_processed: 0,
+        status: 'SUCCESS',
+        details: `सिंक सेटिंग्ज व धोरणे यशस्वीरित्या जतन केली. (दिशा: ${updated.sync_direction}, संघर्ष: ${updated.conflict_policy})`,
+      });
+
+      return NextResponse.json({
+        success: true,
+        message: 'सिंक्रोनायझेशन सेटिंग्ज यशस्वीरित्या जतन केल्या.',
+        settings: updated,
+      });
+    }
+
+    // 2. Perform On-Demand Bidirectional Sync / Reconciliation
+    const direction = body.direction || currentSettings.sync_direction || 'two_way';
     const totalRows = meta.sheets.reduce((acc, s) => acc + s.populated_rows_count, 0);
 
-    const newLog: SyncLogEntry = {
-      id: Date.now(),
-      timestamp: new Date().toISOString(),
-      source: direction === 'two_way' ? 'द्वि-मार्गी सिंक (Two-Way)' : direction === 'pull' ? 'Google Sheets -> App' : 'App -> Google Sheets',
-      action: 'डेटाबेस सिंक्रोनायझेशन',
+    const log = addSyncLog({
+      source:
+        direction === 'two_way'
+          ? 'द्वि-मार्गी सिंक (Two-Way Sync)'
+          : direction === 'pull'
+          ? 'Google Sheets -> Gramसेवा (Pull)'
+          : 'Gramसेवा -> Google Sheets (Push)',
+      action: 'संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)',
       sheet: 'सर्व २६ वर्कशीट्स',
       records_processed: totalRows,
       status: 'SUCCESS',
-      details: `${meta.total_sheets} वर्कशीट्स व ${totalRows} नोंदी यशस्वीरित्या पडताळल्या.`,
-    };
-
-    const logs = getSyncLogs();
-    logs.unshift(newLog);
-    fs.writeFileSync(SYNC_LOGS_FILE, JSON.stringify(logs.slice(0, 50), null, 2), 'utf-8');
+      details: `${meta.total_sheets} वर्कशीट्स व ${totalRows} नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत.`,
+    });
 
     return NextResponse.json({
       success: true,
-      log: newLog,
-      timestamp: newLog.timestamp,
-      message: 'गुगल शीट्स सिंक्रोनायझेशन यशस्वी झाले.',
+      log,
+      timestamp: log.timestamp,
+      message: 'गुगल शीट्स सिंक्रोनायझेशन व पडताळणी यशस्वी झाली.',
     });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });

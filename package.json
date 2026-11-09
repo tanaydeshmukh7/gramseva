@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "node scripts/test-all.js",
+    "test:sync": "node scripts/test-sync-bidirectional.js",
     "lint": "eslint"
   },
   "dependencies": {

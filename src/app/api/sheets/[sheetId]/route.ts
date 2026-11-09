@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getSheetBySlug, saveSheetData } from '@/lib/sheetsService';
 import { SheetRow } from '@/lib/types';
+import { pushToGoogleSheets } from '@/lib/googleSheetsSync';
 
 interface RouteContext {
   params: Promise<{ sheetId: string }>;
@@ -40,18 +41,25 @@ export async function PUT(req: Request, context: RouteContext) {
       return NextResponse.json({ error: 'ओळ सापडली नाही (Row not found)' }, { status: 404 });
     }
 
-    // Preserve formulas if new value is unchanged or empty
+    // Safe merge of existing cells with updated cells so untouched cells/formulas are never dropped:
     const existingRow = sheetData.rows[rowIndex];
-    const mergedCells = updatedRow.cells.map((cell) => {
-      const existingCell = existingRow.cells.find((ec) => ec.col === cell.col);
-      return {
-        col: cell.col,
-        coord: cell.coord || existingCell?.coord || `C${cell.col}`,
-        value: cell.value !== undefined ? cell.value : existingCell?.value ?? null,
-        is_formula: cell.is_formula !== undefined ? cell.is_formula : existingCell?.is_formula ?? false,
-        formula: cell.formula !== undefined ? cell.formula : existingCell?.formula ?? null,
-      };
-    });
+    const cellMap = new Map<number, any>();
+    for (const ec of existingRow.cells) {
+      cellMap.set(ec.col, { ...ec });
+    }
+    for (const uc of updatedRow.cells) {
+      const current = cellMap.get(uc.col);
+      const isFormula = uc.formula ? true : uc.is_formula !== undefined ? uc.is_formula : current?.is_formula ?? false;
+      const formula = uc.formula !== undefined ? uc.formula : current?.formula ?? null;
+      cellMap.set(uc.col, {
+        col: uc.col,
+        coord: uc.coord || current?.coord || `C${uc.col}`,
+        value: uc.value !== undefined ? uc.value : current?.value ?? null,
+        is_formula: isFormula,
+        formula: formula,
+      });
+    }
+    const mergedCells = Array.from(cellMap.values()).sort((a, b) => a.col - b.col);
 
     sheetData.rows[rowIndex] = {
       row_index: updatedRow.row_index,
@@ -63,7 +71,19 @@ export async function PUT(req: Request, context: RouteContext) {
       return NextResponse.json({ error: 'डेटाबेसमध्ये सेव्ह अयशस्वी' }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true, updated_row: sheetData.rows[rowIndex] });
+    // Bidirectional sync: Push changes to Google Sheets
+    const syncRes = await pushToGoogleSheets({
+      action: 'UPDATE_ROW',
+      sheetSlug: sheetId,
+      rowIndex: updatedRow.row_index,
+      cells: mergedCells,
+    });
+
+    return NextResponse.json({
+      success: true,
+      updated_row: sheetData.rows[rowIndex],
+      sync: syncRes,
+    });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
@@ -107,7 +127,15 @@ export async function POST(req: Request, context: RouteContext) {
       return NextResponse.json({ error: 'नवीन नोंद सेव्ह करता आली नाही' }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true, row: newRow });
+    // Bidirectional sync: Push new row to Google Sheets
+    const syncRes = await pushToGoogleSheets({
+      action: 'ADD_ROW',
+      sheetSlug: sheetId,
+      rowIndex: newRowIndex,
+      cells: formattedCells,
+    });
+
+    return NextResponse.json({ success: true, row: newRow, sync: syncRes });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
@@ -143,7 +171,14 @@ export async function DELETE(req: Request, context: RouteContext) {
       return NextResponse.json({ error: 'नोंद हटवणे सेव्ह अयशस्वी' }, { status: 500 });
     }
 
-    return NextResponse.json({ success: true, deleted_row_index: rowIndex });
+    // Bidirectional sync: Push deletion to Google Sheets
+    const syncRes = await pushToGoogleSheets({
+      action: 'DELETE_ROW',
+      sheetSlug: sheetId,
+      rowIndex,
+    });
+
+    return NextResponse.json({ success: true, deleted_row_index: rowIndex, sync: syncRes });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }

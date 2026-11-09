@@ -5,5 +5,13 @@
   "financial_year": "२०२६ - २०२७",
   "contact_no": "07251-XXXXXX",
   "notice_template": "मा. सदस्य, ग्रामपंचायत गोहगावची मासिक सभा दि. {date} रोजी दुपारी {time} वाजता आयोजित केली आहे. सभेचा अजेंडा व नोटीस सोबत जोडली आहे. कृपया उपस्थित राहावे.",
-  "whatsapp_template": "मा. सदस्य, ग्रामपंचायत गोहगावची मासिक सभा दि. {date} रोजी {time} वाजता {venue} येथे आयोजित केली आहे. तरी उपस्थित राहावे ही नम्र विनंती. - ग्रामसेवक/सरपंच, ग्रा.पं. गोहगाव."
+  "whatsapp_template": "मा. सदस्य, ग्रामपंचायत गोहगावची मासिक सभा दि. {date} रोजी {time} वाजता {venue} येथे आयोजित केली आहे. तरी उपस्थित राहावे ही नम्र विनंती. - ग्रामसेवक/सरपंच, ग्रा.पं. गोहगाव.",
+  "spreadsheet_id": "17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk",
+  "spreadsheet_url": "https://docs.google.com/spreadsheets/d/17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk/edit",
+  "webhook_secret": "gramseva_gohgaon_secure_sync_token_2026",
+  "gas_web_app_url": "",
+  "sync_direction": "two_way",
+  "conflict_policy": "admin_review",
+  "auto_sync_interval_mins": 5,
+  "last_sync_timestamp": "2026-11-09T19:44:47.567Z"
 }
