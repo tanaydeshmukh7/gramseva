@@ -3,6 +3,7 @@ import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
 import Header from "@/components/Header";
+import { UIProvider } from "@/context/UIContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,16 +34,18 @@ export default function RootLayout({
       className={`${inter.variable} ${notoSansDevanagari.variable} h-full antialiased light`}
     >
       <body className="min-h-full flex flex-row bg-[#F6F7F5] text-[#252A27] overflow-hidden">
-        {/* Fixed Left Sidebar with all 26 worksheets */}
-        <Sidebar />
+        <UIProvider>
+          {/* Fixed Left Sidebar with all 26 worksheets */}
+          <Sidebar />
 
-        {/* Main Content Area */}
-        <div className="flex-1 flex flex-col h-screen overflow-hidden">
-          <Header />
-          <main className="flex-1 overflow-y-auto bg-[#F6F7F5]">
-            {children}
-          </main>
-        </div>
+          {/* Main Content Area */}
+          <div className="flex-1 flex flex-col h-screen overflow-hidden">
+            <Header />
+            <main className="flex-1 overflow-y-auto bg-[#F6F7F5]">
+              {children}
+            </main>
+          </div>
+        </UIProvider>
       </body>
     </html>
   );

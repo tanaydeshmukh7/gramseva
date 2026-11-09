@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Settings,
   Building2,
@@ -12,6 +12,7 @@ import {
   Upload,
   Save,
   CheckCircle2,
+  AlertCircle,
   ShieldAlert,
 } from "lucide-react";
 
@@ -25,11 +26,56 @@ export default function SettingsPage() {
     "मा. सदस्य, ग्रामपंचायत गोहगावची मासिक सभा दि. {date} रोजी दुपारी {time} वाजता आयोजित केली आहे. सभेचा अजेंडा व नोटीस सोबत जोडली आहे. कृपया उपस्थित राहावे."
   );
   const [savedMessage, setSavedMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [isSaving, setIsSaving] = useState(false);
 
-  const handleSave = (e: React.FormEvent) => {
+  useEffect(() => {
+    fetch("/api/settings")
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data) {
+          if (data.panchayat_name) setPanchayatName(data.panchayat_name);
+          if (data.taluka) setTaluka(data.taluka);
+          if (data.district) setDistrict(data.district);
+          if (data.financial_year) setFinancialYear(data.financial_year);
+          if (data.contact_no) setContactNo(data.contact_no);
+          if (data.notice_template) setNoticeTemplate(data.notice_template);
+        }
+      })
+      .catch((err) => console.error("Error fetching settings:", err));
+  }, []);
+
+  const handleSave = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSavedMessage("सर्व सेटिंग्ज सुरक्षितपणे जतन केल्या आहेत.");
-    setTimeout(() => setSavedMessage(null), 3000);
+    setIsSaving(true);
+    setSavedMessage(null);
+    setErrorMessage(null);
+
+    try {
+      const res = await fetch("/api/settings", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          panchayat_name: panchayatName,
+          taluka,
+          district,
+          financial_year: financialYear,
+          contact_no: contactNo,
+          notice_template: noticeTemplate,
+        }),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "सेटिंग्ज जतन करता आल्या नाहीत.");
+      }
+      setSavedMessage("सर्व सेटिंग्ज सुरक्षितपणे जतन केल्या आहेत.");
+      setTimeout(() => setSavedMessage(null), 3500);
+    } catch (err: any) {
+      setErrorMessage(err.message || "त्रुटी आली.");
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const handleExportBackup = () => {
@@ -40,8 +86,15 @@ export default function SettingsPage() {
     <div className="p-6 max-w-4xl mx-auto space-y-6">
       {savedMessage && (
         <div className="bg-[#E8F5E9] text-[#2E7D32] border border-[#A5D6A7] p-3 rounded-lg text-xs font-semibold flex items-center gap-2">
-          <CheckCircle2 className="w-4 h-4" />
+          <CheckCircle2 className="w-4 h-4 shrink-0" />
           <span>{savedMessage}</span>
+        </div>
+      )}
+
+      {errorMessage && (
+        <div className="bg-red-50 text-red-700 border border-red-200 p-3 rounded-lg text-xs font-semibold flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0" />
+          <span>{errorMessage}</span>
         </div>
       )}
 
@@ -145,10 +198,8 @@ export default function SettingsPage() {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => {
-                alert("सर्व २६ वर्कशीट्सचा बॅकअप JSON तयार आहे.");
-              }}
-              className="flex items-center gap-1.5 px-3.5 py-2 rounded bg-white border border-[#E1E5E1] hover:bg-[#F6F7F5] text-xs font-semibold text-[#252A27]"
+              onClick={handleExportBackup}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded bg-white border border-[#E1E5E1] hover:bg-[#F6F7F5] text-xs font-semibold text-[#252A27] transition-colors"
             >
               <Download className="w-4 h-4 text-[#245C45]" />
               <span>डेटा बॅकअप डाऊनलोड करा (Full Backup)</span>
@@ -160,10 +211,11 @@ export default function SettingsPage() {
         <div className="flex justify-end pt-2">
           <button
             type="submit"
-            className="flex items-center gap-2 px-5 py-2.5 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-semibold shadow-xs"
+            disabled={isSaving}
+            className="flex items-center gap-2 px-5 py-2.5 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-semibold shadow-xs disabled:opacity-75 transition-colors"
           >
             <Save className="w-4 h-4" />
-            <span>बदल जतन करा (Save Settings)</span>
+            <span>{isSaving ? "जतन होत आहे..." : "बदल जतन करा (Save Settings)"}</span>
           </button>
         </div>
       </form>

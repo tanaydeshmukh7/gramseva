@@ -2,29 +2,50 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { RefreshCw, CheckCircle2, Shield, ExternalLink, Calendar } from "lucide-react";
+import { RefreshCw, CheckCircle2, Shield, ExternalLink, Calendar, Menu } from "lucide-react";
+import { useUI } from "@/context/UIContext";
 
 export default function Header() {
   const [isSyncing, setIsSyncing] = useState(false);
   const [lastSync, setLastSync] = useState("आत्ताच");
+  const { toggleSidebar } = useUI();
 
-  const handleManualSync = () => {
+  const handleManualSync = async () => {
     setIsSyncing(true);
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ direction: "two_way" }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setLastSync(new Date().toLocaleTimeString("mr-IN"));
+      }
+    } catch (e) {
+      console.error("Sync error:", e);
+    } finally {
       setIsSyncing(false);
-      setLastSync(new Date().toLocaleTimeString("mr-IN"));
-    }, 1200);
+    }
   };
 
   return (
-    <header className="h-14 border-b border-[#E1E5E1] bg-white px-6 flex items-center justify-between no-print z-10 shrink-0">
-      {/* Title & Panchayat Breadcrumb */}
-      <div className="flex items-center gap-3">
+    <header className="h-14 border-b border-[#E1E5E1] bg-white px-4 md:px-6 flex items-center justify-between no-print z-10 shrink-0">
+      {/* Title & Panchayat Breadcrumb with Mobile Menu Toggle */}
+      <div className="flex items-center gap-2.5">
+        <button
+          onClick={toggleSidebar}
+          aria-label="मेनू उघडा"
+          className="md:hidden p-1.5 rounded text-[#245C45] hover:bg-[#F6F7F5] focus:outline-none focus:ring-1 focus:ring-[#245C45]"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+
         <div>
-          <h1 className="text-sm font-semibold text-[#252A27]">
+          <h1 className="text-sm font-semibold text-[#252A27] truncate">
             ग्रामपंचायत कार्यालय, गोहगाव
           </h1>
-          <p className="text-[11px] text-[#747C76]">
+          <p className="text-[11px] text-[#747C76] hidden sm:block">
             ता. रिसोड, जि. वाशिम • महाराष्ट्र शासन
           </p>
         </div>

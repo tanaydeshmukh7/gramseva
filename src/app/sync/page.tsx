@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   RefreshCw,
   CheckCircle2,
@@ -19,65 +19,92 @@ export default function SyncPage() {
   const [syncDirection, setSyncDirection] = useState<"two_way" | "pull" | "push">("two_way");
   const [autoSyncEnabled, setAutoSyncEnabled] = useState(true);
   const [conflictPolicy, setConflictPolicy] = useState<"admin_review" | "sheets_wins" | "app_wins">("admin_review");
-  const [lastSyncTime, setLastSyncTime] = useState<string>("१० नोव्हेंबर २०२६, १२:००:००");
-  const [logs, setLogs] = useState([
-    {
-      id: 1,
-      time: "१०/११/२०२६, १२:००",
-      sheet: "नमुना ८",
-      action: "पडताळणी",
-      records: "८०३ नोंदी अद्ययावत",
-      status: "यशस्वी",
-    },
-    {
-      id: 2,
-      time: "१०/११/२०२६, १२:००",
-      sheet: "नमुना ९ ",
-      action: "सिंक्रोनायझेशन",
-      records: "७०७ नोंदी जुळल्या",
-      status: "यशस्वी",
-    },
-    {
-      id: 3,
-      time: "१०/११/२०२६, १२:००",
-      sheet: "all mobile no",
-      action: "द्वि-मार्गी सिंक",
-      records: "६८० संपर्क सक्रिय",
-      status: "यशस्वी",
-    },
-    {
-      id: 4,
-      time: "१०/११/२०२६, १२:००",
-      sheet: "मासिक सभा नोटीस",
-      action: "सदस्य पडताळणी",
-      records: "९ सदस्य कायम",
-      status: "यशस्वी",
-    },
-  ]);
+  const [lastSyncTime, setLastSyncTime] = useState<string>("पडताळणी चालू...");
+  const [syncStatus, setSyncStatus] = useState<string>("सक्रिय (Active)");
+  const [logs, setLogs] = useState<any[]>([]);
+  const [notification, setNotification] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
-  const handleRunSync = () => {
+  const fetchSyncData = async () => {
+    try {
+      const res = await fetch("/api/sync");
+      if (res.ok) {
+        const data = await res.json();
+        if (data.last_sync_timestamp) {
+          const dateObj = new Date(data.last_sync_timestamp);
+          setLastSyncTime(dateObj.toLocaleString("mr-IN"));
+        }
+        if (data.logs && Array.isArray(data.logs)) {
+          setLogs(
+            data.logs.map((l: any) => ({
+              id: l.id,
+              time: new Date(l.timestamp).toLocaleString("mr-IN"),
+              sheet: l.sheet,
+              action: l.action,
+              records: l.details || `${l.records_processed} नोंदी`,
+              status: l.status === "SUCCESS" ? "यशस्वी" : "त्रुटी",
+            }))
+          );
+        }
+      }
+    } catch (e) {
+      console.error("Error loading sync data:", e);
+    }
+  };
+
+  useEffect(() => {
+    fetchSyncData();
+  }, []);
+
+  const handleRunSync = async () => {
     setIsSyncing(true);
-    setTimeout(() => {
+    setNotification(null);
+    try {
+      const res = await fetch("/api/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ direction: syncDirection, conflictPolicy }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "सिंक्रोनायझेशन अयशस्वी.");
+      }
+      const nowStr = new Date().toLocaleString("mr-IN");
+      setLastSyncTime(nowStr);
+      setNotification({
+        type: "success",
+        message: data.message || "गुगल शीट्स सिंक्रोनायझेशन यशस्वी झाले.",
+      });
+      await fetchSyncData();
+    } catch (err: any) {
+      setNotification({
+        type: "error",
+        message: err.message || "सिंक करताना त्रुटी आली.",
+      });
+    } finally {
       setIsSyncing(false);
-      const nowStr = new Date().toLocaleTimeString("mr-IN");
-      setLastSyncTime(`१० नोव्हेंबर २०२६, ${nowStr}`);
-      setLogs((prev) => [
-        {
-          id: Date.now(),
-          time: `१०/११/२०२६, ${nowStr}`,
-          sheet: "सर्व २६ वर्कशीट्स",
-          action: "मॅन्युअल द्वि-मार्गी सिंक",
-          records: "सर्व नोंदी व सूत्रे सुरक्षित",
-          status: "यशस्वी",
-        },
-        ...prev,
-      ]);
-    }, 1500);
+    }
   };
 
   return (
     <div className="p-6 max-w-5xl mx-auto space-y-6">
       {/* Top Header */}
+      {notification && (
+        <div
+          className={`p-3 rounded-lg text-xs font-semibold flex items-center gap-2 border ${
+            notification.type === "success"
+              ? "bg-[#E8F5E9] text-[#2E7D32] border-[#A5D6A7]"
+              : "bg-red-50 text-red-700 border-red-200"
+          }`}
+        >
+          {notification.type === "success" ? (
+            <CheckCircle2 className="w-4 h-4 shrink-0" />
+          ) : (
+            <AlertCircle className="w-4 h-4 shrink-0" />
+          )}
+          <span>{notification.message}</span>
+        </div>
+      )}
+
       <div className="bg-white border border-[#E1E5E1] rounded-lg p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-[#245C45] uppercase tracking-wider mb-1">

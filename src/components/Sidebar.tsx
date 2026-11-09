@@ -18,7 +18,9 @@ import {
   Landmark,
   ShieldCheck,
   BookOpen,
+  X,
 } from "lucide-react";
+import { useUI } from "@/context/UIContext";
 
 interface SheetNav {
   slug: string;
@@ -71,30 +73,53 @@ const reportAndNoticeSheets: SheetNav[] = [
 export default function Sidebar() {
   const pathname = usePathname();
   const [monthlyOpen, setMonthlyOpen] = useState(false);
+  const { sidebarOpen, closeSidebar } = useUI();
 
   const isActive = (slug: string) => {
     return pathname === `/sheets/${slug}`;
   };
 
   return (
-    <aside className="w-72 bg-white border-r border-[#E1E5E1] flex flex-col h-screen select-none shrink-0 overflow-hidden no-print">
-      {/* Brand Header */}
-      <div className="p-4 border-b border-[#E1E5E1] bg-[#FFFFFF]">
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-lg bg-[#245C45] flex items-center justify-center text-white font-bold text-lg shadow-sm">
-            ग
-          </div>
-          <div>
-            <div className="font-bold text-base text-[#252A27] tracking-tight flex items-center gap-1.5">
-              <span>Gramसेवा</span>
-              <span className="text-[10px] bg-[#EAF1EC] text-[#245C45] font-semibold px-1.5 py-0.5 rounded">
-                गोहगाव
-              </span>
+    <>
+      {/* Mobile Backdrop */}
+      {sidebarOpen && (
+        <div
+          onClick={closeSidebar}
+          className="fixed inset-0 bg-black/40 z-40 md:hidden transition-opacity"
+          aria-hidden="true"
+        />
+      )}
+
+      <aside
+        className={`fixed inset-y-0 left-0 z-50 md:relative md:translate-x-0 w-72 bg-white border-r border-[#E1E5E1] flex flex-col h-screen select-none shrink-0 overflow-hidden no-print transition-transform duration-200 ease-in-out ${
+          sidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full md:translate-x-0"
+        }`}
+      >
+        {/* Brand Header */}
+        <div className="p-4 border-b border-[#E1E5E1] bg-[#FFFFFF] flex items-center justify-between">
+          <Link href="/" onClick={closeSidebar} className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-lg bg-[#245C45] flex items-center justify-center text-white font-bold text-lg shadow-sm">
+              ग
             </div>
-            <p className="text-xs text-[#747C76] font-medium">ग्रा.पं. व्यवस्थापन प्रणाली</p>
-          </div>
-        </Link>
-      </div>
+            <div>
+              <div className="font-bold text-base text-[#252A27] tracking-tight flex items-center gap-1.5">
+                <span>Gramसेवा</span>
+                <span className="text-[10px] bg-[#EAF1EC] text-[#245C45] font-semibold px-1.5 py-0.5 rounded">
+                  गोहगाव
+                </span>
+              </div>
+              <p className="text-xs text-[#747C76] font-medium">ग्रा.पं. व्यवस्थापन प्रणाली</p>
+            </div>
+          </Link>
+
+          <button
+            onClick={closeSidebar}
+            className="md:hidden p-1.5 rounded-md text-[#747C76] hover:bg-[#F6F7F5] hover:text-[#252A27] transition-colors"
+            aria-label="मेनू बंद करा"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
       {/* Nav List */}
       <div className="flex-1 overflow-y-auto p-3 space-y-4 text-sm">
@@ -300,5 +325,6 @@ export default function Sidebar() {
         <span className="font-mono text-[11px]">सन २०२६-२७</span>
       </div>
     </aside>
+    </>
   );
 }
