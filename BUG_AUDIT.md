@@ -182,6 +182,32 @@ A total of **15 concrete bugs** were discovered, ranging from **Critical** (sear
 
 ---
 
+### BUG-16 (CRITICAL): `EROFS: read-only file system` Crash on Serverless Deployment When Saving Google Sheets Sync Settings
+- **Affected Files:**
+  - `src/app/api/settings/route.ts` (lines 22, 46)
+  - `src/lib/googleSheetsSync.ts` (lines 155, 174, 193, 214)
+  - `src/lib/sheetsService.ts` (lines 29, 37)
+- **Root Cause:**
+  1. In serverless production environments (Vercel, AWS Lambda, read-only Docker containers), the application bundle is deployed at `/var/task`, which is mounted as a strictly read-only filesystem.
+  2. Any execution of `fs.writeFileSync` to `/var/task/src/data/settings.json`, `sync_logs.json`, or sheet data files immediately throws `EROFS: read-only file system, open '/var/task/src/data/settings.json'`.
+  3. GET `/api/settings` attempted to write default settings to disk if the file was missing (`fs.writeFileSync(SETTINGS_FILE, ...)`), crashing immediately on serverless start.
+  4. Saving the Google Apps Script Web App URL in the Google Sheets Sync Center relied on writing to `src/data/settings.json`, which threw a 500 error in production.
+  5. Missing strict Google Apps Script Web App URL validation allowed arbitrary non-HTTPS or invalid input.
+- **Severity:** CRITICAL
+- **Proposed Fix:**
+  - Migrate persistent settings and audit logs to Supabase PostgreSQL:
+    - `gramseva_settings`: Key-value JSONB table for `sync` and `general` configuration.
+    - `gramseva_sync_logs`: Structured audit log table with indexed timestamps.
+    - `gramseva_sheet_mutations`: Serverless audit log for sheet row mutations.
+  - Create Supabase client and storage adapter in `src/lib/supabaseClient.ts` with service role authentication and RLS policies.
+  - Implement `safeWriteJson` wrapper that detects serverless read-only filesystem environments (`process.env.VERCEL`, `process.env.AWS_LAMBDA_FUNCTION_NAME`, `/var/task`) and safely catches `EROFS` without throwing exceptions.
+  - Implement strict URL validation (`validateGasWebAppUrl`) enforcing HTTPS and `script.google.com/macros/s/` structure (while supporting localhost/127.0.0.1 for local test runners).
+  - Sanitize API responses so raw webhook secrets and database credentials are never exposed in frontend API responses or public UI.
+  - Provide `supabase/schema.sql` database migration script and `.env.example` documentation.
+- **Verification Method:** Run `npm run test:persistence` and test invalid URLs, valid URLs, serverless read-only filesystem simulation, and settings persistence.
+
+---
+
 ## Repair Strategy & Execution Plan
 
 1. **Phase 3 (Search):** Overhaul search algorithm with Unicode NFC normalization, numeric float cleaning, debouncing, match highlighting, and clear button.

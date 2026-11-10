@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { processIncomingWebhook, getSyncSettings, getSyncLogs } from '@/lib/googleSheetsSync';
+import { processIncomingWebhook, getSyncSettingsAsync, getSyncLogsAsync } from '@/lib/googleSheetsSync';
 
 export async function POST(req: Request) {
   try {
@@ -28,8 +28,8 @@ export async function POST(req: Request) {
 
 export async function GET(req: Request) {
   try {
-    const settings = getSyncSettings();
-    const logs = getSyncLogs();
+    const settings = await getSyncSettingsAsync();
+    const logs = await getSyncLogsAsync(50);
 
     return NextResponse.json({
       status: 'WEBHOOK_READY',

@@ -34,6 +34,7 @@ export default function SyncPage() {
   const [isTestingWebhook, setIsTestingWebhook] = useState(false);
   const [isSavingConfig, setIsSavingConfig] = useState(false);
   const [logs, setLogs] = useState<any[]>([]);
+  const [storageBackend, setStorageBackend] = useState<string>("SUPABASE_POSTGRES");
   const [notification, setNotification] = useState<{ message: string; type: "success" | "error" | "warning" } | null>(null);
 
   // Webhook URL dynamically determined from browser host
@@ -58,6 +59,7 @@ export default function SyncPage() {
         if (data.webhook_secret_configured !== undefined) setIsSecretConfigured(data.webhook_secret_configured);
         if (data.sync_direction) setSyncDirection(data.sync_direction);
         if (data.conflict_policy) setConflictPolicy(data.conflict_policy);
+        if (data.storage_backend) setStorageBackend(data.storage_backend);
 
         if (data.logs && Array.isArray(data.logs)) {
           setLogs(
@@ -354,6 +356,13 @@ export default function SyncPage() {
           <div className="flex items-center justify-between text-[11px] pt-0.5">
             <span className="text-[#747C76]">शेवटचा सिंक:</span>
             <span className="font-semibold text-[#252A27]">{lastSyncTime}</span>
+          </div>
+          <div className="flex items-center justify-between text-[11px] pt-0.5 border-t border-[#E1E5E1]/60">
+            <span className="text-[#747C76]">डेटाबेस साठा:</span>
+            <span className="font-semibold text-[#245C45] flex items-center gap-1">
+              <ShieldCheck className="w-3 h-3 text-[#2E7D32]" />
+              {storageBackend === "SUPABASE_POSTGRES" ? "Supabase PostgreSQL" : "सर्व्हर मेमरी"}
+            </span>
           </div>
         </div>
       </div>
