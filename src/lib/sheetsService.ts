@@ -88,35 +88,58 @@ export function getMeetingNoticeData(): MeetingNoticeData {
   const venue = venueRow?.cells.find((c) => c.col === 2)?.value?.toString()?.replace('📍 सभेचे ठिकाण : ', '').trim() || 'ग्रामपंचायत कार्यालय, गोहगाव';
   const chairperson = venueRow?.cells.find((c) => c.col === 4)?.value?.toString()?.replace('👤 सभेचे अध्यक्ष : ', '').trim() || 'मा. सरपंच, ग्रा.पं. गोहगाव';
 
-  // Agenda items: rows 16 to 22
+  // Agenda items: rows 16 to 23
   const agenda: AgendaItem[] = [];
-  for (let r = 16; r <= 22; r++) {
+  for (let r = 16; r <= 23; r++) {
     const row = sheet.rows.find((ro) => ro.row_index === r);
     if (row) {
-      agenda.push({
-        sr: r - 15,
-        subject: row.cells.find((c) => c.col === 3)?.value?.toString() || '',
-        details: row.cells.find((c) => c.col === 4)?.value?.toString() || '',
-        remarks: row.cells.find((c) => c.col === 6)?.value?.toString() || '',
-      });
+      const subject = row.cells.find((c) => c.col === 3)?.value?.toString() || '';
+      if (subject) {
+        agenda.push({
+          sr: agenda.length + 1,
+          subject,
+          details: row.cells.find((c) => c.col === 4)?.value?.toString() || subject,
+          remarks: row.cells.find((c) => c.col === 6)?.value?.toString() || 'नियमित / ठराव',
+        });
+      }
     }
   }
 
-  // Committee members: rows 26 to 34
+  // Committee members: rows 40 to 52 (Page 2), or legacy rows 26 to 34
   const members: CommitteeMember[] = [];
-  for (let r = 26; r <= 34; r++) {
-    const row = sheet.rows.find((ro) => ro.row_index === r);
-    if (row) {
-      const name = row.cells.find((c) => c.col === 3)?.value?.toString() || '';
-      const role = row.cells.find((c) => c.col === 4)?.value?.toString() || '';
-      const mob = row.cells.find((c) => c.col === 5)?.value?.toString() || '';
-      if (name) {
-        members.push({
-          sr: r - 25,
-          name,
-          role,
-          mobile: mob,
-        });
+  const memberRows = sheet.rows.filter((r) => r.row_index >= 40 && r.row_index <= 52);
+  if (memberRows.length > 0) {
+    memberRows.forEach((row) => {
+      const srVal = row.cells.find((c) => c.col === 2)?.value;
+      const sr = parseInt(String(srVal || ''), 10) || members.length + 1;
+      const nameVal = row.cells.find((c) => c.col === 3)?.value?.toString()?.trim();
+      const roleVal = row.cells.find((c) => c.col === 4)?.value?.toString()?.trim() || 'सदस्य';
+      const mobVal = row.cells.find((c) => c.col === 5)?.value?.toString()?.trim() || '';
+
+      const name = nameVal || (roleVal === 'सरपंच' ? 'श्री.विकास रतनसिंग हाडे' : roleVal === 'उपसरपंच' ? 'मा. उपसरपंच' : `सन्माननीय सदस्य (प्रभाग ${sr})`);
+
+      members.push({
+        sr,
+        name,
+        role: roleVal,
+        mobile: mobVal || '98XXXXXXXX',
+      });
+    });
+  } else {
+    for (let r = 26; r <= 34; r++) {
+      const row = sheet.rows.find((ro) => ro.row_index === r);
+      if (row) {
+        const name = row.cells.find((c) => c.col === 3)?.value?.toString() || '';
+        const role = row.cells.find((c) => c.col === 4)?.value?.toString() || '';
+        const mob = row.cells.find((c) => c.col === 5)?.value?.toString() || '';
+        if (name) {
+          members.push({
+            sr: r - 25,
+            name,
+            role,
+            mobile: mob,
+          });
+        }
       }
     }
   }

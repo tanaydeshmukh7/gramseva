@@ -1,1 +1,910 @@
-{"index": 26, "name": "मासिक सभा नोटीस", "slug": "masik-sabha-notice", "category": "मासिक सभा व नोटीस (Governance)", "max_row": 40, "max_col": 6, "populated_rows_count": 33, "merged_ranges": ["B4:F4", "D20:E20", "B7:F7", "D11:F11", "D19:E19", "D22:E22", "E39:F39", "D21:E21", "B39:C39", "B12:C12", "E38:F38", "B11:C11", "D12:F12", "B14:F14", "B8:F8", "D17:E17", "B38:C38", "D16:E16", "E2:F2", "B10:F10", "D18:E18", "B40:F40", "B6:C6", "B24:F24", "D15:E15", "B5:F5", "B36:F36", "D6:F6"], "rows": [{"row_index": 2, "cells": [{"col": 1, "coord": "A2", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B2", "value": "📄 ग्रामपंचायत गोहगाव - मासिक सभा नोटीस नमुना (सन २०२६-२७)", "is_formula": false, "formula": null}, {"col": 3, "coord": "C2", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D2", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E2", "value": "🖨️ प्रिंट नोटीस (A4 PDF)", "is_formula": true, "formula": "=HYPERLINK(\"[link removed]\", \"🖨️ प्रिंट नोटीस (A4 PDF)\")"}, {"col": 6, "coord": "F2", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 4, "cells": [{"col": 1, "coord": "A4", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B4", "value": "ग्रामपंचायत कार्यालय, गोहगाव", "is_formula": false, "formula": null}, {"col": 3, "coord": "C4", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D4", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E4", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F4", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 5, "cells": [{"col": 1, "coord": "A5", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B5", "value": "मासिक सभा नोटीस (सन २०२६ - २०२७)", "is_formula": false, "formula": null}, {"col": 3, "coord": "C5", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D5", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E5", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F5", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 6, "cells": [{"col": 1, "coord": "A6", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B6", "value": "जावक क्र. : ग्रा.पं.गोह/सभा/२०२६-२७/२८", "is_formula": false, "formula": null}, {"col": 3, "coord": "C6", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D6", "value": "दिनांक : ०९/११/२०२६", "is_formula": false, "formula": null}, {"col": 5, "coord": "E6", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F6", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 7, "cells": [{"col": 1, "coord": "A7", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B7", "value": "प्रति, मा. सरपंच / उपसरपंच / सर्व सन्माननीय सदस्य, ग्रामपंचायत गोहगाव", "is_formula": false, "formula": null}, {"col": 3, "coord": "C7", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D7", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E7", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F7", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 8, "cells": [{"col": 1, "coord": "A8", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B8", "value": "महोदय / महोदया, ग्रामपंचायत अधिनियम, १९५८ अन्वये ग्रामपंचायत गोहगावची माहे नोव्हेंबर २०२६ ची मासिक सभा खालील तपशिलानुसार आयोजित करण्यात आली आहे. तरी सभेस सर्व सदस्यांनी वेळेवर उपस्थित राहावे ही नम्र विनंती.", "is_formula": false, "formula": null}, {"col": 3, "coord": "C8", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D8", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E8", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F8", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 10, "cells": [{"col": 1, "coord": "A10", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B10", "value": "📌 सभेचा तपशील व कार्यक्रम", "is_formula": false, "formula": null}, {"col": 3, "coord": "C10", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D10", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E10", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F10", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 11, "cells": [{"col": 1, "coord": "A11", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B11", "value": "📅 सभेचा दिनांक : १५/११/२०२६", "is_formula": false, "formula": null}, {"col": 3, "coord": "C11", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D11", "value": "⏰ सभेची वेळ : दुपारी ०२:०० वाजता", "is_formula": false, "formula": null}, {"col": 5, "coord": "E11", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F11", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 12, "cells": [{"col": 1, "coord": "A12", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B12", "value": "📍 सभेचे ठिकाण : ग्रामपंचायत कार्यालय, गोहगाव", "is_formula": false, "formula": null}, {"col": 3, "coord": "C12", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D12", "value": "👤 सभेचे अध्यक्ष : मा. सरपंच, ग्रा.पं. गोहगाव", "is_formula": false, "formula": null}, {"col": 5, "coord": "E12", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F12", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 14, "cells": [{"col": 1, "coord": "A14", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B14", "value": "📋 सभेची विषयपत्रिका (अजेंडा)", "is_formula": false, "formula": null}, {"col": 3, "coord": "C14", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D14", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E14", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F14", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 15, "cells": [{"col": 1, "coord": "A15", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B15", "value": "अ.क्र.", "is_formula": false, "formula": null}, {"col": 3, "coord": "C15", "value": "विषय", "is_formula": false, "formula": null}, {"col": 4, "coord": "D15", "value": "सविस्तर तपशील / चर्चा", "is_formula": false, "formula": null}, {"col": 5, "coord": "E15", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F15", "value": "शेरा", "is_formula": false, "formula": null}]}, {"row_index": 16, "cells": [{"col": 1, "coord": "A16", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B16", "value": "१", "is_formula": false, "formula": null}, {"col": 3, "coord": "C16", "value": "मागील सभेचे इतिवृत्त वाचन", "is_formula": false, "formula": null}, {"col": 4, "coord": "D16", "value": "दि. १५/१०/२०२६ च्या सभेचे इतिवृत्त (प्रोसिडिंग) वाचून कायम करणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E16", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F16", "value": "नियमित", "is_formula": false, "formula": null}]}, {"row_index": 17, "cells": [{"col": 1, "coord": "A17", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B17", "value": "२", "is_formula": false, "formula": null}, {"col": 3, "coord": "C17", "value": "मागील माहे जमा-खर्च मंजुरी", "is_formula": false, "formula": null}, {"col": 4, "coord": "D17", "value": "माहे ऑक्टोबर २०२६ मधील ग्रामनिधी व इतर योजना जमा-खर्च आढावा घेणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E17", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F17", "value": "मंजुरीसाठी", "is_formula": false, "formula": null}]}, {"row_index": 18, "cells": [{"col": 1, "coord": "A18", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B18", "value": "३", "is_formula": false, "formula": null}, {"col": 3, "coord": "C18", "value": "कर वसुली आढावा व मोहीम", "is_formula": false, "formula": null}, {"col": 4, "coord": "D18", "value": "नमुना ८ नुसार घरपट्टी, पाणीपट्टी कर वसुली १००% करण्यासाठी मोहीम आखणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E18", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F18", "value": "वसुली मोहीम", "is_formula": false, "formula": null}]}, {"row_index": 19, "cells": [{"col": 1, "coord": "A19", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B19", "value": "४", "is_formula": false, "formula": null}, {"col": 3, "coord": "C19", "value": "स्वच्छता व दिवाबत्ती दुरुस्ती", "is_formula": false, "formula": null}, {"col": 4, "coord": "D19", "value": "गावातील अंतर्गत रस्ते, नाले स्वच्छता व नादुरुस्त पथदिवे दुरुस्ती करणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E19", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F19", "value": "जनसुविधा", "is_formula": false, "formula": null}]}, {"row_index": 20, "cells": [{"col": 1, "coord": "A20", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B20", "value": "५", "is_formula": false, "formula": null}, {"col": 3, "coord": "C20", "value": "विकासकामे व १५ वा वित्त आयोग", "is_formula": false, "formula": null}, {"col": 4, "coord": "D20", "value": "वार्षिक आराखड्यातील मंजूर विकासकामांना प्रशासकीय मंजुरी देणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E20", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F20", "value": "विकासकामे", "is_formula": false, "formula": null}]}, {"row_index": 21, "cells": [{"col": 1, "coord": "A21", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B21", "value": "६", "is_formula": false, "formula": null}, {"col": 3, "coord": "C21", "value": "नागरिकांचे अर्ज व दाखले", "is_formula": false, "formula": null}, {"col": 4, "coord": "D21", "value": "नागरिकांचे नमुना ८ नोंद, नाव दुरुस्ती, पाणीपट्टी व बांधकाम परवानग्या.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E21", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F21", "value": "प्रशासकीय", "is_formula": false, "formula": null}]}, {"row_index": 22, "cells": [{"col": 1, "coord": "A22", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B22", "value": "७", "is_formula": false, "formula": null}, {"col": 3, "coord": "C22", "value": "अध्यक्षांच्या परवानगीने ऐनवेळचे विषय", "is_formula": false, "formula": null}, {"col": 4, "coord": "D22", "value": "सभेच्या दिवशी ऐनवेळी येणाऱ्या तातडीच्या व सार्वजनिक विषयांवर चर्चा करणे.", "is_formula": false, "formula": null}, {"col": 5, "coord": "E22", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F22", "value": "ऐनवेळचे", "is_formula": false, "formula": null}]}, {"row_index": 24, "cells": [{"col": 1, "coord": "A24", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B24", "value": "✍️ सदस्य नोटीस पोच स्वाक्षरी तक्ता", "is_formula": false, "formula": null}, {"col": 3, "coord": "C24", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D24", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E24", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F24", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 25, "cells": [{"col": 1, "coord": "A25", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B25", "value": "अ.क्र.", "is_formula": false, "formula": null}, {"col": 3, "coord": "C25", "value": "सदस्याचे नाव", "is_formula": false, "formula": null}, {"col": 4, "coord": "D25", "value": "पद / प्रभाग", "is_formula": false, "formula": null}, {"col": 5, "coord": "E25", "value": "मोबाईल क्र.", "is_formula": false, "formula": null}, {"col": 6, "coord": "F25", "value": "नोटीस पोच स्वाक्षरी", "is_formula": false, "formula": null}]}, {"row_index": 26, "cells": [{"col": 1, "coord": "A26", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B26", "value": "१", "is_formula": false, "formula": null}, {"col": 3, "coord": "C26", "value": "श्री. रमेश किसनराव पाटील", "is_formula": false, "formula": null}, {"col": 4, "coord": "D26", "value": "सरपंच", "is_formula": false, "formula": null}, {"col": 5, "coord": "E26", "value": "98XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F26", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 27, "cells": [{"col": 1, "coord": "A27", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B27", "value": "२", "is_formula": false, "formula": null}, {"col": 3, "coord": "C27", "value": "सौ. सुनिता विलास मोरे", "is_formula": false, "formula": null}, {"col": 4, "coord": "D27", "value": "उपसरपंच (प्रभाग १)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E27", "value": "97XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F27", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 28, "cells": [{"col": 1, "coord": "A28", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B28", "value": "३", "is_formula": false, "formula": null}, {"col": 3, "coord": "C28", "value": "श्री. ऋषिकेश मिलिंद हाडे", "is_formula": false, "formula": null}, {"col": 4, "coord": "D28", "value": "सदस्य (प्रभाग १)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E28", "value": "98XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F28", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 29, "cells": [{"col": 1, "coord": "A29", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B29", "value": "४", "is_formula": false, "formula": null}, {"col": 3, "coord": "C29", "value": "सौ. मंगल ज्ञानेश्वर पवार", "is_formula": false, "formula": null}, {"col": 4, "coord": "D29", "value": "सदस्य (प्रभाग २)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E29", "value": "96XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F29", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 30, "cells": [{"col": 1, "coord": "A30", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B30", "value": "५", "is_formula": false, "formula": null}, {"col": 3, "coord": "C30", "value": "श्री. सचिन मारुती कदम", "is_formula": false, "formula": null}, {"col": 4, "coord": "D30", "value": "सदस्य (प्रभाग २)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E30", "value": "95XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F30", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 31, "cells": [{"col": 1, "coord": "A31", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B31", "value": "६", "is_formula": false, "formula": null}, {"col": 3, "coord": "C31", "value": "सौ. अर्चना बाळकृष्ण जाधव", "is_formula": false, "formula": null}, {"col": 4, "coord": "D31", "value": "सदस्य (प्रभाग ३)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E31", "value": "94XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F31", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 32, "cells": [{"col": 1, "coord": "A32", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B32", "value": "७", "is_formula": false, "formula": null}, {"col": 3, "coord": "C32", "value": "श्री. गजानन शंकरराव शिंदे", "is_formula": false, "formula": null}, {"col": 4, "coord": "D32", "value": "सदस्य (प्रभाग ३)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E32", "value": "93XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F32", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 33, "cells": [{"col": 1, "coord": "A33", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B33", "value": "८", "is_formula": false, "formula": null}, {"col": 3, "coord": "C33", "value": "सौ. प्रियंका अमोल काळे", "is_formula": false, "formula": null}, {"col": 4, "coord": "D33", "value": "सदस्य (प्रभाग ४)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E33", "value": "92XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F33", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 34, "cells": [{"col": 1, "coord": "A34", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B34", "value": "९", "is_formula": false, "formula": null}, {"col": 3, "coord": "C34", "value": "श्री. समाधान पंढरीनाथ गाडे", "is_formula": false, "formula": null}, {"col": 4, "coord": "D34", "value": "सदस्य (प्रभाग ४)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E34", "value": "91XXXXXXXX", "is_formula": false, "formula": null}, {"col": 6, "coord": "F34", "value": "स्वाक्षरी : ________________", "is_formula": false, "formula": null}]}, {"row_index": 36, "cells": [{"col": 1, "coord": "A36", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B36", "value": "📌 टीप : १. ठरलेल्या वेळेत गणपूर्ती (कोरम) न झाल्यास सभा नियमानुसार तहकूब राहील व त्यानंतर त्याच ठिकाणी होईल. २. सर्व सदस्यांनी वेळेवर उपस्थित राहणे बंधनकारक आहे.", "is_formula": false, "formula": null}, {"col": 3, "coord": "C36", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D36", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E36", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F36", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 38, "cells": [{"col": 1, "coord": "A38", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B38", "value": "ग्रामसेवक / ग्रा.वि.अ.", "is_formula": false, "formula": null}, {"col": 3, "coord": "C38", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D38", "value": "नोटीस बजावणारा कर्मचारी", "is_formula": false, "formula": null}, {"col": 5, "coord": "E38", "value": "सरपंच / उपसरपंच", "is_formula": false, "formula": null}, {"col": 6, "coord": "F38", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 39, "cells": [{"col": 1, "coord": "A39", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B39", "value": "ग्रामपंचायत गोहगाव", "is_formula": false, "formula": null}, {"col": 3, "coord": "C39", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D39", "value": "ग्रामपंचायत गोहगाव", "is_formula": false, "formula": null}, {"col": 5, "coord": "E39", "value": "ग्रामपंचायत गोहगाव", "is_formula": false, "formula": null}, {"col": 6, "coord": "F39", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 40, "cells": [{"col": 1, "coord": "A40", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B40", "value": "संगणकीकृत मासिक सभा नोटीस - ग्रामपंचायत गोहगाव | स्वच्छ गाव, सुंदर गाव", "is_formula": false, "formula": null}, {"col": 3, "coord": "C40", "value": null, "is_formula": false, "formula": null}, {"col": 4, "coord": "D40", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E40", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F40", "value": null, "is_formula": false, "formula": null}]}]}
+{
+  "index": 15,
+  "name": "मासिक सभा नोटीस",
+  "original_sheet_name": "मासिक सभा नोटीस",
+  "slug": "masik-sabha-notice",
+  "category": "मासिक सभा (Governance)",
+  "is_archived": false,
+  "max_row": 60,
+  "max_col": 6,
+  "populated_rows_count": 48,
+  "formula_count": 5,
+  "merged_ranges": [
+    "E2:F2",
+    "B4:F4",
+    "B5:F5",
+    "B6:C6",
+    "D6:F6",
+    "B7:F7",
+    "B8:F8",
+    "B10:F10",
+    "B11:C11",
+    "D11:F11",
+    "B12:C12",
+    "D12:F12",
+    "B14:F14",
+    "C15:F15",
+    "C16:F16",
+    "C17:F17",
+    "C18:F18",
+    "C19:F19",
+    "C20:F20",
+    "C21:F21",
+    "C22:F22",
+    "C23:F23",
+    "B25:F25",
+    "B28:C28",
+    "E28:F28",
+    "B29:C29",
+    "E29:F29",
+    "B30:C30",
+    "E30:F30",
+    "B32:F32",
+    "B34:D34",
+    "E34:F34",
+    "B35:F35",
+    "B36:F36",
+    "E37:F37",
+    "E55:F55",
+    "E56:F56",
+    "B37:D37",
+    "B38:F38",
+    "B53:F53",
+    "B54:C54",
+    "E54:F54",
+    "B55:C55",
+    "B56:C56",
+    "B58:F58"
+  ],
+  "rows": [
+    {
+      "row_index": 2,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B2",
+          "value": "📄 ग्रामपंचायत गोहगाव - मासिक सभा नोटीस नमुना (सन २०२६-२७)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E2",
+          "value": "🖨️ प्रिंट नोटीस (A4 PDF)",
+          "is_formula": true,
+          "formula": "=HYPERLINK(\"[link removed]\", \"🖨️ प्रिंट नोटीस (A4 PDF)\")"
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B4",
+          "value": "ग्रामपंचायत कार्यालय, गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B5",
+          "value": "मासिक सभा नोटीस (सन २०२६ - २०२७)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B6",
+          "value": "जावक क्र. : ग्रा.पं.गोहगाव/सभा/नोव्हेंबर/२०२६-२०२७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D6",
+          "value": "दिनांक : 10/11/2026 09:04 AM",
+          "is_formula": true,
+          "formula": "=\"दिनांक : \" & TEXT(NOW(),\"DD/MM/YYYY hh:mm AM/PM\")"
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B7",
+          "value": "प्रति, मा. सरपंच / उपसरपंच / सर्व सन्माननीय सदस्य, ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B8",
+          "value": "महोदय / महोदया, ग्रामपंचायत अधिनियम, १९५८ अन्वये ग्रामपंचायत गोहगावची माहे नोव्हेंबर २०२६ ची मासिक सभा खालील तपशिलानुसार आयोजित करण्यात आली आहे. तरी सभेस सर्व सदस्यांनी वेळेवर उपस्थित राहावे ही नम्र विनंती.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B10",
+          "value": "📌 सभेचा तपशील व कार्यक्रम",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B11",
+          "value": "📅 सभेचा दिनांक : १५/११/२०२६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D11",
+          "value": "⏰ सभेची वेळ : दुपारी ०२:०० वाजता",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B12",
+          "value": "📍 सभेचे ठिकाण : ग्रामपंचायत कार्यालय, गोहगाव",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D12",
+          "value": "👤 सभेचे अध्यक्ष : मा. सरपंच, ग्रा.पं. गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B14",
+          "value": "📋 सभेची विषयपत्रिका (अजेंडा)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B15",
+          "value": "अ.क्र.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C15",
+          "value": "सभेपुढील विषय",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B16",
+          "value": "१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C16",
+          "value": "मागील सभेचे इतिवृत्त वाचून कायम करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B17",
+          "value": "२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C17",
+          "value": "मागील माहे जमा-खर्चाचा आढावा घेऊन मंजुरी देणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B18",
+          "value": "३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C18",
+          "value": "ग्रामपंचायत कर व पाणीपट्टी वसुलीचा आढावा घेणे व मोहीम राबविणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B19",
+          "value": "४",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C19",
+          "value": "गावातील सार्वजनिक स्वच्छता, सांडपाणी नियोजन व दिवाबत्ती दुरुस्ती करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B20",
+          "value": "५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C20",
+          "value": "ग्रामपंचायत क्षेत्रातील विकासकामे व १५ वा वित्त आयोग नियोजनावर चर्चा करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B21",
+          "value": "६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C21",
+          "value": "शासकीय योजनांची अंमलबजावणी व विविध लाभार्थी निवडीबाबत विचारविनिमय करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B22",
+          "value": "७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C22",
+          "value": "नागरिकांचे विविध अर्ज, बांधकाम परवानग्या व दाखले मंजुरीबाबत चर्चा करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B23",
+          "value": "८",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C23",
+          "value": "अध्यक्षांच्या परवानगीने वेळेवर येणाऱ्या ऐनवेळच्या विषयांवर चर्चा करणे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B25",
+          "value": "📌 वैधानिक टीप : १. ठरलेल्या वेळेत गणपूर्ती (कोरम) न झाल्यास सभा नियमानुसार ३० मिनिटे तहकूब राहील व त्यानंतर त्याच ठिकाणी होईल, ज्यास गणपूर्तीची अट राहणार नाही. २. सर्व सन्माननीय सदस्यांनी वेळेवर उपस्थित राहावे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B28",
+          "value": "ग्रामसेवक / ग्रा.वि.अ.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E28",
+          "value": "सरपंच / उपसरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B29",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E29",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 30,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B30",
+          "value": "(स्वाक्षरी व शिक्का)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E30",
+          "value": "(स्वाक्षरी व शिक्का)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B32",
+          "value": "संगणकीकृत मासिक सभा नोटीस - ग्रामपंचायत गोहगाव, ता. रिसोड, जि. वाशिम | स्वच्छ गाव, सुंदर गाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B34",
+          "value": "📄 ग्रामपंचायत गोहगाव - मासिक सभा सदस्य पोच पावती (पेज २)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E34",
+          "value": "🖨️ प्रिंट पोच पावती (A4 PDF)",
+          "is_formula": true,
+          "formula": "=HYPERLINK(\"[link removed]\", \"🖨️ प्रिंट पोच पावती (A4 PDF)\")"
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B35",
+          "value": "ग्रामपंचायत कार्यालय, गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 36,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B36",
+          "value": "मासिक सभा नोटीस पोच व स्वाक्षरी तक्ता (सन २०२६ - २०२७)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B37",
+          "value": "जावक क्र. : ग्रा.पं.गोहगाव/सभा/नोव्हेंबर/२०२६-२०२७",
+          "is_formula": true,
+          "formula": "='मासिक सभा नोटीस'!B6"
+        },
+        {
+          "col": 5,
+          "coord": "E37",
+          "value": "दिनांक : 10/11/2026 09:04 AM",
+          "is_formula": true,
+          "formula": "=\"दिनांक : \" & TEXT(NOW(),\"DD/MM/YYYY hh:mm AM/PM\")"
+        }
+      ]
+    },
+    {
+      "row_index": 38,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B38",
+          "value": "📌 सभेचा संदर्भ : माहे नोव्हेंबर २०२६ ची मासिक सभा | दिनांक : १५/११/२०२६ | वेळ : दुपारी ०२:०० वाजता",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B39",
+          "value": "अ.क्र.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C39",
+          "value": "सदस्याचे संपूर्ण नाव",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D39",
+          "value": "पद / प्रभाग",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E39",
+          "value": "मोबाईल क्र.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F39",
+          "value": "सदस्याची स्वाक्षरी",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 40,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B40",
+          "value": "१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C40",
+          "value": "श्री.विकास रतनसिंग हाडे",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D40",
+          "value": "सरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B41",
+          "value": "२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D41",
+          "value": "उपसरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 42,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B42",
+          "value": "३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D42",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 43,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B43",
+          "value": "४",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D43",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 44,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B44",
+          "value": "५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D44",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 45,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B45",
+          "value": "६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D45",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 46,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B46",
+          "value": "७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D46",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 47,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B47",
+          "value": "८",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D47",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 48,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B48",
+          "value": "९",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D48",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 49,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B49",
+          "value": "१०",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D49",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 50,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B50",
+          "value": "११",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D50",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 51,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B51",
+          "value": "१२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D51",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 52,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B52",
+          "value": "१३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D52",
+          "value": "सदस्य",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 53,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B53",
+          "value": "📌 वैधानिक टीप : १. ठरलेल्या वेळेत गणपूर्ती (कोरम) न झाल्यास सभा नियमानुसार ३० मिनिटे तहकूब राहील व त्यानंतर त्याच ठिकाणी होईल, ज्यास गणपूर्तीची अट असणार नाही. २. सर्व सन्माननीय सदस्यांनी वेळेवर उपस्थित राहावे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 54,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B54",
+          "value": "नोटीस बजावणारा कर्मचारी",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E54",
+          "value": "सरपंच / उपसरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 55,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B55",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E55",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 56,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B56",
+          "value": "(स्वाक्षरी व पोच अहवाल)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E56",
+          "value": "(स्वाक्षरी व शिक्का)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 58,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B58",
+          "value": "संगणकीकृत मासिक सभा नोटीस पोच - ग्रामपंचायत गोहगाव, ता. रिसोड, जि. वाशिम | स्वच्छ गाव, सुंदर गाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,776 @@
-{"index": 12, "name": "नमुना ७ पावती ", "slug": "namuna-7-pavati", "category": "दस्तावेज व प्रिंटिंग (Documents)", "max_row": 1, "max_col": 1, "populated_rows_count": 0, "merged_ranges": [], "rows": []}
+{
+  "index": 13,
+  "name": "नमुना ७ पावती",
+  "original_sheet_name": "नमुना ७ पावती ",
+  "slug": "namuna-7-pavati",
+  "category": "किरकोळ वसुली पावती (Misc Receipts)",
+  "is_archived": false,
+  "max_row": 43,
+  "max_col": 7,
+  "populated_rows_count": 37,
+  "formula_count": 14,
+  "merged_ranges": [
+    "C39:D39",
+    "E39:G39",
+    "A40:B40",
+    "C40:D40",
+    "E40:G40",
+    "E41:G41",
+    "A42:G42",
+    "A43:G43",
+    "B34:G34",
+    "B35:C35",
+    "E35:G35",
+    "B36:C36",
+    "E36:G36",
+    "A37:G37",
+    "A39:B39",
+    "F5:G5",
+    "F6:G6",
+    "A1:C1",
+    "E1:G1",
+    "A2:G2",
+    "A3:G3",
+    "A4:G4",
+    "B5:D5",
+    "B6:D6",
+    "E12:G12",
+    "E13:G13",
+    "E16:G16",
+    "E17:G17",
+    "E18:G18",
+    "B8:G8",
+    "B9:G9",
+    "B10:D10",
+    "F10:G10",
+    "B11:G11",
+    "B12:C12",
+    "A14:G14",
+    "B13:C13",
+    "A16:B16",
+    "C16:D16",
+    "A17:B17",
+    "C17:D17",
+    "A19:G19",
+    "A20:G20",
+    "A22:G22",
+    "A24:C24",
+    "E24:G24",
+    "A25:G25",
+    "A26:G26",
+    "A27:G27",
+    "F28:G28",
+    "B28:D28",
+    "B29:D29",
+    "F29:G29",
+    "B31:G31",
+    "B32:G32",
+    "B33:D33",
+    "F33:G33"
+  ],
+  "rows": [
+    {
+      "row_index": 1,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A1",
+          "value": "संत गाडगेबाबा",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E1",
+          "value": "राष्ट्रसंत तुकडोजी महाराज",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A2",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A3",
+          "value": "नमुना नं. ७ (नियम ३७ (२) पहा)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A4",
+          "value": "सामान्य पावती [ मूळ प्रत / Original ]",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A5",
+          "value": "बुक नंबर :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E5",
+          "value": "पावती नं. :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A6",
+          "value": "तारीख :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B6",
+          "value": "10/11/2026 09:04 AM",
+          "is_formula": true,
+          "formula": "=TEXT(NOW(),\"DD/MM/YYYY hh:mm AM/PM\")"
+        },
+        {
+          "col": 5,
+          "coord": "E6",
+          "value": "आर्थिक वर्ष :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F6",
+          "value": "२०२४ - २०२५",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A8",
+          "value": "श्री. / श्रीमती :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A9",
+          "value": "रा. (पत्ता/वॉर्ड) :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A10",
+          "value": "कशाबद्दल मिळाले :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E10",
+          "value": "बाब / लेखाशीर्ष :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A11",
+          "value": "अक्षरी रुपये :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A12",
+          "value": "मिळालेली रक्कम :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B12",
+          "value": "₹",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D12",
+          "value": "भरणा प्रकार :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E12",
+          "value": "रोख / चेक / ऑनलाइन",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A13",
+          "value": "संदर्भ / चेक क्र. :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D13",
+          "value": "बँकेचे नाव :",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A14",
+          "value": "सदर रक्कम ग्रामपंचायत गोहगाव यांच्या ग्रामनिधी खाती जमा करून पावती देण्यात येत आहे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A16",
+          "value": "पैसे देणाऱ्याची सही",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C16",
+          "value": "पैसे स्वीकारणाऱ्याची सही",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E16",
+          "value": "ग्रामसेवक / ग्रा.वि.अधिकारी / सरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A17",
+          "value": "(खातेदार / नागरिक)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C17",
+          "value": "(वसुली कारकून / लिपिक)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E17",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "cells": [
+        {
+          "col": 5,
+          "coord": "E18",
+          "value": "(स्वाक्षरी व अधिकृत शिक्का)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A19",
+          "value": "टीप : ही पावती ग्रामपंचायत गोहगावच्या अधिकृत शिक्क्याशिवाय व स्वाक्षरीशिवाय ग्राह्य धरली जाणार नाही.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A20",
+          "value": "नोंद : दैनिक रोकड वही (नमुना ५-क) व सामान्य रोकड वही (नमुना ५) मध्ये नोंद घेतली आहे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A22",
+          "value": "✂️ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ✂️",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 24,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A24",
+          "value": "संत गाडगेबाबा",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E24",
+          "value": "राष्ट्रसंत तुकडोजी महाराज",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A25",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 26,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A26",
+          "value": "नमुना नं. ७ (नियम ३७ (२) पहा)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 27,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A27",
+          "value": "सामान्य पावती [ कार्यालयीन प्रत (OC) ]",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A28",
+          "value": "बुक नंबर :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B28",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B5=\"\",\"\",B5)"
+        },
+        {
+          "col": 5,
+          "coord": "E28",
+          "value": "पावती नं. :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F28",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(F5=\"\",\"\",F5)"
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A29",
+          "value": "तारीख :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B29",
+          "value": "10/11/2026 09:04 AM",
+          "is_formula": true,
+          "formula": "=IF(B6=\"\",\"\",B6)"
+        },
+        {
+          "col": 5,
+          "coord": "E29",
+          "value": "आर्थिक वर्ष :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F29",
+          "value": "२०२४ - २०२५",
+          "is_formula": true,
+          "formula": "=IF(F6=\"\",\"\",F6)"
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A31",
+          "value": "श्री. / श्रीमती :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B31",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B8=\"\",\"\",B8)"
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A32",
+          "value": "रा. (पत्ता/वॉर्ड) :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B32",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B9=\"\",\"\",B9)"
+        }
+      ]
+    },
+    {
+      "row_index": 33,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A33",
+          "value": "कशाबद्दल मिळाले :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B33",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B10=\"\",\"\",B10)"
+        },
+        {
+          "col": 5,
+          "coord": "E33",
+          "value": "बाब / लेखाशीर्ष :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F33",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(F10=\"\",\"\",F10)"
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A34",
+          "value": "अक्षरी रुपये :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B34",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B11=\"\",\"\",B11)"
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A35",
+          "value": "मिळालेली रक्कम :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B35",
+          "value": "₹",
+          "is_formula": true,
+          "formula": "=IF(B12=\"\",\"\",B12)"
+        },
+        {
+          "col": 4,
+          "coord": "D35",
+          "value": "भरणा प्रकार :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E35",
+          "value": "रोख / चेक / ऑनलाइन",
+          "is_formula": true,
+          "formula": "=IF(E12=\"\",\"\",E12)"
+        }
+      ]
+    },
+    {
+      "row_index": 36,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A36",
+          "value": "संदर्भ / चेक क्र. :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B36",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(B13=\"\",\"\",B13)"
+        },
+        {
+          "col": 4,
+          "coord": "D36",
+          "value": "बँकेचे नाव :",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E36",
+          "value": "",
+          "is_formula": true,
+          "formula": "=IF(E13=\"\",\"\",E13)"
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A37",
+          "value": "सदर रक्कम ग्रामपंचायत गोहगाव यांच्या ग्रामनिधी खाती जमा करून पावती देण्यात येत आहे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A39",
+          "value": "पैसे देणाऱ्याची सही",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C39",
+          "value": "पैसे स्वीकारणाऱ्याची सही",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E39",
+          "value": "ग्रामसेवक / ग्रा.वि.अधिकारी / सरपंच",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 40,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A40",
+          "value": "(खातेदार / नागरिक)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C40",
+          "value": "(वसुली कारकून / लिपिक)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E40",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "cells": [
+        {
+          "col": 5,
+          "coord": "E41",
+          "value": "(स्वाक्षरी व अधिकृत शिक्का)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 42,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A42",
+          "value": "टीप : ही पावती ग्रामपंचायत गोहगावच्या अधिकृत शिक्क्याशिवाय व स्वाक्षरीशिवाय ग्राह्य धरली जाणार नाही.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 43,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A43",
+          "value": "नोंद : दैनिक रोकड वही (नमुना ५-क) व सामान्य रोकड वही (नमुना ५) मध्ये नोंद घेतली आहे.",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

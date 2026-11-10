@@ -1,1 +1,1122 @@
-{"index": 1, "name": "Sheet1", "slug": "sheet1", "category": "लेखाशीर्ष व संदर्भ (Reference)", "max_row": 1000, "max_col": 26, "populated_rows_count": 38, "merged_ranges": [], "rows": [{"row_index": 4, "cells": [{"col": 1, "coord": "A4", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B4", "value": "Gramnidhi_Jama", "is_formula": false, "formula": null}, {"col": 3, "coord": "C4", "value": "Gramnidhi_kharch", "is_formula": false, "formula": null}, {"col": 4, "coord": "D4", "value": "Panipatti_jama", "is_formula": false, "formula": null}, {"col": 5, "coord": "E4", "value": "Panipatti_kharch", "is_formula": false, "formula": null}, {"col": 6, "coord": "F4", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G4", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H4", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I4", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J4", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K4", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L4", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M4", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N4", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O4", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P4", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q4", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R4", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S4", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T4", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U4", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V4", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W4", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X4", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y4", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z4", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 5, "cells": [{"col": 1, "coord": "A5", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B5", "value": "निवासी इमारतीवरील कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C5", "value": "सरपंच मानधन ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D5", "value": "जनरल पाणीपट्टी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E5", "value": "कर्मचारी वेतन ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F5", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G5", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H5", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I5", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J5", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K5", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L5", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M5", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N5", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O5", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P5", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q5", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R5", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S5", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T5", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U5", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V5", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W5", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X5", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y5", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z5", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 6, "cells": [{"col": 1, "coord": "A6", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B6", "value": "अनिवासी इमारती, खुल्या ( अकृषक ) जागेवरील कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C6", "value": "सदस्य बैठक भत्ता ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D6", "value": "स्पेशल पाणीपट्टी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E6", "value": "कर्मचारी प्रवास भत्ता ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F6", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G6", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H6", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I6", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J6", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K6", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L6", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M6", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N6", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O6", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P6", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q6", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R6", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S6", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T6", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U6", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V6", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W6", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X6", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y6", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z6", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 7, "cells": [{"col": 1, "coord": "A7", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B7", "value": "दिवाबत्ती ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C7", "value": "सदस्य / सरपंच प्रवास भत्ता ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D7", "value": "पाणी पुरवठा ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E7", "value": "दुरुस्ती व देखभाल ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F7", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G7", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H7", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I7", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J7", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K7", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L7", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M7", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N7", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O7", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P7", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q7", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R7", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S7", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T7", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U7", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V7", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W7", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X7", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y7", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z7", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 8, "cells": [{"col": 1, "coord": "A8", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B8", "value": "स्वच्छता कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C8", "value": "कर्मचारी वेतन ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D8", "value": "पाईप लाईन दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E8", "value": "स्वच्छता ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F8", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G8", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H8", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I8", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J8", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K8", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L8", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M8", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N8", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O8", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P8", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q8", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R8", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S8", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T8", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U8", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V8", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W8", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X8", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y8", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z8", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 9, "cells": [{"col": 1, "coord": "A9", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B9", "value": "दुकाने, लघु उद्योग व हॉटेल चालविणे यावरील कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C9", "value": "कर्मचारी प्रवास भत्ता ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D9", "value": "पाणी पुरवठा नवीन कामे ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E9", "value": "पाईप लाईन दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F9", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G9", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H9", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I9", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J9", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K9", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L9", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M9", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N9", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O9", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P9", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q9", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R9", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S9", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T9", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U9", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V9", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W9", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X9", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y9", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z9", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 10, "cells": [{"col": 1, "coord": "A10", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B10", "value": "यात्रा कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C10", "value": "कार्यालयीन खर्च ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D10", "value": "पाणी पुरवठा कर्मचारी वेतन ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E10", "value": "पाणी पुरवठा नवीन कामे ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F10", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G10", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H10", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I10", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J10", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K10", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L10", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M10", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N10", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O10", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P10", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q10", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R10", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S10", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T10", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U10", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V10", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W10", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X10", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y10", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z10", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 11, "cells": [{"col": 1, "coord": "A11", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B11", "value": "जत्रा व उत्सव कर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C11", "value": "दुरुस्ती व देखभाल ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D11", "value": "पाणी मीटर / साहित्य खरेदी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E11", "value": "पाणी पुरवठा कर्मचारी वेतन ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F11", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G11", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H11", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I11", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J11", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K11", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L11", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M11", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N11", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O11", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P11", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q11", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R11", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S11", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T11", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U11", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V11", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W11", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X11", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y11", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z11", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 12, "cells": [{"col": 1, "coord": "A12", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B12", "value": "इतर ( वर्गणी ) ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C12", "value": "स्वच्छता ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D12", "value": "नळमार्गाचे परीक्षण व दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E12", "value": "पाणी मीटर / साहित्य खरेदी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F12", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G12", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H12", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I12", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J12", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K12", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L12", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M12", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N12", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O12", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P12", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q12", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R12", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S12", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T12", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U12", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V12", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W12", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X12", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y12", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z12", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 13, "cells": [{"col": 1, "coord": "A13", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B13", "value": "बाजार फी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C13", "value": "( ब ) रस्त्यावरील दिवाबत्ती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D13", "value": "शासकीय पाणीपट्टीचा भरणा करणे", "is_formula": false, "formula": null}, {"col": 5, "coord": "E13", "value": "नळमार्गाचे परीक्षण व दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F13", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G13", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H13", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I13", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J13", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K13", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L13", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M13", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N13", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O13", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P13", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q13", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R13", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S13", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T13", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U13", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V13", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W13", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X13", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y13", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z13", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 14, "cells": [{"col": 1, "coord": "A14", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B14", "value": "जमीन भाडेपट्टी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C14", "value": "( क ) कार्यालय ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D14", "value": "नलिका विहिरीची देखभाल व दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E14", "value": "शासकीय पाणीपट्टीचा भरणा करणे", "is_formula": false, "formula": null}, {"col": 6, "coord": "F14", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G14", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H14", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I14", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J14", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K14", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L14", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M14", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N14", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O14", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P14", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q14", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R14", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S14", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T14", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U14", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V14", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W14", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X14", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y14", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z14", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 15, "cells": [{"col": 1, "coord": "A15", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B15", "value": "व्याज जमा ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C15", "value": "पथ दिवाबत्ती, साहित्य व इतर ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D15", "value": "हात पंप / वीज पंप वर्गणी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E15", "value": "नलिका विहिरीची देखभाल व दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F15", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G15", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H15", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I15", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J15", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K15", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L15", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M15", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N15", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O15", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P15", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q15", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R15", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S15", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T15", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U15", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V15", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W15", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X15", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y15", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z15", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 16, "cells": [{"col": 1, "coord": "A16", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B16", "value": "जागा भाडे ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C16", "value": "दिवाबत्ती मजुरी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D16", "value": "इतर ( वर्गणी ) ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E16", "value": "हात पंप / वीज पंप वर्गणी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F16", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G16", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H16", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I16", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J16", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K16", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L16", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M16", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N16", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O16", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P16", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q16", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R16", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S16", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T16", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U16", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V16", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W16", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X16", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y16", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z16", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 17, "cells": [{"col": 1, "coord": "A17", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B17", "value": "देणगी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C17", "value": "शिक्षण ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D17", "value": "स्वच्छता फी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E17", "value": "( अ ) पाणी पुरवठा वीज देयक", "is_formula": false, "formula": null}, {"col": 6, "coord": "F17", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G17", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H17", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I17", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J17", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K17", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L17", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M17", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N17", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O17", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P17", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q17", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R17", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S17", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T17", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U17", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V17", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W17", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X17", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y17", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z17", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 18, "cells": [{"col": 1, "coord": "A18", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B18", "value": "इतर जमा ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C18", "value": "आरोग्य ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D18", "value": "व्याज जमा ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E18", "value": "आरोग्य ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F18", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G18", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H18", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I18", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J18", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K18", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L18", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M18", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N18", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O18", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P18", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q18", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R18", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S18", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T18", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U18", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V18", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W18", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X18", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y18", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z18", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 19, "cells": [{"col": 1, "coord": "A19", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B19", "value": "लिलाव ( धूळ, घाण, शेण, केरकचरा, जनावरांची प्रेत व इतर)", "is_formula": false, "formula": null}, {"col": 3, "coord": "C19", "value": "रस्ते देखभाल दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D19", "value": "देणगी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E19", "value": "जलशुद्धीकरण / टी. सी. एल ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F19", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G19", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H19", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I19", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J19", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K19", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L19", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M19", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N19", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O19", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P19", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q19", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R19", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S19", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T19", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U19", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V19", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W19", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X19", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y19", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z19", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 20, "cells": [{"col": 1, "coord": "A20", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B20", "value": "इमारत भाडे ( टावर भाडे ) ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C20", "value": "रस्ते नवीन ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D20", "value": "इतर जमा ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E20", "value": "सामाजिक व सांस्कृतिक कार्यक्रम ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F20", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G20", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H20", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I20", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J20", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K20", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L20", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M20", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N20", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O20", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P20", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q20", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R20", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S20", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T20", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U20", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V20", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W20", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X20", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y20", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z20", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 21, "cells": [{"col": 1, "coord": "A21", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B21", "value": "दाखले फी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C21", "value": "गटार देखभाल दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D21", "value": "लिलाव ( धूळ, घाण, शेण, केरकचरा, जनावरांची प्रेत व इतर)", "is_formula": false, "formula": null}, {"col": 5, "coord": "E21", "value": "साहित्य खरेदी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F21", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G21", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H21", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I21", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J21", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K21", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L21", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M21", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N21", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O21", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P21", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q21", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R21", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S21", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T21", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U21", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V21", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W21", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X21", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y21", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z21", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 22, "cells": [{"col": 1, "coord": "A22", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B22", "value": "मुद्रांक शुल्क ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C22", "value": "गटार नवीन ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D22", "value": "साहित्य खरेदी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E22", "value": "कोर्ट वकील फी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F22", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G22", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H22", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I22", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J22", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K22", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L22", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M22", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N22", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O22", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P22", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q22", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R22", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S22", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T22", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U22", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V22", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W22", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X22", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y22", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z22", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 23, "cells": [{"col": 1, "coord": "A23", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B23", "value": "उपकर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C23", "value": "मुतारी दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D23", "value": "पाणी पुरवठा / टी. सी. एल ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E23", "value": "जाहिरात व प्रसिद्धी वरील खर्च ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F23", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G23", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H23", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I23", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J23", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K23", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L23", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M23", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N23", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O23", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P23", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q23", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R23", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S23", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T23", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U23", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V23", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W23", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X23", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y23", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z23", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 24, "cells": [{"col": 1, "coord": "A24", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B24", "value": "जमीन महसूल ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C24", "value": "स्मशानभूमी दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D24", "value": "बांधकाम ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E24", "value": "पेट्रोल तेल व वंगण ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F24", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G24", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H24", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I24", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J24", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K24", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L24", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M24", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N24", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O24", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P24", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q24", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R24", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S24", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T24", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U24", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V24", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W24", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X24", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y24", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z24", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 25, "cells": [{"col": 1, "coord": "A25", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B25", "value": "जमीन समानीकरण ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C25", "value": "समाजकल्याण ( २०%) ( आदिवासी व मागास वर्ग ) ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D25", "value": "आरोग्य ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E25", "value": "वाहन दुरुस्ती ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F25", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G25", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H25", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I25", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J25", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K25", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L25", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M25", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N25", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O25", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P25", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q25", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R25", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S25", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T25", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U25", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V25", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W25", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X25", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y25", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z25", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 26, "cells": [{"col": 1, "coord": "A26", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B26", "value": "गौण खनिज ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C26", "value": "डी.व्ही.डी.एफ. वर्गणी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D26", "value": "अनामत / प्रतीभुती ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E26", "value": "वैद्यकीय सहाय्य ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F26", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G26", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H26", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I26", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J26", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K26", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L26", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M26", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N26", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O26", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P26", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q26", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R26", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S26", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T26", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U26", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V26", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W26", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X26", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y26", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z26", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 27, "cells": [{"col": 1, "coord": "A27", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B27", "value": "इतर अनुदान ( शिपाई पगार मानधन )", "is_formula": false, "formula": null}, {"col": 3, "coord": "C27", "value": "महिला व बाल कल्याण ( १० % ) ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D27", "value": "ठेवी ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E27", "value": "कर्म. भविष्य निर्वाह निधी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F27", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G27", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H27", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I27", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J27", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K27", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L27", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M27", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N27", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O27", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P27", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q27", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R27", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S27", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T27", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U27", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V27", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W27", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X27", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y27", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z27", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 28, "cells": [{"col": 1, "coord": "A28", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B28", "value": "मानधन, किमान वेतन व बैठक भत्ता ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C28", "value": "साहित्य खरेदी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D28", "value": "राज्य शासन कर्ज ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E28", "value": "ड्रेस ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F28", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G28", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H28", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I28", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J28", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K28", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L28", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M28", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N28", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O28", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P28", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q28", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R28", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S28", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T28", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U28", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V28", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W28", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X28", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y28", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z28", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 29, "cells": [{"col": 1, "coord": "A29", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B29", "value": "इतर ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C29", "value": "अपंग कल्याण ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D29", "value": "केंद्र शासन कर्ज ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E29", "value": "अग्रिम / अनामत ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F29", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G29", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H29", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I29", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J29", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K29", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L29", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M29", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N29", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O29", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P29", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q29", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R29", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S29", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T29", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U29", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V29", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W29", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X29", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y29", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z29", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 30, "cells": [{"col": 1, "coord": "A30", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B30", "value": "आमदार निधी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C30", "value": "कर्म. भविष्य निर्वाह निधी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D30", "value": " ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E30", "value": "ठेवी ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F30", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G30", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H30", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I30", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J30", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K30", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L30", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M30", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N30", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O30", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P30", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q30", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R30", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S30", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T30", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U30", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V30", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W30", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X30", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y30", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z30", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 31, "cells": [{"col": 1, "coord": "A31", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B31", "value": "खासदार निधी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C31", "value": "मानधन, किमान वेतन व बैठक भत्ता व अल्पोपहार ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D31", "value": " ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E31", "value": "राज्य शासन कर्जे, हफ्ता व व्याज प्रदाने ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F31", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G31", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H31", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I31", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J31", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K31", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L31", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M31", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N31", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O31", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P31", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q31", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R31", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S31", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T31", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U31", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V31", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W31", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X31", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y31", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z31", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 32, "cells": [{"col": 1, "coord": "A32", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B32", "value": "२५१५ स्थानिक विकास निधी", "is_formula": false, "formula": null}, {"col": 3, "coord": "C32", "value": "आमदार निधी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D32", "value": " ", "is_formula": false, "formula": null}, {"col": 5, "coord": "E32", "value": "केंद्र शासन कर्जे, हफ्ता व व्याज प्रदाने ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F32", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G32", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H32", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I32", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J32", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K32", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L32", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M32", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N32", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O32", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P32", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q32", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R32", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S32", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T32", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U32", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V32", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W32", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X32", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y32", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z32", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 33, "cells": [{"col": 1, "coord": "A33", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B33", "value": "अनामत / प्रतीभुती ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C33", "value": "खासदार निधी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D33", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E33", "value": "इतर ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F33", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G33", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H33", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I33", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J33", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K33", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L33", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M33", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N33", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O33", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P33", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q33", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R33", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S33", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T33", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U33", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V33", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W33", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X33", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y33", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z33", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 34, "cells": [{"col": 1, "coord": "A34", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B34", "value": "ठेवी ", "is_formula": false, "formula": null}, {"col": 3, "coord": "C34", "value": "अग्रिम / अनामत ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D34", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E34", "value": "अनामत / प्रतीभुती ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F34", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G34", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H34", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I34", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J34", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K34", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L34", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M34", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N34", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O34", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P34", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q34", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R34", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S34", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T34", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U34", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V34", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W34", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X34", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y34", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z34", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 35, "cells": [{"col": 1, "coord": "A35", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B35", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C35", "value": "ठेवी ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D35", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E35", "value": "बँक चार्जेस ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F35", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G35", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H35", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I35", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J35", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K35", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L35", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M35", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N35", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O35", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P35", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q35", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R35", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S35", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T35", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U35", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V35", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W35", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X35", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y35", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z35", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 36, "cells": [{"col": 1, "coord": "A36", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B36", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C36", "value": "अनामत / प्रतीभुती ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D36", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E36", "value": "वर्ग रकमा ", "is_formula": false, "formula": null}, {"col": 6, "coord": "F36", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G36", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H36", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I36", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J36", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K36", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L36", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M36", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N36", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O36", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P36", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q36", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R36", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S36", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T36", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U36", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V36", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W36", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X36", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y36", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z36", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 37, "cells": [{"col": 1, "coord": "A37", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B37", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C37", "value": "बँक चार्जेस ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D37", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E37", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F37", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G37", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H37", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I37", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J37", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K37", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L37", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M37", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N37", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O37", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P37", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q37", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R37", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S37", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T37", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U37", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V37", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W37", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X37", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y37", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z37", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 38, "cells": [{"col": 1, "coord": "A38", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B38", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C38", "value": "वर्ग रकमा ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D38", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E38", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F38", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G38", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H38", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I38", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J38", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K38", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L38", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M38", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N38", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O38", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P38", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q38", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R38", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S38", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T38", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U38", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V38", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W38", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X38", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y38", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z38", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 39, "cells": [{"col": 1, "coord": "A39", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B39", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C39", "value": "सिमेंट रस्ता तयार करणे ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D39", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E39", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F39", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G39", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H39", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I39", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J39", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K39", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L39", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M39", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N39", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O39", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P39", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q39", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R39", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S39", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T39", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U39", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V39", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W39", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X39", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y39", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z39", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 40, "cells": [{"col": 1, "coord": "A40", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B40", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C40", "value": "अमरधाम बांधकाम करणे ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D40", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E40", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F40", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G40", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H40", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I40", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J40", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K40", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L40", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M40", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N40", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O40", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P40", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q40", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R40", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S40", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T40", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U40", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V40", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W40", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X40", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y40", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z40", "value": null, "is_formula": false, "formula": null}]}, {"row_index": 41, "cells": [{"col": 1, "coord": "A41", "value": null, "is_formula": false, "formula": null}, {"col": 2, "coord": "B41", "value": null, "is_formula": false, "formula": null}, {"col": 3, "coord": "C41", "value": "पेव्हर ब्लॉक बसविणे ", "is_formula": false, "formula": null}, {"col": 4, "coord": "D41", "value": null, "is_formula": false, "formula": null}, {"col": 5, "coord": "E41", "value": null, "is_formula": false, "formula": null}, {"col": 6, "coord": "F41", "value": null, "is_formula": false, "formula": null}, {"col": 7, "coord": "G41", "value": null, "is_formula": false, "formula": null}, {"col": 8, "coord": "H41", "value": null, "is_formula": false, "formula": null}, {"col": 9, "coord": "I41", "value": null, "is_formula": false, "formula": null}, {"col": 10, "coord": "J41", "value": null, "is_formula": false, "formula": null}, {"col": 11, "coord": "K41", "value": null, "is_formula": false, "formula": null}, {"col": 12, "coord": "L41", "value": null, "is_formula": false, "formula": null}, {"col": 13, "coord": "M41", "value": null, "is_formula": false, "formula": null}, {"col": 14, "coord": "N41", "value": null, "is_formula": false, "formula": null}, {"col": 15, "coord": "O41", "value": null, "is_formula": false, "formula": null}, {"col": 16, "coord": "P41", "value": null, "is_formula": false, "formula": null}, {"col": 17, "coord": "Q41", "value": null, "is_formula": false, "formula": null}, {"col": 18, "coord": "R41", "value": null, "is_formula": false, "formula": null}, {"col": 19, "coord": "S41", "value": null, "is_formula": false, "formula": null}, {"col": 20, "coord": "T41", "value": null, "is_formula": false, "formula": null}, {"col": 21, "coord": "U41", "value": null, "is_formula": false, "formula": null}, {"col": 22, "coord": "V41", "value": null, "is_formula": false, "formula": null}, {"col": 23, "coord": "W41", "value": null, "is_formula": false, "formula": null}, {"col": 24, "coord": "X41", "value": null, "is_formula": false, "formula": null}, {"col": 25, "coord": "Y41", "value": null, "is_formula": false, "formula": null}, {"col": 26, "coord": "Z41", "value": null, "is_formula": false, "formula": null}]}]}
+{
+  "index": 1,
+  "name": "Sheet1",
+  "original_sheet_name": "Sheet1",
+  "slug": "sheet1",
+  "category": "प्रशासकीय संदर्भ",
+  "is_archived": false,
+  "max_row": 1000,
+  "max_col": 26,
+  "populated_rows_count": 38,
+  "formula_count": 0,
+  "merged_ranges": [],
+  "rows": [
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B4",
+          "value": "Gramnidhi_Jama",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C4",
+          "value": "Gramnidhi_kharch",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D4",
+          "value": "Panipatti_jama",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E4",
+          "value": "Panipatti_kharch",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B5",
+          "value": "निवासी इमारतीवरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C5",
+          "value": "सरपंच मानधन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D5",
+          "value": "जनरल पाणीपट्टी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E5",
+          "value": "कर्मचारी वेतन ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B6",
+          "value": "अनिवासी इमारती, खुल्या ( अकृषक ) जागेवरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C6",
+          "value": "सदस्य बैठक भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D6",
+          "value": "स्पेशल पाणीपट्टी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E6",
+          "value": "कर्मचारी प्रवास भत्ता ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B7",
+          "value": "दिवाबत्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C7",
+          "value": "सदस्य / सरपंच प्रवास भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D7",
+          "value": "पाणी पुरवठा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E7",
+          "value": "दुरुस्ती व देखभाल ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B8",
+          "value": "स्वच्छता कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C8",
+          "value": "कर्मचारी वेतन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D8",
+          "value": "पाईप लाईन दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E8",
+          "value": "स्वच्छता ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B9",
+          "value": "दुकाने, लघु उद्योग व हॉटेल चालविणे यावरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C9",
+          "value": "कर्मचारी प्रवास भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D9",
+          "value": "पाणी पुरवठा नवीन कामे ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E9",
+          "value": "पाईप लाईन दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B10",
+          "value": "यात्रा कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C10",
+          "value": "कार्यालयीन खर्च ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D10",
+          "value": "पाणी पुरवठा कर्मचारी वेतन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E10",
+          "value": "पाणी पुरवठा नवीन कामे ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B11",
+          "value": "जत्रा व उत्सव कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C11",
+          "value": "दुरुस्ती व देखभाल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D11",
+          "value": "पाणी मीटर / साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E11",
+          "value": "पाणी पुरवठा कर्मचारी वेतन ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B12",
+          "value": "इतर ( वर्गणी ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C12",
+          "value": "स्वच्छता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D12",
+          "value": "नळमार्गाचे परीक्षण व दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E12",
+          "value": "पाणी मीटर / साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B13",
+          "value": "बाजार फी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C13",
+          "value": "( ब ) रस्त्यावरील दिवाबत्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D13",
+          "value": "शासकीय पाणीपट्टीचा भरणा करणे",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E13",
+          "value": "नळमार्गाचे परीक्षण व दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B14",
+          "value": "जमीन भाडेपट्टी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C14",
+          "value": "( क ) कार्यालय ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D14",
+          "value": "नलिका विहिरीची देखभाल व दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E14",
+          "value": "शासकीय पाणीपट्टीचा भरणा करणे",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B15",
+          "value": "व्याज जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C15",
+          "value": "पथ दिवाबत्ती, साहित्य व इतर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D15",
+          "value": "हात पंप / वीज पंप वर्गणी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E15",
+          "value": "नलिका विहिरीची देखभाल व दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B16",
+          "value": "जागा भाडे ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C16",
+          "value": "दिवाबत्ती मजुरी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D16",
+          "value": "इतर ( वर्गणी ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E16",
+          "value": "हात पंप / वीज पंप वर्गणी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B17",
+          "value": "देणगी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C17",
+          "value": "शिक्षण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D17",
+          "value": "स्वच्छता फी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E17",
+          "value": "( अ ) पाणी पुरवठा वीज देयक",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B18",
+          "value": "इतर जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C18",
+          "value": "आरोग्य ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D18",
+          "value": "व्याज जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E18",
+          "value": "आरोग्य ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B19",
+          "value": "लिलाव ( धूळ, घाण, शेण, केरकचरा, जनावरांची प्रेत व इतर)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C19",
+          "value": "रस्ते देखभाल दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D19",
+          "value": "देणगी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E19",
+          "value": "जलशुद्धीकरण / टी. सी. एल ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B20",
+          "value": "इमारत भाडे ( टावर भाडे ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C20",
+          "value": "रस्ते नवीन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D20",
+          "value": "इतर जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E20",
+          "value": "सामाजिक व सांस्कृतिक कार्यक्रम ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B21",
+          "value": "दाखले फी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C21",
+          "value": "गटार देखभाल दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D21",
+          "value": "लिलाव ( धूळ, घाण, शेण, केरकचरा, जनावरांची प्रेत व इतर)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E21",
+          "value": "साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B22",
+          "value": "मुद्रांक शुल्क ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C22",
+          "value": "गटार नवीन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D22",
+          "value": "साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E22",
+          "value": "कोर्ट वकील फी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B23",
+          "value": "उपकर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C23",
+          "value": "मुतारी दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D23",
+          "value": "पाणी पुरवठा / टी. सी. एल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E23",
+          "value": "जाहिरात व प्रसिद्धी वरील खर्च ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 24,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B24",
+          "value": "जमीन महसूल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C24",
+          "value": "स्मशानभूमी दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D24",
+          "value": "बांधकाम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E24",
+          "value": "पेट्रोल तेल व वंगण ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B25",
+          "value": "जमीन समानीकरण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C25",
+          "value": "समाजकल्याण ( २०%) ( आदिवासी व मागास वर्ग ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D25",
+          "value": "आरोग्य ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E25",
+          "value": "वाहन दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 26,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B26",
+          "value": "गौण खनिज ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C26",
+          "value": "डी.व्ही.डी.एफ. वर्गणी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D26",
+          "value": "अनामत / प्रतीभुती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E26",
+          "value": "वैद्यकीय सहाय्य ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 27,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B27",
+          "value": "इतर अनुदान ( शिपाई पगार मानधन )",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C27",
+          "value": "महिला व बाल कल्याण ( १० % ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D27",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E27",
+          "value": "कर्म. भविष्य निर्वाह निधी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B28",
+          "value": "मानधन, किमान वेतन व बैठक भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C28",
+          "value": "साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D28",
+          "value": "राज्य शासन कर्ज ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E28",
+          "value": "ड्रेस ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B29",
+          "value": "इतर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C29",
+          "value": "अपंग कल्याण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D29",
+          "value": "केंद्र शासन कर्ज ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E29",
+          "value": "अग्रिम / अनामत ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 30,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B30",
+          "value": "आमदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C30",
+          "value": "कर्म. भविष्य निर्वाह निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D30",
+          "value": " ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E30",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B31",
+          "value": "खासदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C31",
+          "value": "मानधन, किमान वेतन व बैठक भत्ता व अल्पोपहार ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D31",
+          "value": " ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E31",
+          "value": "राज्य शासन कर्जे, हफ्ता व व्याज प्रदाने ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B32",
+          "value": "२५१५ स्थानिक विकास निधी",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C32",
+          "value": "आमदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D32",
+          "value": " ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E32",
+          "value": "केंद्र शासन कर्जे, हफ्ता व व्याज प्रदाने ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 33,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B33",
+          "value": "अनामत / प्रतीभुती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C33",
+          "value": "खासदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E33",
+          "value": "इतर ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B34",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C34",
+          "value": "अग्रिम / अनामत ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E34",
+          "value": "अनामत / प्रतीभुती ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C35",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E35",
+          "value": "बँक चार्जेस ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 36,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C36",
+          "value": "अनामत / प्रतीभुती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E36",
+          "value": "वर्ग रकमा ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C37",
+          "value": "बँक चार्जेस ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 38,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C38",
+          "value": "वर्ग रकमा ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C39",
+          "value": "सिमेंट रस्ता तयार करणे ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 40,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C40",
+          "value": "अमरधाम बांधकाम करणे ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C41",
+          "value": "पेव्हर ब्लॉक बसविणे ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

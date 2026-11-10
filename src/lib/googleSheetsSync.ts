@@ -117,21 +117,46 @@ function createSheetCell(
   };
 }
 
-// Map Sheet Name to Slug
+// Map Sheet Name to Slug (Supporting All 19 Active Worksheets + Historical Aliases)
 export const NAME_TO_SLUG: Record<string, string> = {
+  // 19 Active Worksheets
   'Sheet1': 'sheet1',
-  'न.नं.५ पा. पु': 'n-n-5-pa-pu',
+  'न.नं.५ पा. पु': 'namuna-5-pani-purwatha',
   'all mobile no': 'all-mobile-no',
-  'न.नं.५ योजना': 'n-n-5-yojana',
-  'न. नं. ५ GN': 'n-n-5-gn',
-  'न.८ साठीचे दर': 'n-8-sathiche-dar',
+  'नमुना ५ १६ वित्त ': 'namuna-5-16-vitta',
+  'नमुना ५ १६ वित्त': 'namuna-5-16-vitta',
+  'नमुना ५ सामान्य ': 'namuna-5-samanya',
+  'नमुना ५ सामान्य': 'namuna-5-samanya',
+  'न.८ साठीचे दर': 'namuna-8-rates',
   'नमुना ८': 'namuna-8',
   'उतारा': 'utara',
+  'नमुना ९ ': 'namuna-9',
   'नमुना ९': 'namuna-9',
+  'नमुना ९ गोषवारा ': 'namuna-9-goshavara',
+  'नमुना ९ गोषवारा': 'namuna-9-goshavara',
+  'मागणी बिल ': 'magani-bill',
   'मागणी बिल': 'magani-bill',
+  'नमुना १० पावती ': 'namuna-10-pavati',
   'नमुना १० पावती': 'namuna-10-pavati',
+  'नमुना ७ पावती ': 'namuna-7-pavati',
   'नमुना ७ पावती': 'namuna-7-pavati',
-  'April': 'april',
+  'नमुना न. ६ ': 'namuna-na-6',
+  'नमुना न. ६': 'namuna-na-6',
+  'मासिक सभा नोटीस': 'masik-sabha-notice',
+  'नमुना 8 खातेदार': 'namuna-8-khatedar',
+  'नमुना ९ प्रिंट रजिस्टर': 'namuna-9-print-register',
+  'नमुना ८ प्रिंट रजिस्टर': 'namuna-8-print-register',
+  'थकबाकी यादी २०२६-२७': 'thakbaki-yadi-2026-27',
+
+  // Backward-Compatible & Historical Aliases
+  'n-n-5-pa-pu': 'namuna-5-pani-purwatha',
+  'n-8-sathiche-dar': 'namuna-8-rates',
+  'न.नं.५ योजना': 'namuna-5-16-vitta',
+  'n-n-5-yojana': 'namuna-5-16-vitta',
+  'न. नं. ५ GN': 'namuna-5-samanya',
+  'n-n-5-gn': 'namuna-5-samanya',
+  'April': 'namuna-na-6',
+  'april': 'namuna-na-6',
   'May': 'may',
   'Jun': 'jun',
   'July': 'july',
@@ -144,7 +169,6 @@ export const NAME_TO_SLUG: Record<string, string> = {
   'Feb': 'feb',
   'वसुली रिपोर्ट': 'vasuli-report',
   'वसुली रिपोर्ट E': 'vasuli-report-e',
-  'मासिक सभा नोटीस': 'masik-sabha-notice',
 };
 
 // 1. Google Apps Script Web App URL Validator

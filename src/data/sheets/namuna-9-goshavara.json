@@ -1,0 +1,3085 @@
+{
+  "index": 10,
+  "name": "नमुना ९ गोषवारा",
+  "original_sheet_name": "नमुना ९ गोषवारा ",
+  "slug": "namuna-9-goshavara",
+  "category": "कर मागणी गोषवारा (Abstract)",
+  "is_archived": false,
+  "max_row": 100,
+  "max_col": 26,
+  "populated_rows_count": 65,
+  "formula_count": 308,
+  "merged_ranges": [
+    "A64:B64",
+    "A67:C67",
+    "E67:G67",
+    "A68:C68",
+    "E68:G68",
+    "A69:C69",
+    "E69:G69",
+    "A1:G1",
+    "A2:G2",
+    "A3:G3",
+    "A4:G4",
+    "A5:G5",
+    "A56:B56",
+    "A58:E58"
+  ],
+  "rows": [
+    {
+      "row_index": 1,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A1",
+          "value": "नमुना नंबर - ०९",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A2",
+          "value": "ग्रामपंचायत :- गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A3",
+          "value": "तालुका :- रिसोड, जिल्हा :- वाशिम",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A4",
+          "value": "कर मागणी गोषवारा (पाननिहाय)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A5",
+          "value": "सन :- २०२६-२०२७",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A7",
+          "value": "पान क्र.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B7",
+          "value": "मिळकत क्र. (व्याप्ती)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C7",
+          "value": "घर कर (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D7",
+          "value": "दिवाबत्ती कर (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E7",
+          "value": "आरोग्य कर (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F7",
+          "value": "पाणी कर (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G7",
+          "value": "एकूण मागणी (रु.)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A8",
+          "value": 1,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B8",
+          "value": "1 ते 15",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B8 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B22"
+        },
+        {
+          "col": 3,
+          "coord": "C8",
+          "value": 3937.231249,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G23"
+        },
+        {
+          "col": 4,
+          "coord": "D8",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J23"
+        },
+        {
+          "col": 5,
+          "coord": "E8",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M23"
+        },
+        {
+          "col": 6,
+          "coord": "F8",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P23"
+        },
+        {
+          "col": 7,
+          "coord": "G8",
+          "value": 4837.231249,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q23"
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A9",
+          "value": 2,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B9",
+          "value": "16 ते 30",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B33 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B47"
+        },
+        {
+          "col": 3,
+          "coord": "C9",
+          "value": 7359.960513,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G48"
+        },
+        {
+          "col": 4,
+          "coord": "D9",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J48"
+        },
+        {
+          "col": 5,
+          "coord": "E9",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M48"
+        },
+        {
+          "col": 6,
+          "coord": "F9",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P48"
+        },
+        {
+          "col": 7,
+          "coord": "G9",
+          "value": 8259.960513,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q48"
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A10",
+          "value": 3,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B10",
+          "value": "31 ते 46",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B58 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B72"
+        },
+        {
+          "col": 3,
+          "coord": "C10",
+          "value": 7618.422687,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G73"
+        },
+        {
+          "col": 4,
+          "coord": "D10",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J73"
+        },
+        {
+          "col": 5,
+          "coord": "E10",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M73"
+        },
+        {
+          "col": 6,
+          "coord": "F10",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P73"
+        },
+        {
+          "col": 7,
+          "coord": "G10",
+          "value": 8518.422687,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q73"
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A11",
+          "value": 4,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B11",
+          "value": "47 ते 61",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B83 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B97"
+        },
+        {
+          "col": 3,
+          "coord": "C11",
+          "value": 5357.984953,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G98"
+        },
+        {
+          "col": 4,
+          "coord": "D11",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J98"
+        },
+        {
+          "col": 5,
+          "coord": "E11",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M98"
+        },
+        {
+          "col": 6,
+          "coord": "F11",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P98"
+        },
+        {
+          "col": 7,
+          "coord": "G11",
+          "value": 6257.984953,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q98"
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A12",
+          "value": 5,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B12",
+          "value": "62 ते 76",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B108 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B122"
+        },
+        {
+          "col": 3,
+          "coord": "C12",
+          "value": 3124.435836,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G123"
+        },
+        {
+          "col": 4,
+          "coord": "D12",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J123"
+        },
+        {
+          "col": 5,
+          "coord": "E12",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M123"
+        },
+        {
+          "col": 6,
+          "coord": "F12",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P123"
+        },
+        {
+          "col": 7,
+          "coord": "G12",
+          "value": 4024.435836,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q123"
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A13",
+          "value": 6,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B13",
+          "value": "77 ते 91",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B133 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B147"
+        },
+        {
+          "col": 3,
+          "coord": "C13",
+          "value": 5118.555379,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G148"
+        },
+        {
+          "col": 4,
+          "coord": "D13",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J148"
+        },
+        {
+          "col": 5,
+          "coord": "E13",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M148"
+        },
+        {
+          "col": 6,
+          "coord": "F13",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P148"
+        },
+        {
+          "col": 7,
+          "coord": "G13",
+          "value": 6018.555379,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q148"
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A14",
+          "value": 7,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B14",
+          "value": "92 ते 106",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B158 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B172"
+        },
+        {
+          "col": 3,
+          "coord": "C14",
+          "value": 4156.982999,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G173"
+        },
+        {
+          "col": 4,
+          "coord": "D14",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J173"
+        },
+        {
+          "col": 5,
+          "coord": "E14",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M173"
+        },
+        {
+          "col": 6,
+          "coord": "F14",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P173"
+        },
+        {
+          "col": 7,
+          "coord": "G14",
+          "value": 5056.982999,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q173"
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A15",
+          "value": 8,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B15",
+          "value": "107 ते 121",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B183 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B197"
+        },
+        {
+          "col": 3,
+          "coord": "C15",
+          "value": 5248.789869,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G198"
+        },
+        {
+          "col": 4,
+          "coord": "D15",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J198"
+        },
+        {
+          "col": 5,
+          "coord": "E15",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M198"
+        },
+        {
+          "col": 6,
+          "coord": "F15",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P198"
+        },
+        {
+          "col": 7,
+          "coord": "G15",
+          "value": 6148.789869,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q198"
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A16",
+          "value": 9,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B16",
+          "value": "122 ते 136",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B208 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B222"
+        },
+        {
+          "col": 3,
+          "coord": "C16",
+          "value": 2657.716458,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G223"
+        },
+        {
+          "col": 4,
+          "coord": "D16",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J223"
+        },
+        {
+          "col": 5,
+          "coord": "E16",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M223"
+        },
+        {
+          "col": 6,
+          "coord": "F16",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P223"
+        },
+        {
+          "col": 7,
+          "coord": "G16",
+          "value": 3557.716458,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q223"
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A17",
+          "value": 10,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B17",
+          "value": "137 ते 151",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B233 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B247"
+        },
+        {
+          "col": 3,
+          "coord": "C17",
+          "value": 4952.781605,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G248"
+        },
+        {
+          "col": 4,
+          "coord": "D17",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J248"
+        },
+        {
+          "col": 5,
+          "coord": "E17",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M248"
+        },
+        {
+          "col": 6,
+          "coord": "F17",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P248"
+        },
+        {
+          "col": 7,
+          "coord": "G17",
+          "value": 5852.781605,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q248"
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A18",
+          "value": 11,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B18",
+          "value": "152 ते 166",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B258 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B272"
+        },
+        {
+          "col": 3,
+          "coord": "C18",
+          "value": 2338.643367,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G273"
+        },
+        {
+          "col": 4,
+          "coord": "D18",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J273"
+        },
+        {
+          "col": 5,
+          "coord": "E18",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M273"
+        },
+        {
+          "col": 6,
+          "coord": "F18",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P273"
+        },
+        {
+          "col": 7,
+          "coord": "G18",
+          "value": 3238.643367,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q273"
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A19",
+          "value": 12,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B19",
+          "value": "167 ते 181",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B283 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B297"
+        },
+        {
+          "col": 3,
+          "coord": "C19",
+          "value": 3446.016611,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G298"
+        },
+        {
+          "col": 4,
+          "coord": "D19",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J298"
+        },
+        {
+          "col": 5,
+          "coord": "E19",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M298"
+        },
+        {
+          "col": 6,
+          "coord": "F19",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P298"
+        },
+        {
+          "col": 7,
+          "coord": "G19",
+          "value": 4346.016611,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q298"
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A20",
+          "value": 13,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B20",
+          "value": "182 ते 196",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B308 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B322"
+        },
+        {
+          "col": 3,
+          "coord": "C20",
+          "value": 3784.522659,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G323"
+        },
+        {
+          "col": 4,
+          "coord": "D20",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J323"
+        },
+        {
+          "col": 5,
+          "coord": "E20",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M323"
+        },
+        {
+          "col": 6,
+          "coord": "F20",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P323"
+        },
+        {
+          "col": 7,
+          "coord": "G20",
+          "value": 4684.522659,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q323"
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A21",
+          "value": 14,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B21",
+          "value": "197 ते 211",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B333 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B347"
+        },
+        {
+          "col": 3,
+          "coord": "C21",
+          "value": 2532.013406,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G348"
+        },
+        {
+          "col": 4,
+          "coord": "D21",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J348"
+        },
+        {
+          "col": 5,
+          "coord": "E21",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M348"
+        },
+        {
+          "col": 6,
+          "coord": "F21",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P348"
+        },
+        {
+          "col": 7,
+          "coord": "G21",
+          "value": 3432.013406,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q348"
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A22",
+          "value": 15,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B22",
+          "value": "212 ते 226",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B358 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B372"
+        },
+        {
+          "col": 3,
+          "coord": "C22",
+          "value": 3883.049687,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G373"
+        },
+        {
+          "col": 4,
+          "coord": "D22",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J373"
+        },
+        {
+          "col": 5,
+          "coord": "E22",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M373"
+        },
+        {
+          "col": 6,
+          "coord": "F22",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P373"
+        },
+        {
+          "col": 7,
+          "coord": "G22",
+          "value": 4783.049687,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q373"
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A23",
+          "value": 16,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B23",
+          "value": "227 ते 241",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B383 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B397"
+        },
+        {
+          "col": 3,
+          "coord": "C23",
+          "value": 5414.34483,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G398"
+        },
+        {
+          "col": 4,
+          "coord": "D23",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J398"
+        },
+        {
+          "col": 5,
+          "coord": "E23",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M398"
+        },
+        {
+          "col": 6,
+          "coord": "F23",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P398"
+        },
+        {
+          "col": 7,
+          "coord": "G23",
+          "value": 6314.34483,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q398"
+        }
+      ]
+    },
+    {
+      "row_index": 24,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A24",
+          "value": 17,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B24",
+          "value": "242 ते 256",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B408 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B422"
+        },
+        {
+          "col": 3,
+          "coord": "C24",
+          "value": 7532.159086,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G423"
+        },
+        {
+          "col": 4,
+          "coord": "D24",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J423"
+        },
+        {
+          "col": 5,
+          "coord": "E24",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M423"
+        },
+        {
+          "col": 6,
+          "coord": "F24",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P423"
+        },
+        {
+          "col": 7,
+          "coord": "G24",
+          "value": 8432.159086,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q423"
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A25",
+          "value": 18,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B25",
+          "value": "257 ते 268",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B433 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B447"
+        },
+        {
+          "col": 3,
+          "coord": "C25",
+          "value": 4664.139911,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G448"
+        },
+        {
+          "col": 4,
+          "coord": "D25",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J448"
+        },
+        {
+          "col": 5,
+          "coord": "E25",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M448"
+        },
+        {
+          "col": 6,
+          "coord": "F25",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P448"
+        },
+        {
+          "col": 7,
+          "coord": "G25",
+          "value": 5564.139911,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q448"
+        }
+      ]
+    },
+    {
+      "row_index": 26,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A26",
+          "value": 19,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B26",
+          "value": "269 ते 284",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B458 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B472"
+        },
+        {
+          "col": 3,
+          "coord": "C26",
+          "value": 4594.676087,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G473"
+        },
+        {
+          "col": 4,
+          "coord": "D26",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J473"
+        },
+        {
+          "col": 5,
+          "coord": "E26",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M473"
+        },
+        {
+          "col": 6,
+          "coord": "F26",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P473"
+        },
+        {
+          "col": 7,
+          "coord": "G26",
+          "value": 5494.676087,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q473"
+        }
+      ]
+    },
+    {
+      "row_index": 27,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A27",
+          "value": 20,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B27",
+          "value": "285 ते 300",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B483 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B497"
+        },
+        {
+          "col": 3,
+          "coord": "C27",
+          "value": 5862.677703,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G498"
+        },
+        {
+          "col": 4,
+          "coord": "D27",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J498"
+        },
+        {
+          "col": 5,
+          "coord": "E27",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M498"
+        },
+        {
+          "col": 6,
+          "coord": "F27",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P498"
+        },
+        {
+          "col": 7,
+          "coord": "G27",
+          "value": 6762.677703,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q498"
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A28",
+          "value": 21,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B28",
+          "value": "301 ते 315",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B508 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B522"
+        },
+        {
+          "col": 3,
+          "coord": "C28",
+          "value": 5425.246846,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G523"
+        },
+        {
+          "col": 4,
+          "coord": "D28",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J523"
+        },
+        {
+          "col": 5,
+          "coord": "E28",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M523"
+        },
+        {
+          "col": 6,
+          "coord": "F28",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P523"
+        },
+        {
+          "col": 7,
+          "coord": "G28",
+          "value": 6325.246846,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q523"
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A29",
+          "value": 22,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B29",
+          "value": "316 ते 330",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B533 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B547"
+        },
+        {
+          "col": 3,
+          "coord": "C29",
+          "value": 4322.843227,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G548"
+        },
+        {
+          "col": 4,
+          "coord": "D29",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J548"
+        },
+        {
+          "col": 5,
+          "coord": "E29",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M548"
+        },
+        {
+          "col": 6,
+          "coord": "F29",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P548"
+        },
+        {
+          "col": 7,
+          "coord": "G29",
+          "value": 5222.843227,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q548"
+        }
+      ]
+    },
+    {
+      "row_index": 30,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A30",
+          "value": 23,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B30",
+          "value": "331 ते 345",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B558 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B572"
+        },
+        {
+          "col": 3,
+          "coord": "C30",
+          "value": 4401.39005,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G573"
+        },
+        {
+          "col": 4,
+          "coord": "D30",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J573"
+        },
+        {
+          "col": 5,
+          "coord": "E30",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M573"
+        },
+        {
+          "col": 6,
+          "coord": "F30",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P573"
+        },
+        {
+          "col": 7,
+          "coord": "G30",
+          "value": 5301.39005,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q573"
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A31",
+          "value": 24,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B31",
+          "value": "346 ते 361",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B583 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B597"
+        },
+        {
+          "col": 3,
+          "coord": "C31",
+          "value": 3899.824178,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G598"
+        },
+        {
+          "col": 4,
+          "coord": "D31",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J598"
+        },
+        {
+          "col": 5,
+          "coord": "E31",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M598"
+        },
+        {
+          "col": 6,
+          "coord": "F31",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P598"
+        },
+        {
+          "col": 7,
+          "coord": "G31",
+          "value": 4799.824178,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q598"
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A32",
+          "value": 25,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B32",
+          "value": "362 ते 376",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B608 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B622"
+        },
+        {
+          "col": 3,
+          "coord": "C32",
+          "value": 3543.677285,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G623"
+        },
+        {
+          "col": 4,
+          "coord": "D32",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J623"
+        },
+        {
+          "col": 5,
+          "coord": "E32",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M623"
+        },
+        {
+          "col": 6,
+          "coord": "F32",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P623"
+        },
+        {
+          "col": 7,
+          "coord": "G32",
+          "value": 4443.677285,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q623"
+        }
+      ]
+    },
+    {
+      "row_index": 33,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A33",
+          "value": 26,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B33",
+          "value": "377 ते 391",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B633 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B647"
+        },
+        {
+          "col": 3,
+          "coord": "C33",
+          "value": 2927.686936,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G648"
+        },
+        {
+          "col": 4,
+          "coord": "D33",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J648"
+        },
+        {
+          "col": 5,
+          "coord": "E33",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M648"
+        },
+        {
+          "col": 6,
+          "coord": "F33",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P648"
+        },
+        {
+          "col": 7,
+          "coord": "G33",
+          "value": 3827.686936,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q648"
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A34",
+          "value": 27,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B34",
+          "value": "392 ते 406",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B658 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B672"
+        },
+        {
+          "col": 3,
+          "coord": "C34",
+          "value": 805.0956285,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G673"
+        },
+        {
+          "col": 4,
+          "coord": "D34",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J673"
+        },
+        {
+          "col": 5,
+          "coord": "E34",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M673"
+        },
+        {
+          "col": 6,
+          "coord": "F34",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P673"
+        },
+        {
+          "col": 7,
+          "coord": "G34",
+          "value": 1705.095628,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q673"
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A35",
+          "value": 28,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B35",
+          "value": "407 ते 421",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B683 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B697"
+        },
+        {
+          "col": 3,
+          "coord": "C35",
+          "value": 7588.718339,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G698"
+        },
+        {
+          "col": 4,
+          "coord": "D35",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J698"
+        },
+        {
+          "col": 5,
+          "coord": "E35",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M698"
+        },
+        {
+          "col": 6,
+          "coord": "F35",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P698"
+        },
+        {
+          "col": 7,
+          "coord": "G35",
+          "value": 8488.718339,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q698"
+        }
+      ]
+    },
+    {
+      "row_index": 36,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A36",
+          "value": 29,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B36",
+          "value": "422 ते 436",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B708 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B722"
+        },
+        {
+          "col": 3,
+          "coord": "C36",
+          "value": 3241.201034,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G723"
+        },
+        {
+          "col": 4,
+          "coord": "D36",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J723"
+        },
+        {
+          "col": 5,
+          "coord": "E36",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M723"
+        },
+        {
+          "col": 6,
+          "coord": "F36",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P723"
+        },
+        {
+          "col": 7,
+          "coord": "G36",
+          "value": 4141.201034,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q723"
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A37",
+          "value": 30,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B37",
+          "value": "437 ते 451",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B733 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B747"
+        },
+        {
+          "col": 3,
+          "coord": "C37",
+          "value": 7789.468395,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G748"
+        },
+        {
+          "col": 4,
+          "coord": "D37",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J748"
+        },
+        {
+          "col": 5,
+          "coord": "E37",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M748"
+        },
+        {
+          "col": 6,
+          "coord": "F37",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P748"
+        },
+        {
+          "col": 7,
+          "coord": "G37",
+          "value": 8689.468395,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q748"
+        }
+      ]
+    },
+    {
+      "row_index": 38,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A38",
+          "value": 31,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B38",
+          "value": "452 ते 466",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B758 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B772"
+        },
+        {
+          "col": 3,
+          "coord": "C38",
+          "value": 7050.000396,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G773"
+        },
+        {
+          "col": 4,
+          "coord": "D38",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J773"
+        },
+        {
+          "col": 5,
+          "coord": "E38",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M773"
+        },
+        {
+          "col": 6,
+          "coord": "F38",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P773"
+        },
+        {
+          "col": 7,
+          "coord": "G38",
+          "value": 7950.000396,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q773"
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A39",
+          "value": 32,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B39",
+          "value": "467 ते 481",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B783 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B797"
+        },
+        {
+          "col": 3,
+          "coord": "C39",
+          "value": 8231.949721,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G798"
+        },
+        {
+          "col": 4,
+          "coord": "D39",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J798"
+        },
+        {
+          "col": 5,
+          "coord": "E39",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M798"
+        },
+        {
+          "col": 6,
+          "coord": "F39",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P798"
+        },
+        {
+          "col": 7,
+          "coord": "G39",
+          "value": 9131.949721,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q798"
+        }
+      ]
+    },
+    {
+      "row_index": 40,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A40",
+          "value": 33,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B40",
+          "value": "482 ते 496",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B808 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B822"
+        },
+        {
+          "col": 3,
+          "coord": "C40",
+          "value": 7971.338545,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G823"
+        },
+        {
+          "col": 4,
+          "coord": "D40",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J823"
+        },
+        {
+          "col": 5,
+          "coord": "E40",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M823"
+        },
+        {
+          "col": 6,
+          "coord": "F40",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P823"
+        },
+        {
+          "col": 7,
+          "coord": "G40",
+          "value": 8871.338545,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q823"
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A41",
+          "value": 34,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B41",
+          "value": "497 ते 511",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B833 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B847"
+        },
+        {
+          "col": 3,
+          "coord": "C41",
+          "value": 2683.640385,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G848"
+        },
+        {
+          "col": 4,
+          "coord": "D41",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J848"
+        },
+        {
+          "col": 5,
+          "coord": "E41",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M848"
+        },
+        {
+          "col": 6,
+          "coord": "F41",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P848"
+        },
+        {
+          "col": 7,
+          "coord": "G41",
+          "value": 3583.640385,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q848"
+        }
+      ]
+    },
+    {
+      "row_index": 42,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A42",
+          "value": 35,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B42",
+          "value": "512 ते 526",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B858 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B872"
+        },
+        {
+          "col": 3,
+          "coord": "C42",
+          "value": 4855.184699,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G873"
+        },
+        {
+          "col": 4,
+          "coord": "D42",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J873"
+        },
+        {
+          "col": 5,
+          "coord": "E42",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M873"
+        },
+        {
+          "col": 6,
+          "coord": "F42",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P873"
+        },
+        {
+          "col": 7,
+          "coord": "G42",
+          "value": 5755.184699,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q873"
+        }
+      ]
+    },
+    {
+      "row_index": 43,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A43",
+          "value": 36,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B43",
+          "value": "527 ते 541",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B883 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B897"
+        },
+        {
+          "col": 3,
+          "coord": "C43",
+          "value": 3777.306355,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G898"
+        },
+        {
+          "col": 4,
+          "coord": "D43",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J898"
+        },
+        {
+          "col": 5,
+          "coord": "E43",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M898"
+        },
+        {
+          "col": 6,
+          "coord": "F43",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P898"
+        },
+        {
+          "col": 7,
+          "coord": "G43",
+          "value": 4677.306355,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q898"
+        }
+      ]
+    },
+    {
+      "row_index": 44,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A44",
+          "value": 37,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B44",
+          "value": "542 ते 556",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B908 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B922"
+        },
+        {
+          "col": 3,
+          "coord": "C44",
+          "value": 11389.47868,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G923"
+        },
+        {
+          "col": 4,
+          "coord": "D44",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J923"
+        },
+        {
+          "col": 5,
+          "coord": "E44",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M923"
+        },
+        {
+          "col": 6,
+          "coord": "F44",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P923"
+        },
+        {
+          "col": 7,
+          "coord": "G44",
+          "value": 12289.47868,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q923"
+        }
+      ]
+    },
+    {
+      "row_index": 45,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A45",
+          "value": 38,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B45",
+          "value": "557 ते 571",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B933 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B947"
+        },
+        {
+          "col": 3,
+          "coord": "C45",
+          "value": 52708.64548,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G948"
+        },
+        {
+          "col": 4,
+          "coord": "D45",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J948"
+        },
+        {
+          "col": 5,
+          "coord": "E45",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M948"
+        },
+        {
+          "col": 6,
+          "coord": "F45",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P948"
+        },
+        {
+          "col": 7,
+          "coord": "G45",
+          "value": 53608.64548,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q948"
+        }
+      ]
+    },
+    {
+      "row_index": 46,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A46",
+          "value": 39,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B46",
+          "value": "572 ते 586",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B958 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B972"
+        },
+        {
+          "col": 3,
+          "coord": "C46",
+          "value": 86422.17057,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G973"
+        },
+        {
+          "col": 4,
+          "coord": "D46",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J973"
+        },
+        {
+          "col": 5,
+          "coord": "E46",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M973"
+        },
+        {
+          "col": 6,
+          "coord": "F46",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P973"
+        },
+        {
+          "col": 7,
+          "coord": "G46",
+          "value": 87322.17057,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q973"
+        }
+      ]
+    },
+    {
+      "row_index": 47,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A47",
+          "value": 40,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B47",
+          "value": "587 ते 601",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B983 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B997"
+        },
+        {
+          "col": 3,
+          "coord": "C47",
+          "value": 88004.05518,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G998"
+        },
+        {
+          "col": 4,
+          "coord": "D47",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J998"
+        },
+        {
+          "col": 5,
+          "coord": "E47",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M998"
+        },
+        {
+          "col": 6,
+          "coord": "F47",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P998"
+        },
+        {
+          "col": 7,
+          "coord": "G47",
+          "value": 88904.05518,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q998"
+        }
+      ]
+    },
+    {
+      "row_index": 48,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A48",
+          "value": 41,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B48",
+          "value": "602 ते 616",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1008 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1022"
+        },
+        {
+          "col": 3,
+          "coord": "C48",
+          "value": 46135.39576,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1023"
+        },
+        {
+          "col": 4,
+          "coord": "D48",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1023"
+        },
+        {
+          "col": 5,
+          "coord": "E48",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1023"
+        },
+        {
+          "col": 6,
+          "coord": "F48",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1023"
+        },
+        {
+          "col": 7,
+          "coord": "G48",
+          "value": 47035.39576,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1023"
+        }
+      ]
+    },
+    {
+      "row_index": 49,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A49",
+          "value": 42,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B49",
+          "value": "617 ते 631",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1033 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1047"
+        },
+        {
+          "col": 3,
+          "coord": "C49",
+          "value": 28509.35396,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1048"
+        },
+        {
+          "col": 4,
+          "coord": "D49",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1048"
+        },
+        {
+          "col": 5,
+          "coord": "E49",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1048"
+        },
+        {
+          "col": 6,
+          "coord": "F49",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1048"
+        },
+        {
+          "col": 7,
+          "coord": "G49",
+          "value": 29409.35396,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1048"
+        }
+      ]
+    },
+    {
+      "row_index": 50,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A50",
+          "value": 43,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B50",
+          "value": "632 ते 646",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1058 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1072"
+        },
+        {
+          "col": 3,
+          "coord": "C50",
+          "value": 26489.79376,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1073"
+        },
+        {
+          "col": 4,
+          "coord": "D50",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1073"
+        },
+        {
+          "col": 5,
+          "coord": "E50",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1073"
+        },
+        {
+          "col": 6,
+          "coord": "F50",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1073"
+        },
+        {
+          "col": 7,
+          "coord": "G50",
+          "value": 27389.79376,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1073"
+        }
+      ]
+    },
+    {
+      "row_index": 51,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A51",
+          "value": 44,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B51",
+          "value": "647 ते 661",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1083 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1097"
+        },
+        {
+          "col": 3,
+          "coord": "C51",
+          "value": 23807.05017,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1098"
+        },
+        {
+          "col": 4,
+          "coord": "D51",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1098"
+        },
+        {
+          "col": 5,
+          "coord": "E51",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1098"
+        },
+        {
+          "col": 6,
+          "coord": "F51",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1098"
+        },
+        {
+          "col": 7,
+          "coord": "G51",
+          "value": 24707.05017,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1098"
+        }
+      ]
+    },
+    {
+      "row_index": 52,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A52",
+          "value": 45,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B52",
+          "value": "662 ते 676",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1108 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1122"
+        },
+        {
+          "col": 3,
+          "coord": "C52",
+          "value": 41081.49721,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1123"
+        },
+        {
+          "col": 4,
+          "coord": "D52",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1123"
+        },
+        {
+          "col": 5,
+          "coord": "E52",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1123"
+        },
+        {
+          "col": 6,
+          "coord": "F52",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1123"
+        },
+        {
+          "col": 7,
+          "coord": "G52",
+          "value": 41981.49721,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1123"
+        }
+      ]
+    },
+    {
+      "row_index": 53,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A53",
+          "value": 46,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B53",
+          "value": "677 ते 691",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1133 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1147"
+        },
+        {
+          "col": 3,
+          "coord": "C53",
+          "value": 9132.040134,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1148"
+        },
+        {
+          "col": 4,
+          "coord": "D53",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1148"
+        },
+        {
+          "col": 5,
+          "coord": "E53",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1148"
+        },
+        {
+          "col": 6,
+          "coord": "F53",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1148"
+        },
+        {
+          "col": 7,
+          "coord": "G53",
+          "value": 10032.04013,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1148"
+        }
+      ]
+    },
+    {
+      "row_index": 54,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A54",
+          "value": 47,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B54",
+          "value": "692 ते 706",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1158 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1172"
+        },
+        {
+          "col": 3,
+          "coord": "C54",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1173"
+        },
+        {
+          "col": 4,
+          "coord": "D54",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1173"
+        },
+        {
+          "col": 5,
+          "coord": "E54",
+          "value": 450,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1173"
+        },
+        {
+          "col": 6,
+          "coord": "F54",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1173"
+        },
+        {
+          "col": 7,
+          "coord": "G54",
+          "value": 900,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1173"
+        }
+      ]
+    },
+    {
+      "row_index": 55,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A55",
+          "value": 48,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B55",
+          "value": "707 ते 708",
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!B1183 & \" ते \" & 'नमुना ९ प्रिंट रजिस्टर'!B1184"
+        },
+        {
+          "col": 3,
+          "coord": "C55",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!G1198"
+        },
+        {
+          "col": 4,
+          "coord": "D55",
+          "value": 60,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!J1198"
+        },
+        {
+          "col": 5,
+          "coord": "E55",
+          "value": 60,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!M1198"
+        },
+        {
+          "col": 6,
+          "coord": "F55",
+          "value": 0,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!P1198"
+        },
+        {
+          "col": 7,
+          "coord": "G55",
+          "value": 120,
+          "is_formula": true,
+          "formula": "='नमुना ९ प्रिंट रजिस्टर'!Q1198"
+        }
+      ]
+    },
+    {
+      "row_index": 56,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A56",
+          "value": "एकूण बेरीज (Grand Total)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C56",
+          "value": 585779.1578,
+          "is_formula": true,
+          "formula": "=SUM(C8:C55)"
+        },
+        {
+          "col": 4,
+          "coord": "D56",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=SUM(D8:D55)"
+        },
+        {
+          "col": 5,
+          "coord": "E56",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=SUM(E8:E55)"
+        },
+        {
+          "col": 6,
+          "coord": "F56",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(F8:F55)"
+        },
+        {
+          "col": 7,
+          "coord": "G56",
+          "value": 628199.1578,
+          "is_formula": true,
+          "formula": "=SUM(G8:G55)"
+        }
+      ]
+    },
+    {
+      "row_index": 58,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A58",
+          "value": "करनिहाय एकत्रित गोषवारा",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 59,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A59",
+          "value": "अ.क्र.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B59",
+          "value": "तपशील",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C59",
+          "value": "थकबाकी (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D59",
+          "value": "चालू मागणी (रु.)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E59",
+          "value": "एकूण मागणी (रु.)",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 60,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A60",
+          "value": 1,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B60",
+          "value": "घर कर",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C60",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!D7:D1000)"
+        },
+        {
+          "col": 4,
+          "coord": "D60",
+          "value": 585779.1578,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!E7:E1000)"
+        },
+        {
+          "col": 5,
+          "coord": "E60",
+          "value": 585779.1578,
+          "is_formula": true,
+          "formula": "=C60+D60"
+        }
+      ]
+    },
+    {
+      "row_index": 61,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A61",
+          "value": 2,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B61",
+          "value": "दिवाबत्ती कर",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C61",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!H7:H1000)"
+        },
+        {
+          "col": 4,
+          "coord": "D61",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!I7:I1000)"
+        },
+        {
+          "col": 5,
+          "coord": "E61",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=C61+D61"
+        }
+      ]
+    },
+    {
+      "row_index": 62,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A62",
+          "value": 3,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B62",
+          "value": "आरोग्य कर",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C62",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!K7:K1000)"
+        },
+        {
+          "col": 4,
+          "coord": "D62",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!L7:L1000)"
+        },
+        {
+          "col": 5,
+          "coord": "E62",
+          "value": 21210,
+          "is_formula": true,
+          "formula": "=C62+D62"
+        }
+      ]
+    },
+    {
+      "row_index": 63,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A63",
+          "value": 4,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B63",
+          "value": "पाणी कर",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C63",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!N7:N1000)"
+        },
+        {
+          "col": 4,
+          "coord": "D63",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM('नमुना ९ '!O7:O1000)"
+        },
+        {
+          "col": 5,
+          "coord": "E63",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=C63+D63"
+        }
+      ]
+    },
+    {
+      "row_index": 64,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A64",
+          "value": "एकूण :-",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C64",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(C60:C63)"
+        },
+        {
+          "col": 4,
+          "coord": "D64",
+          "value": 628199.1578,
+          "is_formula": true,
+          "formula": "=SUM(D60:D63)"
+        },
+        {
+          "col": 5,
+          "coord": "E64",
+          "value": 628199.1578,
+          "is_formula": true,
+          "formula": "=SUM(E60:E63)"
+        }
+      ]
+    },
+    {
+      "row_index": 67,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A67",
+          "value": "सरपंच",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E67",
+          "value": "ग्रामपंचायत अधिकारी",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 68,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A68",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E68",
+          "value": "ग्रामपंचायत गोहगाव",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 69,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A69",
+          "value": "ता. रिसोड, जि. वाशिम",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E69",
+          "value": "ता. रिसोड, जि. वाशिम",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

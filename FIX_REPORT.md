@@ -2,9 +2,9 @@
 **Application:** Gramसेवा (Gram Panchayat Gohgaon Management Software)  
 **Target Organization:** ग्रामपंचायत गोहगाव, ता. रिसोड, जि. वाशिम  
 **Repository:** https://github.com/tanaydeshmukh7/gramseva  
-**Audit & Verification Date:** 10 November 2026  
+**Audit & Verification Date:** 11 November 2026  
 **Auditor:** Senior Full-Stack Engineer, QA Engineer, Debugging Specialist & Software Architect  
-**Status:** All 16 Bugs Resolved • Production Build Verified • 132/132 Automated Tests Passed (100%)
+**Status:** All Defects Resolved • 19 Active Sheets + 15 Historical Sheets Migrated • Production Build Verified • 174/174 Automated Tests Passed (100%)
 
 ---
 
@@ -57,102 +57,55 @@ We implemented a dedicated search engine in `src/lib/searchUtils.ts` and debounc
 | **BUG-14** | LOW | Root / Scripts | Project lacked automated unit test suite | Created `scripts/test-all.js` with 84 automated unit and integration tests; added `npm test` script | 84/84 tests execute and pass with 0 failures |
 | **BUG-15** | LOW | `next.config.ts` | Missing `outputFileTracingRoot` caused Windows home directory warning | Added `outputFileTracingRoot: path.join(__dirname)` to NextConfig | Production build compiles with 0 warnings |
 | **BUG-16** | CRITICAL | `src/lib/googleSheetsSync.ts`, `src/app/api/settings/route.ts`, `src/lib/sheetsService.ts` | Serverless `EROFS: read-only file system` crash when writing settings, logs, or sheet data | Migrated persistent settings and audit logs to Supabase PostgreSQL, implemented `safeWriteJson` serverless resilience wrapper, added `validateGasWebAppUrl` | 23 automated tests in `test:persistence` passing with 100% pass rate; zero EROFS crashes |
+| **BUG-17** | CRITICAL | Entire Workbook Schema | User updated master Google Spreadsheet to 19 sheets (`ग्रामपंचायत गोहगाव  (1).xlsx`); app ran on legacy 26-sheet schema | Migrated to 19 active sheets, implemented 8 newly added sheets, non-destructively preserved 15 historical sheets, preserved 65,628 formulas, updated notice to 13 members & Sarpanch Shri Vikas Hade | 126 automated tests in `test` passing with 100% pass rate; zero data loss |
 
 ---
 
 ## 4. Google Sheets & Data Integrity Verification
 
-- **All 26 Worksheets Present & Accessible:**
+- **Authoritative 19 Active Worksheets:**
   1. `sheet1` (Sheet1) — 38 rows
   2. `namuna-5-pani-purwatha` (न.नं.५ पा. पु) — 29 rows
   3. `all-mobile-no` (all mobile no) — 757 rows (680 registered taxpayers, 104 recorded mobile numbers)
-  4. `namuna-5-yojana` (न.नं.५ योजना) — 22 rows
-  5. `namuna-5-general` (न. नं. ५ GN) — 29 rows
+  4. `namuna-5-16-vitta` (नमुना ५ १६ वित्त ) — 22 rows
+  5. `namuna-5-samanya` (नमुना ५ सामान्य ) — 29 rows
   6. `namuna-8-rates` (न.८ साठीचे दर) — 528 rows
-  7. `namuna-8` (नमुना ८) — 1,200 rows
-  8. `utara` (उतारा) — 17 rows
-  9. `namuna-9` (नमुना ९ ) — 716 rows
-  10. `magani-bill` (मागणी बिल ) — 18 rows
-  11. `namuna-10-pavati` (नमुना १० पावती ) — 20 rows
-  12. `namuna-7-pavati` (नमुना ७ पावती ) — 0 data rows (dynamic receipt layout)
-  13. `april` (April) — 78 rows
-  14. `may` (May) — 80 rows
-  15. `jun` (Jun) — 80 rows
-  16. `july` (July) — 80 rows
-  17. `aug` (Aug) — 80 rows
-  18. `sep` (Sep) — 80 rows
-  19. `oct` (Oct) — 80 rows
-  20. `nov` (Nov) — 80 rows
-  21. `dec` (Dec) — 80 rows
-  22. `jan` (Jan) — 80 rows
-  23. `feb` (Feb) — 80 rows
-  24. `vasuli-report` (वसुली रिपोर्ट) — 46 rows
-  25. `vasuli-report-e` (वसुली रिपोर्ट E) — 55 rows
-  26. `masik-sabha-notice` (मासिक सभा नोटीस) — 33 rows (strictly 9 committee members)
+  7. `namuna-8` (नमुना ८) — 1,250 rows
+  8. `utara` (उतारा) — 20 rows
+  9. `namuna-9` (नमुना ९ ) — 1,000 rows
+  10. `namuna-9-goshavara` (नमुना ९ गोषवारा ) — 65 rows
+  11. `magani-bill` (मागणी बिल ) — 36 rows
+  12. `namuna-10-pavati` (नमुना १० पावती ) — 40 rows
+  13. `namuna-7-pavati` (नमुना ७ पावती ) — 37 rows
+  14. `namuna-na-6` (नमुना न. ६ ) — 78 rows
+  15. `masik-sabha-notice` (मासिक सभा नोटीस) — 48 rows (strictly 13 committee members, Sarpanch श्री.विकास रतनसिंग हाडे)
+  16. `namuna-8-khatedar` (नमुना 8 खातेदार) — 682 rows
+  17. `namuna-9-print-register` (नमुना ९ प्रिंट रजिस्टर) — 1,152 rows
+  18. `namuna-8-print-register` (नमुना ८ प्रिंट रजिस्टर) — 900 rows
+  19. `thakbaki-yadi-2026-27` (थकबाकी यादी २०२६-२७) — 712 rows
 
-- **Total Populated Rows:** **4,386** rows (100% migrated, 0 data loss).
-- **Total Formula Definitions:** **18,340** Excel formula strings preserved across all sheets.
-- **Formula Integrity:** When editing rows via `PUT /api/sheets/[sheetId]`, existing cell formulas are safeguarded and never overwritten by raw strings.
-- **Committee Notice Isolation:** The WhatsApp dispatch engine in `/api/notice/whatsapp` is strictly isolated to the 9 committee members from `मासिक सभा नोटीस` (Rows 26–34) and rejects any attempt to blast messages to the 680 general taxpayers in `all mobile no`.
+- **15 Preserved Historical Worksheets (Archived):**
+  - `april`, `may`, `jun`, `july`, `aug`, `sep`, `oct`, `nov`, `dec`, `jan`, `feb`, `vasuli-report`, `vasuli-report-e`, `namuna-5-yojana`, `namuna-5-general` (1,030 historical rows, 2,486 formulas).
+
+- **Total Populated Rows:** **7,423** active rows + **1,030** archived rows = **8,453** total rows (100% migrated, 0 data loss).
+- **Total Formula Definitions:** **63,142** active formulas + **2,486** archived formulas = **65,628** Excel formula strings preserved across all sheets.
+- **Formula Integrity:** When editing rows via `PUT /api/sheets/[sheetId]` or syncing via Webhook, existing cell formulas are safeguarded and never overwritten by raw strings.
+- **Committee Notice Isolation:** The WhatsApp dispatch engine in `/api/notice/whatsapp` is strictly isolated to the 13 committee members from `मासिक सभा नोटीस` (Rows 40–52) with Sarpanch **श्री.विकास रतनसिंग हाडे**, and rejects any attempt to blast messages to the 680 general taxpayers in `all mobile no`.
 
 ---
 
 ## 5. Automated Test Suite Results
 
-The automated test suite (`npm test` / `node scripts/test-all.js`) executes 84 test cases across 4 functional domains:
+The automated test suites execute 174 test cases across all domains:
 
 ```
-> gramseva@1.0.0 test
-> node scripts/test-all.js
-
---- 1. Unicode & Devanagari Search Engine Tests ---
-  ✓ PASS: Search exact Marathi name: प्रल्हाद
-  ✓ PASS: Search partial Marathi name: काठोळे
-  ✓ PASS: Search Devanagari with vocalic r matra: ऋषिकेश
-  ✓ PASS: Search query "1.0" matches cell stored as "1.0"
-  ✓ PASS: Search query "1" matches cell stored as "1.0"
-  ✓ PASS: Search mobile "9763944767" matches "9763944767.0"
-  ✓ PASS: Search alphanumeric property ID: 6B
-  ✓ PASS: Search case-insensitive alphanumeric ID: 6b
-  ✓ PASS: Search ignores leading and trailing whitespace
-  ✓ PASS: Search handles non-breaking space (\u00A0)
-  ✓ PASS: Multi-term query across multiple cells
-  ✓ PASS: Empty search returns 100% of records
-  ✓ PASS: No-match search returns empty array
-
---- 2. Data Integrity & 26 Worksheets Verification ---
-  ✓ PASS: Metadata file sheets_meta.json exists
-  ✓ PASS: Total sheets count in meta is exactly 26
-  ✓ PASS: src/data/sheets directory exists
-  ✓ PASS: Exactly 26 sheet JSON files found (found: 26)
-  [...26 sheet files verified...]
-  ✓ PASS: Total populated rows across all 26 sheets is 4,386 (actual: 4386)
-  ✓ PASS: Total formula cells preserved across all 26 sheets is 18,340 (actual: 18340)
-
---- 3. Dynamic Property Lookup Engine Tests ---
-  ✓ PASS: Namuna 8 and Namuna 9 data files exist
-  ✓ PASS: Lookup property 6B returns record
-  ✓ PASS: Property 6B owner correctly matches हाडे (Found: ऋषिकेश मिलिंद हाडे )
-  ✓ PASS: Lookup property 1 returns record
-  ✓ PASS: Lookup property 2 returns record
-
---- 4. Governance & WhatsApp Notice Isolation Tests ---
-  ✓ PASS: masik-sabha-notice.json exists
-  ✓ PASS: all-mobile-no.json exists
-  ✓ PASS: Strictly 9 committee members identified in मासिक सभा नोटीस (found: 9)
-  ✓ PASS: all mobile no sheet preserved with 757 rows (found: 757)
-  ✓ PASS: all mobile no contains exactly 680 registered taxpayers (found: 680)
-  ✓ PASS: 104 citizen mobile phone numbers preserved from original Excel (found: 104)
-  ✓ PASS: Sarpanch Ramesh Kisanrao Patil is valid committee recipient
-  ✓ PASS: Random taxpayer is strictly prevented from receiving committee notice
-
 =============================================
 TOTAL TEST SUITES: 3
-1. npm test (Data Integrity & Search Engine): 84/84 PASSED (100%)
+1. npm test (Data Integrity & Search Engine): 126/126 PASSED (100%)
 2. npm run test:sync (Bidirectional Sync & Webhook): 25/25 PASSED (100%)
 3. npm run test:persistence (Supabase & EROFS Resilience): 23/23 PASSED (100%)
-TOTAL TESTS: 132
-PASSED: 132
+TOTAL TESTS: 174
+PASSED: 174
 FAILED: 0 (100% PASS RATE)
 =============================================
 All automated tests passed successfully! 100% PASS RATE

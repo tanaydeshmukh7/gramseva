@@ -1,0 +1,592 @@
+{
+  "index": 4,
+  "name": "नमुना ५ १६ वित्त",
+  "original_sheet_name": "नमुना ५ १६ वित्त ",
+  "slug": "namuna-5-16-vitta",
+  "category": "कॅशबुक (१६ वा वित्त आयोग)",
+  "is_archived": false,
+  "max_row": 1000,
+  "max_col": 26,
+  "populated_rows_count": 22,
+  "formula_count": 14,
+  "merged_ranges": [
+    "F4:F5",
+    "G4:G5",
+    "H4:H5",
+    "I4:I5",
+    "I19:J19",
+    "I20:J20",
+    "I21:J21",
+    "I22:J22",
+    "H23:J23",
+    "J4:J5",
+    "K4:L4",
+    "M4:M5",
+    "N4:N5",
+    "M19:N19",
+    "M20:N20",
+    "M21:N21",
+    "K23:O23",
+    "A1:O1",
+    "A2:C2",
+    "H2:I2",
+    "A4:A5",
+    "B4:B5",
+    "C4:D4",
+    "E4:E5",
+    "O4:O5"
+  ],
+  "rows": [
+    {
+      "row_index": 1,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A1",
+          "value": "सामान्य कॅशबुक नमुना नं. ५",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 2,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A2",
+          "value": "ग्राम पंचायत ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E2",
+          "value": "ता. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 8,
+          "coord": "H2",
+          "value": "सन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K2",
+          "value": "२०२१/२२",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A3",
+          "value": "जमा बाजू ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O3",
+          "value": "खर्च बाजू",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A4",
+          "value": "दिनांक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B4",
+          "value": "पावती नंबर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C4",
+          "value": "जमेचा तपशील ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E4",
+          "value": "लेखाशीर्ष ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F4",
+          "value": "जमा रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G4",
+          "value": "सुरवातीच्या शिल्लक सहित रोजची एकूण जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 8,
+          "coord": "H4",
+          "value": "अदा केल्याची तारिख ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 9,
+          "coord": "I4",
+          "value": "चेक क्र. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 10,
+          "coord": "J4",
+          "value": "व्हौचर क्र. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K4",
+          "value": "अदा केल्याचा तपशील ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 13,
+          "coord": "M4",
+          "value": "लेखाशीर्ष ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N4",
+          "value": "खर्च रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O4",
+          "value": "अखेरच्या शिल्लक सहित रोजची एकूण रु . ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 3,
+          "coord": "C5",
+          "value": "कोणाकडून मिळाले ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D5",
+          "value": "कोणत्या खात्यावर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K5",
+          "value": "कोणास अदा केले ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 12,
+          "coord": "L5",
+          "value": "कोणत्या खात्यावर ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F6",
+          "value": "आरंभीची शिल्लक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N6",
+          "value": 100,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F7",
+          "value": 1000,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F8",
+          "value": 1000,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N8",
+          "value": 100,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F9",
+          "value": 10,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N9",
+          "value": 100,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 14,
+          "coord": "N10",
+          "value": 100,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F11",
+          "value": 100,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F15",
+          "value": 1,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F19",
+          "value": "एकूण जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G19",
+          "value": 2111,
+          "is_formula": true,
+          "formula": "=SUM(F7:F18)"
+        },
+        {
+          "col": 9,
+          "coord": "I19",
+          "value": " DDC बँकेत ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K19",
+          "value": 500,
+          "is_formula": true,
+          "formula": "=G31"
+        },
+        {
+          "col": 13,
+          "coord": "M19",
+          "value": "आजचा खर्च ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O19",
+          "value": 400,
+          "is_formula": true,
+          "formula": "=SUM(N6:N18)"
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F20",
+          "value": "एकूण एकंदर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G20",
+          "value": 2111,
+          "is_formula": true,
+          "formula": "=G6+G19"
+        },
+        {
+          "col": 9,
+          "coord": "I20",
+          "value": "बँक",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K20",
+          "value": 300,
+          "is_formula": true,
+          "formula": "=G32"
+        },
+        {
+          "col": 13,
+          "coord": "M20",
+          "value": "अखेरची शिल्लक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O20",
+          "value": 1711,
+          "is_formula": true,
+          "formula": "=O21-O19"
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "cells": [
+        {
+          "col": 9,
+          "coord": "I21",
+          "value": "हाती शिल्लक",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K21",
+          "value": 911,
+          "is_formula": true,
+          "formula": "=T29-K19-K20"
+        },
+        {
+          "col": 13,
+          "coord": "M21",
+          "value": "एकूण एकंदर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O21",
+          "value": 2111,
+          "is_formula": true,
+          "formula": "=G20"
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 9,
+          "coord": "I22",
+          "value": "अखेरची शिल्लक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K22",
+          "value": 1711,
+          "is_formula": true,
+          "formula": "=O20"
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "cells": [
+        {
+          "col": 8,
+          "coord": "H23",
+          "value": "अक्षरी रक्कम रु.",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K23",
+          "value": "एक हजार सातशे अकरा",
+          "is_formula": true,
+          "formula": "=IFERROR(IF(LEN(T25)>11,LMT,IF(VALUE(RIGHT(INT(T25/ABJ),2))=0,\"\",INDEX(MA_Num_S2G,RIGHT(INT(T25/ABJ),2)) &ABW)&IF(VALUE(RIGHT(INT(T25/KTI),2))=0,\"\",INDEX(MA_Num_S2G,RIGHT(INT(T25/KTI),2))&KTW)&IF(VALUE(RIGHT(INT(T25/LKS),2))=0,\"\",INDEX(MA_Num_S2G,RIGHT(INT(T25/LKS),2))&LKW)&IF(VALUE(RIGHT(INT(T25/HZR),2))=0,\"\",INDEX(MA_Num_S2G,RIGHT(INT(T25/HZR),2))&HZW)&IF(RIGHT(T25,3)=\"100\",STK,IF(VALUE(RIGHT(INT(T25/100),1))=0,\"\",INDEX(MA_Num_S2G,RIGHT(INT(T25/100),1))&SHE))&IF(INT(RIGHT(T25,2))=0,\"\",INDEX(MA_Num_S2G,RIGHT(T25,2)))&IF(T25=0,ZRO,\"\")),\"\")"
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 20,
+          "coord": "T25",
+          "value": 1711,
+          "is_formula": true,
+          "formula": "=K22"
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 7,
+          "coord": "G28",
+          "value": 1000,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 20,
+          "coord": "T28",
+          "value": 2111,
+          "is_formula": true,
+          "formula": "=G20"
+        },
+        {
+          "col": 21,
+          "coord": "U28",
+          "value": 1711,
+          "is_formula": true,
+          "formula": "=O20"
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 20,
+          "coord": "T29",
+          "value": 1711,
+          "is_formula": true,
+          "formula": "=K22"
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F31",
+          "value": "DDCC बँक",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G31",
+          "value": 500,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 6,
+          "coord": "F32",
+          "value": "इतर बँक",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G32",
+          "value": 300,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    }
+  ]
+}

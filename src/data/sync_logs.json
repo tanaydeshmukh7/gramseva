@@ -1,5 +1,105 @@
 [
   {
+    "id": 1794353591811,
+    "timestamp": "2026-11-10T23:33:11.811Z",
+    "source": "द्वि-मार्गी सिंक (Two-Way Sync)",
+    "action": "संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)",
+    "sheet": "सर्व २६ वर्कशीट्स",
+    "records_processed": 8453,
+    "status": "SUCCESS",
+    "details": "34 वर्कशीट्स व 8453 नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत."
+  },
+  {
+    "id": 1794353591802,
+    "timestamp": "2026-11-10T23:33:11.802Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review, GAS URL: None)"
+  },
+  {
+    "id": 1794353591795,
+    "timestamp": "2026-11-10T23:33:11.795Z",
+    "source": "Gramसेवा ॲप -> Google Sheets",
+    "action": "द्वि-मार्गी सिंक यशस्वी (Sync Pushed)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 18 मधील बदल गुगल स्प्रेडशीटमध्ये यशस्वीरित्या अद्ययावत केले."
+  },
+  {
+    "id": 1794353591728,
+    "timestamp": "2026-11-10T23:33:11.728Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review, GAS URL: Configured)"
+  },
+  {
+    "id": 1794353591711,
+    "timestamp": "2026-11-10T23:33:11.711Z",
+    "source": "Google Sheets Webhook",
+    "action": "नोंद हटवली (Row Deleted)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ क्र. 758 यशस्वीरित्या डेटाबेसमधून हटवली."
+  },
+  {
+    "id": 1794353591681,
+    "timestamp": "2026-11-10T23:33:11.681Z",
+    "source": "Google Sheets Webhook",
+    "action": "नवीन नोंद समाविष्ट (Row Added)",
+    "sheet": "all mobile no",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ क्र. 758 वर नवीन नोंद यशस्वीरित्या समाविष्ट केली."
+  },
+  {
+    "id": 1794353591651,
+    "timestamp": "2026-11-10T23:33:11.651Z",
+    "source": "Google Sheets Webhook",
+    "action": "सेल बदल (Cell Edit)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14, स्तंभ 3 अद्ययावत केला. मूल्य: \"null\""
+  },
+  {
+    "id": 1794353591379,
+    "timestamp": "2026-11-10T23:33:11.380Z",
+    "source": "Google Sheets Webhook",
+    "action": "सेल बदल (Cell Edit)",
+    "sheet": "नमुना ८",
+    "records_processed": 1,
+    "status": "SUCCESS",
+    "details": "ओळ 14, स्तंभ 3 अद्ययावत केला. मूल्य: \"श्री. विलास बाबाराव देशमुख (Google Sheets Live Edit Test)\""
+  },
+  {
+    "id": 1794353591282,
+    "timestamp": "2026-11-10T23:33:11.282Z",
+    "source": "Google Sheets Webhook",
+    "action": "अनाधिकृत प्रवेश प्रयत्न (Unauthorized Attempt)",
+    "sheet": "नमुना ८",
+    "records_processed": 0,
+    "status": "ERROR",
+    "details": "वेबबुक सीक्रेट टोकन अमान्य आहे (Invalid Webhook Secret)."
+  },
+  {
+    "id": 1794353580658,
+    "timestamp": "2026-11-10T23:33:00.658Z",
+    "source": "Gramसेवा प्रशासक",
+    "action": "सिंक सेटिंग्ज अद्ययावत (Settings Saved)",
+    "sheet": "सिस्टिम",
+    "records_processed": 0,
+    "status": "SUCCESS",
+    "details": "सिंक सेटिंग्ज यशस्वीरित्या जतन केली. (दिशा: two_way, संघर्ष: admin_review, GAS URL: Configured)"
+  },
+  {
     "id": 1794254037774,
     "timestamp": "2026-11-09T19:53:57.774Z",
     "source": "द्वि-मार्गी सिंक (Two-Way Sync)",

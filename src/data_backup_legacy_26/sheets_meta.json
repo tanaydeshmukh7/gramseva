@@ -1,0 +1,269 @@
+{
+  "village": "गोहगाव",
+  "taluka": "रिसोड",
+  "district": "वाशिम",
+  "financial_year": "२०२६ - २०२७",
+  "total_sheets": 26,
+  "sheets": [
+    {
+      "index": 1,
+      "name": "Sheet1",
+      "slug": "sheet1",
+      "category": "लेखाशीर्ष व संदर्भ (Reference)",
+      "max_row": 1000,
+      "max_col": 26,
+      "populated_rows_count": 38,
+      "merged_ranges_count": 0
+    },
+    {
+      "index": 2,
+      "name": "न.नं.५ पा. पु",
+      "slug": "namuna-5-pani-purwatha",
+      "category": "कॅशबुक (Cashbooks)",
+      "max_row": 1000,
+      "max_col": 29,
+      "populated_rows_count": 29,
+      "merged_ranges_count": 28
+    },
+    {
+      "index": 3,
+      "name": "all mobile no",
+      "slug": "all-mobile-no",
+      "category": "करदाते संपर्क (Citizens)",
+      "max_row": 1000,
+      "max_col": 26,
+      "populated_rows_count": 757,
+      "merged_ranges_count": 0
+    },
+    {
+      "index": 4,
+      "name": "न.नं.५ योजना",
+      "slug": "namuna-5-yojana",
+      "category": "कॅशबुक (Cashbooks)",
+      "max_row": 1000,
+      "max_col": 26,
+      "populated_rows_count": 22,
+      "merged_ranges_count": 25
+    },
+    {
+      "index": 5,
+      "name": "न. नं. ५ GN",
+      "slug": "namuna-5-general",
+      "category": "कॅशबुक (Cashbooks)",
+      "max_row": 1000,
+      "max_col": 35,
+      "populated_rows_count": 29,
+      "merged_ranges_count": 30
+    },
+    {
+      "index": 6,
+      "name": "न.८ साठीचे दर",
+      "slug": "namuna-8-rates",
+      "category": "मालमत्ता व कर (Tax & Assessment)",
+      "max_row": 1000,
+      "max_col": 39,
+      "populated_rows_count": 528,
+      "merged_ranges_count": 1
+    },
+    {
+      "index": 7,
+      "name": "नमुना ८",
+      "slug": "namuna-8",
+      "category": "मालमत्ता व कर (Tax & Assessment)",
+      "max_row": 1250,
+      "max_col": 61,
+      "populated_rows_count": 1200,
+      "merged_ranges_count": 27
+    },
+    {
+      "index": 8,
+      "name": "उतारा",
+      "slug": "utara",
+      "category": "दस्तावेज व प्रिंटिंग (Documents)",
+      "max_row": 1000,
+      "max_col": 31,
+      "populated_rows_count": 17,
+      "merged_ranges_count": 47
+    },
+    {
+      "index": 9,
+      "name": "नमुना ९ ",
+      "slug": "namuna-9",
+      "category": "मालमत्ता व कर (Tax & Assessment)",
+      "max_row": 728,
+      "max_col": 18,
+      "populated_rows_count": 716,
+      "merged_ranges_count": 19
+    },
+    {
+      "index": 10,
+      "name": "मागणी बिल ",
+      "slug": "magani-bill",
+      "category": "दस्तावेज व प्रिंटिंग (Documents)",
+      "max_row": 24,
+      "max_col": 7,
+      "populated_rows_count": 18,
+      "merged_ranges_count": 18
+    },
+    {
+      "index": 11,
+      "name": "नमुना १० पावती ",
+      "slug": "namuna-10-pavati",
+      "category": "दस्तावेज व प्रिंटिंग (Documents)",
+      "max_row": 28,
+      "max_col": 7,
+      "populated_rows_count": 20,
+      "merged_ranges_count": 22
+    },
+    {
+      "index": 12,
+      "name": "नमुना ७ पावती ",
+      "slug": "namuna-7-pavati",
+      "category": "दस्तावेज व प्रिंटिंग (Documents)",
+      "max_row": 1,
+      "max_col": 1,
+      "populated_rows_count": 0,
+      "merged_ranges_count": 0
+    },
+    {
+      "index": 13,
+      "name": "April",
+      "slug": "april",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 43,
+      "populated_rows_count": 78,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 14,
+      "name": "May",
+      "slug": "may",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 15,
+      "name": "Jun",
+      "slug": "jun",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 16,
+      "name": "July",
+      "slug": "july",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 17,
+      "name": "Aug",
+      "slug": "aug",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 18,
+      "name": "Sep",
+      "slug": "sep",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 19,
+      "name": "Oct",
+      "slug": "oct",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 20,
+      "name": "Nov",
+      "slug": "nov",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 21,
+      "name": "Dec",
+      "slug": "dec",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 22,
+      "name": "Jan",
+      "slug": "jan",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 23,
+      "name": "Feb",
+      "slug": "feb",
+      "category": "मासिक खाती (Monthly Accounts)",
+      "max_row": 1000,
+      "max_col": 44,
+      "populated_rows_count": 80,
+      "merged_ranges_count": 42
+    },
+    {
+      "index": 24,
+      "name": "वसुली रिपोर्ट",
+      "slug": "vasuli-report",
+      "category": "अहवाल (Reports)",
+      "max_row": 1000,
+      "max_col": 26,
+      "populated_rows_count": 46,
+      "merged_ranges_count": 22
+    },
+    {
+      "index": 25,
+      "name": "वसुली रिपोर्ट E",
+      "slug": "vasuli-report-e",
+      "category": "अहवाल (Reports)",
+      "max_row": 78,
+      "max_col": 40,
+      "populated_rows_count": 55,
+      "merged_ranges_count": 44
+    },
+    {
+      "index": 26,
+      "name": "मासिक सभा नोटीस",
+      "slug": "masik-sabha-notice",
+      "category": "मासिक सभा व नोटीस (Governance)",
+      "max_row": 40,
+      "max_col": 6,
+      "populated_rows_count": 33,
+      "merged_ranges_count": 28
+    }
+  ]
+}

@@ -1,0 +1,3346 @@
+{
+  "index": 14,
+  "name": "नमुना न. ६",
+  "original_sheet_name": "नमुना न. ६ ",
+  "slug": "namuna-na-6",
+  "category": "जमा नोंदवही (Classified Register)",
+  "is_archived": false,
+  "max_row": 1000,
+  "max_col": 43,
+  "populated_rows_count": 78,
+  "formula_count": 131,
+  "merged_ranges": [
+    "A6:B7",
+    "C6:C7",
+    "B2:G2",
+    "N2:R2",
+    "C4:AI4",
+    "A5:B5",
+    "C5:E5",
+    "F5:H5",
+    "I5:N5",
+    "D6:AH6",
+    "X5:Y5",
+    "Z5:AF5",
+    "AI6:AI7",
+    "AJ6:AJ7",
+    "AK6:AK7",
+    "AG37:AH37",
+    "AJ38:AK38",
+    "AG38:AI38",
+    "AG39:AI39",
+    "AJ39:AK39",
+    "AG40:AI40",
+    "AJ40:AK40",
+    "AG41:AI41",
+    "AJ41:AK41",
+    "AG81:AH81",
+    "F47:H47",
+    "I47:N47",
+    "A48:B49",
+    "C48:C49",
+    "X47:Y47",
+    "Z47:AF47",
+    "AI48:AI49",
+    "AJ48:AJ49",
+    "AK48:AK49",
+    "AG42:AI42",
+    "AJ42:AK42",
+    "A44:AK44",
+    "A45:AK45",
+    "C46:AI46",
+    "A47:B47",
+    "C47:E47",
+    "D48:AH48"
+  ],
+  "rows": [
+    {
+      "row_index": 2,
+      "cells": [
+        {
+          "col": 2,
+          "coord": "B2",
+          "value": "ग्रामनिधी",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N2",
+          "value": "नमूना नं. ०६ ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 3,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A3",
+          "value": "सन",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B3",
+          "value": "२०१९/२०",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C3",
+          "value": "[ नियम १९(७), २५(१), (२) व (३), ३२(५), व (६), ३३ (२) (३) व (४) (च), ३५, ३६,(२), ३८(१), ४२(४), (ध), ६३ (२) आणि (४) पाहा ]",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 4,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A4",
+          "value": "माहे ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B4",
+          "value": "एप्रिल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C4",
+          "value": "महिन्याबद्दल जमा रक्कमांची वर्गीकृत नोंदवही ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ4",
+          "value": "पान क्रं. ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 5,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A5",
+          "value": "ग्राम पंचायत  ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C5",
+          "value": "मोरगव्हाण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F5",
+          "value": "ता. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 9,
+          "coord": "I5",
+          "value": "रिसोड ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 24,
+          "coord": "X5",
+          "value": "जि. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 26,
+          "coord": "Z5",
+          "value": "वाशिम ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 6,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A6",
+          "value": "लेखशीर्ष ( अर्थ संकल्पात निर्दिष्ट केल्याप्रमाणे / बाब ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C6",
+          "value": "अर्थ संकल्पीय तरतूद ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D6",
+          "value": "तारखा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI6",
+          "value": "महिन्यातील एकूण रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ6",
+          "value": "आधीच्या महिना अखेर पर्यंतची एकूण रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK6",
+          "value": "चढती बेरीज ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 7,
+      "cells": [
+        {
+          "col": 4,
+          "coord": "D7",
+          "value": 1,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E7",
+          "value": 2,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F7",
+          "value": 3,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G7",
+          "value": 4,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 8,
+          "coord": "H7",
+          "value": 5,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 9,
+          "coord": "I7",
+          "value": 6,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 10,
+          "coord": "J7",
+          "value": 7,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K7",
+          "value": 8,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 12,
+          "coord": "L7",
+          "value": 9,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 13,
+          "coord": "M7",
+          "value": 10,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N7",
+          "value": 11,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O7",
+          "value": 12,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 16,
+          "coord": "P7",
+          "value": 13,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 17,
+          "coord": "Q7",
+          "value": 14,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 18,
+          "coord": "R7",
+          "value": 15,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 19,
+          "coord": "S7",
+          "value": 16,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 20,
+          "coord": "T7",
+          "value": 17,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 21,
+          "coord": "U7",
+          "value": 18,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 22,
+          "coord": "V7",
+          "value": 19,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 23,
+          "coord": "W7",
+          "value": 20,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 24,
+          "coord": "X7",
+          "value": 21,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 25,
+          "coord": "Y7",
+          "value": 22,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 26,
+          "coord": "Z7",
+          "value": 23,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 27,
+          "coord": "AA7",
+          "value": 24,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 28,
+          "coord": "AB7",
+          "value": 25,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 29,
+          "coord": "AC7",
+          "value": 26,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 30,
+          "coord": "AD7",
+          "value": 27,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 31,
+          "coord": "AE7",
+          "value": 28,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 32,
+          "coord": "AF7",
+          "value": 29,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 33,
+          "coord": "AG7",
+          "value": 30,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 34,
+          "coord": "AH7",
+          "value": 31,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 8,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A8",
+          "value": "निवासी इमारतीवरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B8",
+          "value": "००३५-१०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI8",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D8:AH8)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ8",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK8",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI8:AJ8)"
+        }
+      ]
+    },
+    {
+      "row_index": 9,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A9",
+          "value": "अनिवासी इमारती, खुल्या ( अकृषक ) जागेवरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B9",
+          "value": "००३५-१०२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI9",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D9:AH9)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ9",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK9",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI9:AJ9)"
+        }
+      ]
+    },
+    {
+      "row_index": 10,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A10",
+          "value": "दिवाबत्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B10",
+          "value": "००४४-१०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI10",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D10:AH10)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ10",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK10",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI10:AJ10)"
+        }
+      ]
+    },
+    {
+      "row_index": 11,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A11",
+          "value": "स्वच्छता कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B11",
+          "value": "०२१५-१०३ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI11",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D11:AH11)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ11",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK11",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI11:AJ11)"
+        }
+      ]
+    },
+    {
+      "row_index": 12,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A12",
+          "value": "दुकाने, लघु उद्योग व हॉटेल चालविणे यावरील कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B12",
+          "value": "००२८-१०२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI12",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D12:AH12)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ12",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK12",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI12:AJ12)"
+        }
+      ]
+    },
+    {
+      "row_index": 13,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A13",
+          "value": "यात्रा कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B13",
+          "value": "००४२-१०३ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI13",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D13:AH13)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ13",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK13",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI13:AJ13)"
+        }
+      ]
+    },
+    {
+      "row_index": 14,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A14",
+          "value": "जत्रा व उत्सव कर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B14",
+          "value": "०२०६-१०२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI14",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D14:AH14)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ14",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK14",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI14:AJ14)"
+        }
+      ]
+    },
+    {
+      "row_index": 15,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A15",
+          "value": "इतर ( वर्गणी ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI15",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D15:AH15)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ15",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK15",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI15:AJ15)"
+        }
+      ]
+    },
+    {
+      "row_index": 16,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A16",
+          "value": "बाजार फी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B16",
+          "value": "०२०६-१०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI16",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D16:AH16)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ16",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK16",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI16:AJ16)"
+        }
+      ]
+    },
+    {
+      "row_index": 17,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A17",
+          "value": "जमीन भाडेपट्टी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B17",
+          "value": "०५१५-४२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI17",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D17:AH17)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ17",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK17",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI17:AJ17)"
+        }
+      ]
+    },
+    {
+      "row_index": 18,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A18",
+          "value": "व्याज जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B18",
+          "value": "००४९-१०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI18",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D18:AH18)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ18",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK18",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI18:AJ18)"
+        }
+      ]
+    },
+    {
+      "row_index": 19,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A19",
+          "value": "जागा भाडे ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B19",
+          "value": "०५१५-४२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI19",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D19:AH19)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ19",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK19",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI19:AJ19)"
+        }
+      ]
+    },
+    {
+      "row_index": 20,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A20",
+          "value": "देणगी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B20",
+          "value": "०५१५-८०० ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI20",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D20:AH20)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ20",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK20",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI20:AJ20)"
+        }
+      ]
+    },
+    {
+      "row_index": 21,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A21",
+          "value": "इतर जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B21",
+          "value": "०५१५-८०० ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI21",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D21:AH21)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ21",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK21",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI21:AJ21)"
+        }
+      ]
+    },
+    {
+      "row_index": 22,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A22",
+          "value": "लिलाव ( धूळ, घाण, शेण, केरकचरा, जनावरांची प्रेत व इतर)",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B22",
+          "value": "०५१५-८००",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI22",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D22:AH22)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ22",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK22",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI22:AJ22)"
+        }
+      ]
+    },
+    {
+      "row_index": 23,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A23",
+          "value": "इमारत भाडे ( टावर भाडे ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B23",
+          "value": "००५९-१०१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI23",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D23:AH23)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ23",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK23",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI23:AJ23)"
+        }
+      ]
+    },
+    {
+      "row_index": 24,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A24",
+          "value": "दाखले फी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B24",
+          "value": "०५१५-४६ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI24",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D24:AH24)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ24",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK24",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI24:AJ24)"
+        }
+      ]
+    },
+    {
+      "row_index": 25,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A25",
+          "value": "मुद्रांक शुल्क ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B25",
+          "value": "००३०-९०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI25",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D25:AH25)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ25",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK25",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI25:AJ25)"
+        }
+      ]
+    },
+    {
+      "row_index": 26,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A26",
+          "value": "उपकर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B26",
+          "value": "००२९-१०२ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI26",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D26:AH26)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ26",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK26",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI26:AJ26)"
+        }
+      ]
+    },
+    {
+      "row_index": 27,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A27",
+          "value": "जमीन महसूल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B27",
+          "value": "००२९-१०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI27",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D27:AH27)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ27",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK27",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI27:AJ27)"
+        }
+      ]
+    },
+    {
+      "row_index": 28,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A28",
+          "value": "जमीन समानीकरण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B28",
+          "value": "००२९-९०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI28",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D28:AH28)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ28",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK28",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI28:AJ28)"
+        }
+      ]
+    },
+    {
+      "row_index": 29,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A29",
+          "value": "गौण खनिज ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B29",
+          "value": "०५१५-९०१ ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI29",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D29:AH29)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ29",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK29",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI29:AJ29)"
+        }
+      ]
+    },
+    {
+      "row_index": 30,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A30",
+          "value": "इतर अनुदान ( शिपाई पगार मानधन )",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI30",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D30:AH30)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ30",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK30",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI30:AJ30)"
+        }
+      ]
+    },
+    {
+      "row_index": 31,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A31",
+          "value": "मानधन, किमान वेतन व बैठक भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B31",
+          "value": "१६०१-१०२-२०५३-२०४२-३१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI31",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D31:AH31)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ31",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK31",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI31:AJ31)"
+        }
+      ]
+    },
+    {
+      "row_index": 32,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A32",
+          "value": "इतर ( वर्ग रकमा )",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B32",
+          "value": "४०००-८००",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI32",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D32:AH32)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ32",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK32",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI32:AJ32)"
+        }
+      ]
+    },
+    {
+      "row_index": 33,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A33",
+          "value": "आमदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B33",
+          "value": "१६०१-१०२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI33",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D33:AH33)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ33",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK33",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI33:AJ33)"
+        }
+      ]
+    },
+    {
+      "row_index": 34,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A34",
+          "value": "खासदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B34",
+          "value": "४५१५-२५५३-१०१-२५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI34",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D34:AH34)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ34",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK34",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI34:AJ34)"
+        }
+      ]
+    },
+    {
+      "row_index": 35,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A35",
+          "value": "अनामत / प्रतीभुती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B35",
+          "value": "८४४३-१०२-५५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI35",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D35:AH35)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ35",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK35",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI35:AJ35)"
+        }
+      ]
+    },
+    {
+      "row_index": 36,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A36",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B36",
+          "value": "८४४३-१०३-५५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI36",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D36:AH36)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ36",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK36",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI36:AJ36)"
+        }
+      ]
+    },
+    {
+      "row_index": 37,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG37",
+          "value": "एकूण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI37",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI8:AI36)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ37",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AJ8:AJ36)"
+        },
+        {
+          "col": 37,
+          "coord": "AK37",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AK8:AK36)"
+        }
+      ]
+    },
+    {
+      "row_index": 38,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG38",
+          "value": "वर्षारंभीची शिल्लक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ38",
+          "value": 7431,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 39,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG39",
+          "value": "महिन्यातील जमा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ39",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=AK37"
+        }
+      ]
+    },
+    {
+      "row_index": 40,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG40",
+          "value": "एकूण एकंदर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ40",
+          "value": 7431,
+          "is_formula": true,
+          "formula": "=SUM(AJ38:AK39)"
+        }
+      ]
+    },
+    {
+      "row_index": 41,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG41",
+          "value": "महिन्यातील खर्च ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ41",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=AK81"
+        }
+      ]
+    },
+    {
+      "row_index": 42,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG42",
+          "value": "अखेरची शिल्लक ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ42",
+          "value": 7431,
+          "is_formula": true,
+          "formula": "=AJ40-AJ41"
+        }
+      ]
+    },
+    {
+      "row_index": 43,
+      "cells": [
+        {
+          "col": 36,
+          "coord": "AJ43",
+          "value": 7431,
+          "is_formula": true,
+          "formula": "=SUM(AJ41:AK42)"
+        }
+      ]
+    },
+    {
+      "row_index": 46,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A46",
+          "value": "माहे ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B46",
+          "value": "एप्रिल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C46",
+          "value": "महिन्याबद्दल खर्च  रक्कमांची वर्गीकृत नोंदवही ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ46",
+          "value": "पान क्रं. ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 47,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A47",
+          "value": "ग्राम पंचायत  ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C47",
+          "value": "मोरगव्हाण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F47",
+          "value": "ता. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 9,
+          "coord": "I47",
+          "value": "रिसोड ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 24,
+          "coord": "X47",
+          "value": "जि. ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 26,
+          "coord": "Z47",
+          "value": "वाशिम ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 48,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A48",
+          "value": "लेखशीर्ष ( अर्थ संकल्पात निर्दिष्ट केल्याप्रमाणे / बाब ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 3,
+          "coord": "C48",
+          "value": "अर्थ संकल्पीय तरतूद ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 4,
+          "coord": "D48",
+          "value": "तारखा ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI48",
+          "value": "महिन्यातील एकूण रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 36,
+          "coord": "AJ48",
+          "value": "आधीच्या महिना अखेर पर्यंतची एकूण रक्कम ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK48",
+          "value": "चढती बेरीज ",
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 49,
+      "cells": [
+        {
+          "col": 4,
+          "coord": "D49",
+          "value": 1,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 5,
+          "coord": "E49",
+          "value": 2,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 6,
+          "coord": "F49",
+          "value": 3,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 7,
+          "coord": "G49",
+          "value": 4,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 8,
+          "coord": "H49",
+          "value": 5,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 9,
+          "coord": "I49",
+          "value": 6,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 10,
+          "coord": "J49",
+          "value": 7,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 11,
+          "coord": "K49",
+          "value": 8,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 12,
+          "coord": "L49",
+          "value": 9,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 13,
+          "coord": "M49",
+          "value": 10,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 14,
+          "coord": "N49",
+          "value": 11,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 15,
+          "coord": "O49",
+          "value": 12,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 16,
+          "coord": "P49",
+          "value": 13,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 17,
+          "coord": "Q49",
+          "value": 14,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 18,
+          "coord": "R49",
+          "value": 15,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 19,
+          "coord": "S49",
+          "value": 16,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 20,
+          "coord": "T49",
+          "value": 17,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 21,
+          "coord": "U49",
+          "value": 18,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 22,
+          "coord": "V49",
+          "value": 19,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 23,
+          "coord": "W49",
+          "value": 20,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 24,
+          "coord": "X49",
+          "value": 21,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 25,
+          "coord": "Y49",
+          "value": 22,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 26,
+          "coord": "Z49",
+          "value": 23,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 27,
+          "coord": "AA49",
+          "value": 24,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 28,
+          "coord": "AB49",
+          "value": 25,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 29,
+          "coord": "AC49",
+          "value": 26,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 30,
+          "coord": "AD49",
+          "value": 27,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 31,
+          "coord": "AE49",
+          "value": 28,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 32,
+          "coord": "AF49",
+          "value": 29,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 33,
+          "coord": "AG49",
+          "value": 30,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 34,
+          "coord": "AH49",
+          "value": 31,
+          "is_formula": false,
+          "formula": null
+        }
+      ]
+    },
+    {
+      "row_index": 50,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A50",
+          "value": "सरपंच मानधन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B50",
+          "value": "२५१५-१०३-०५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI50",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D50:AH50)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ50",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK50",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI50:AJ50)"
+        }
+      ]
+    },
+    {
+      "row_index": 51,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A51",
+          "value": "सदस्य बैठक भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B51",
+          "value": "१६०१-१०२-२०५३-१०४२-३१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI51",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D51:AH51)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ51",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK51",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI51:AJ51)"
+        }
+      ]
+    },
+    {
+      "row_index": 52,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A52",
+          "value": "सदस्य / सरपंच प्रवास भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B52",
+          "value": "२५१५-१०३-११",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI52",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D52:AH52)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ52",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK52",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI52:AJ52)"
+        }
+      ]
+    },
+    {
+      "row_index": 53,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A53",
+          "value": "कर्मचारी वेतन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B53",
+          "value": "२५१५-१०३-०१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI53",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D53:AH53)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ53",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK53",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI53:AJ53)"
+        }
+      ]
+    },
+    {
+      "row_index": 54,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A54",
+          "value": "कर्मचारी प्रवास भत्ता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B54",
+          "value": "२५१५-१०३-A११",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI54",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D54:AH54)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ54",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK54",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI54:AJ54)"
+        }
+      ]
+    },
+    {
+      "row_index": 55,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A55",
+          "value": "कार्यालयीन खर्च ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B55",
+          "value": "२५१५-१०३-१३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI55",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D55:AH55)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ55",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK55",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI55:AJ55)"
+        }
+      ]
+    },
+    {
+      "row_index": 56,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A56",
+          "value": "दुरुस्ती व देखभाल ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B56",
+          "value": "२०५९-१०१-२७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI56",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D56:AH56)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ56",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK56",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI56:AJ56)"
+        }
+      ]
+    },
+    {
+      "row_index": 57,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A57",
+          "value": "स्वच्छता ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B57",
+          "value": 2215,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI57",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D57:AH57)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ57",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK57",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI57:AJ57)"
+        }
+      ]
+    },
+    {
+      "row_index": 58,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A58",
+          "value": "( ब ) रस्त्यावरील दिवाबत्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B58",
+          "value": "१६०१-१०२-३६०४-०३२५-५०",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI58",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D58:AH58)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ58",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK58",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI58:AJ58)"
+        }
+      ]
+    },
+    {
+      "row_index": 59,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A59",
+          "value": "( क ) कार्यालय ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B59",
+          "value": "२८०१-१०१-२१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI59",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D59:AH59)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ59",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK59",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI59:AJ59)"
+        }
+      ]
+    },
+    {
+      "row_index": 60,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A60",
+          "value": "पथ दिवाबत्ती, साहित्य व इतर ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B60",
+          "value": "२८०१-१०३-२१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI60",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D60:AH60)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ60",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK60",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI60:AJ60)"
+        }
+      ]
+    },
+    {
+      "row_index": 61,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A61",
+          "value": "दिवाबत्ती मजुरी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B61",
+          "value": "२८०१-१०३-०२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI61",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D61:AH61)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ61",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK61",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI61:AJ61)"
+        }
+      ]
+    },
+    {
+      "row_index": 62,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A62",
+          "value": "शिक्षण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B62",
+          "value": 22024202,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI62",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D62:AH62)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ62",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK62",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI62:AJ62)"
+        }
+      ]
+    },
+    {
+      "row_index": 63,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A63",
+          "value": "आरोग्य ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B63",
+          "value": 22104210,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI63",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D63:AH63)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ63",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK63",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI63:AJ63)"
+        }
+      ]
+    },
+    {
+      "row_index": 64,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A64",
+          "value": "रस्ते देखभाल दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B64",
+          "value": "३०५४-१०१-२७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI64",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D64:AH64)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ64",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK64",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI64:AJ64)"
+        }
+      ]
+    },
+    {
+      "row_index": 65,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A65",
+          "value": "रस्ते नवीन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B65",
+          "value": "५०५४-१०१-५३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI65",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D65:AH65)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ65",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK65",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI65:AJ65)"
+        }
+      ]
+    },
+    {
+      "row_index": 66,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A66",
+          "value": "गटार देखभाल दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B66",
+          "value": "२०५९-१०१-२७",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI66",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D66:AH66)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ66",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK66",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI66:AJ66)"
+        }
+      ]
+    },
+    {
+      "row_index": 67,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A67",
+          "value": "गटार नवीन ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B67",
+          "value": "५०५४-१०२-५३",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI67",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D67:AH67)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ67",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK67",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI67:AJ67)"
+        }
+      ]
+    },
+    {
+      "row_index": 68,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A68",
+          "value": "मुतारी दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI68",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D68:AH68)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ68",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK68",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI68:AJ68)"
+        }
+      ]
+    },
+    {
+      "row_index": 69,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A69",
+          "value": "स्मशानभूमी दुरुस्ती ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI69",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D69:AH69)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ69",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK69",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI69:AJ69)"
+        }
+      ]
+    },
+    {
+      "row_index": 70,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A70",
+          "value": "समाजकल्याण ( २०%) ( आदिवासी व मागास वर्ग ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B70",
+          "value": "२२३५-१०१-३२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI70",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D70:AH70)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ70",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK70",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI70:AJ70)"
+        }
+      ]
+    },
+    {
+      "row_index": 71,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A71",
+          "value": "डी.व्ही.डी.एफ. वर्गणी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B71",
+          "value": "२५१५-१०३-३२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI71",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D71:AH71)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ71",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK71",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI71:AJ71)"
+        }
+      ]
+    },
+    {
+      "row_index": 72,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A72",
+          "value": "महिला व बाल कल्याण ( १० % ) ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B72",
+          "value": "२२११-१०१-३२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI72",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D72:AH72)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ72",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK72",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI72:AJ72)"
+        }
+      ]
+    },
+    {
+      "row_index": 73,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A73",
+          "value": "साहित्य खरेदी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B73",
+          "value": "२५१५-१०३-२१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI73",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D73:AH73)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ73",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK73",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI73:AJ73)"
+        }
+      ]
+    },
+    {
+      "row_index": 74,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A74",
+          "value": "अपंग कल्याण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B74",
+          "value": "२२३५-१०२-६२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI74",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D74:AH74)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ74",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK74",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI74:AJ74)"
+        }
+      ]
+    },
+    {
+      "row_index": 75,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A75",
+          "value": "कर्म. भविष्य निर्वाह निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B75",
+          "value": "८००९-१०२-५६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI75",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D75:AH75)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ75",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK75",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI75:AJ75)"
+        }
+      ]
+    },
+    {
+      "row_index": 76,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A76",
+          "value": "मानधन, किमान वेतन व बैठक भत्ता व अल्पोपहार ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B76",
+          "value": "१६०१-१०२-२०५३-१०४२-३१",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI76",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D76:AH76)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ76",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK76",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI76:AJ76)"
+        }
+      ]
+    },
+    {
+      "row_index": 77,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A77",
+          "value": "आमदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B77",
+          "value": "१६०१-१०२",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI77",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D77:AH77)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ77",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK77",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI77:AJ77)"
+        }
+      ]
+    },
+    {
+      "row_index": 78,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A78",
+          "value": "खासदार निधी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B78",
+          "value": "४५१५-२५५३-१०१-२५",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI78",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D78:AH78)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ78",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK78",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI78:AJ78)"
+        }
+      ]
+    },
+    {
+      "row_index": 79,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A79",
+          "value": "अग्रिम / अनामत ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B79",
+          "value": "८४४३-१०२-५६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI79",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D79:AH79)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ79",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK79",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI79:AJ79)"
+        }
+      ]
+    },
+    {
+      "row_index": 80,
+      "cells": [
+        {
+          "col": 1,
+          "coord": "A80",
+          "value": "ठेवी ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 2,
+          "coord": "B80",
+          "value": "८४४३-१०३-५६",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI80",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(D80:AH80)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ80",
+          "value": 0,
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 37,
+          "coord": "AK80",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI80:AJ80)"
+        }
+      ]
+    },
+    {
+      "row_index": 81,
+      "cells": [
+        {
+          "col": 33,
+          "coord": "AG81",
+          "value": "एकूण ",
+          "is_formula": false,
+          "formula": null
+        },
+        {
+          "col": 35,
+          "coord": "AI81",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AI50:AI80)"
+        },
+        {
+          "col": 36,
+          "coord": "AJ81",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AJ50:AJ80)"
+        },
+        {
+          "col": 37,
+          "coord": "AK81",
+          "value": 0,
+          "is_formula": true,
+          "formula": "=SUM(AK50:AK80)"
+        }
+      ]
+    }
+  ]
+}

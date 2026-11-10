@@ -67,8 +67,8 @@ async function runTests() {
   console.log('==================================================================\n');
 
   const baselineFormulas = countAllFormulas();
-  console.log(`Baseline formula count across all 26 sheets: ${baselineFormulas}`);
-  assert(baselineFormulas === 18340, 'Baseline formula integrity verified (18,340 formula definitions)');
+  console.log(`Baseline formula count across all 34 sheets: ${baselineFormulas}`);
+  assert(baselineFormulas === 65628, 'Baseline formula integrity verified (65,628 formula definitions)');
 
   const settings = JSON.parse(fs.readFileSync(settingsFile, 'utf-8'));
   const webhookSecret = process.env.GRAMSEVA_WEBHOOK_SECRET || settings.webhook_secret || 'gramseva_gohgaon_secure_sync_token_2026';
@@ -377,7 +377,7 @@ async function runTests() {
 
   // Final Formula Integrity Check
   const finalFormulas = countAllFormulas();
-  assert(finalFormulas === 18340, `Final formula integrity verified: 18,340 formulas intact (initial: ${baselineFormulas}, final: ${finalFormulas})`);
+  assert(finalFormulas === 65628, `Final formula integrity verified: 65,628 formulas intact (initial: ${baselineFormulas}, final: ${finalFormulas})`);
 
   console.log('\n==================================================================');
   console.log(`TOTAL BIDIRECTIONAL SYNC TESTS: ${totalTests}`);

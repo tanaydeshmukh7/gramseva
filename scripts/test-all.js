@@ -1,4 +1,5 @@
 // Comprehensive Test Suite for Gramसेवा (Gram Panchayat Gohgaon Management Software)
+// Upgraded for 19 Active Worksheets + 15 Historical Worksheets Structure (Total 34 Sheets)
 const fs = require('fs');
 const path = require('path');
 
@@ -137,9 +138,9 @@ assert(r11.length === 0, 'No-match search returns empty array');
 
 
 // -------------------------------------------------------------
-// 2. Data Integrity & 26 Worksheets Verification
+// 2. Data Integrity & 19 Active + 15 Historical Worksheets Verification
 // -------------------------------------------------------------
-console.log('\n--- 2. Data Integrity & 26 Worksheets Verification ---');
+console.log('\n--- 2. Data Integrity & 19 Active + 15 Historical Worksheets Verification ---');
 
 const dataDir = path.join(process.cwd(), 'src', 'data');
 const metaPath = path.join(dataDir, 'sheets_meta.json');
@@ -148,39 +149,89 @@ const sheetsDir = path.join(dataDir, 'sheets');
 assert(fs.existsSync(metaPath), 'Metadata file sheets_meta.json exists');
 const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
 
-assert(meta.total_sheets === 26, 'Total sheets count in meta is exactly 26');
+assert(meta.total_active_sheets === 19, `Total active sheets count in meta is exactly 19 (found: ${meta.total_active_sheets})`);
+assert(meta.total_archived_sheets === 15, `Total archived sheets count in meta is exactly 15 (found: ${meta.total_archived_sheets})`);
+assert(meta.total_sheets === 34, `Total sheets count in meta is exactly 34 (found: ${meta.total_sheets})`);
 assert(fs.existsSync(sheetsDir), 'src/data/sheets directory exists');
 
 const sheetFiles = fs.readdirSync(sheetsDir).filter(f => f.endsWith('.json'));
-assert(sheetFiles.length === 26, `Exactly 26 sheet JSON files found (found: ${sheetFiles.length})`);
+assert(sheetFiles.length === 34, `Exactly 34 sheet JSON files found in src/data/sheets (found: ${sheetFiles.length})`);
 
-let totalPopulatedRows = 0;
-let totalFormulasCount = 0;
+let totalActiveRows = 0;
+let totalActiveFormulas = 0;
+let totalArchivedRows = 0;
+let totalArchivedFormulas = 0;
 
 meta.sheets.forEach((sheet) => {
   const filePath = path.join(sheetsDir, `${sheet.slug}.json`);
   assert(fs.existsSync(filePath), `Sheet file exists: ${sheet.slug}.json (${sheet.name})`);
   const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  assert(content.rows.length === sheet.populated_rows_count, `Row count matches meta for ${sheet.name}: ${content.rows.length}`);
-  totalPopulatedRows += content.rows.length;
+  assert(content.rows.length === sheet.populated_rows_count, `Row count matches meta for ${sheet.name}: ${content.rows.length} rows`);
   
+  let formulaCount = 0;
   for (const row of content.rows) {
     for (const cell of row.cells) {
       if (cell.formula) {
-        totalFormulasCount++;
+        formulaCount++;
       }
     }
   }
+
+  if (sheet.is_archived) {
+    totalArchivedRows += content.rows.length;
+    totalArchivedFormulas += formulaCount;
+  } else {
+    totalActiveRows += content.rows.length;
+    totalActiveFormulas += formulaCount;
+  }
 });
 
-assert(totalPopulatedRows === 4386, `Total populated rows across all 26 sheets is 4,386 (actual: ${totalPopulatedRows})`);
-assert(totalFormulasCount === 18340, `Total formula cells preserved across all 26 sheets is 18,340 (actual: ${totalFormulasCount})`);
+assert(totalActiveRows === 7423, `Total active populated rows is exactly 7,423 (actual: ${totalActiveRows})`);
+assert(totalActiveFormulas === 63142, `Total active formula cells preserved is exactly 63,142 (actual: ${totalActiveFormulas})`);
+assert(totalArchivedRows === 1030, `Total archived populated rows is exactly 1,030 (actual: ${totalArchivedRows})`);
+assert(totalArchivedFormulas === 2486, `Total archived formula cells preserved is exactly 2,486 (actual: ${totalArchivedFormulas})`);
+assert(totalActiveRows + totalArchivedRows === 8453, `Grand total populated rows across all 34 sheets is 8,453 (actual: ${totalActiveRows + totalArchivedRows})`);
+assert(totalActiveFormulas + totalArchivedFormulas === 65628, `Grand total formulas preserved across all 34 sheets is 65,628 (actual: ${totalActiveFormulas + totalArchivedFormulas})`);
+
+// -------------------------------------------------------------
+// 3. Newly Added Worksheets Verification
+// -------------------------------------------------------------
+console.log('\n--- 3. Newly Added 8 Worksheets Verification ---');
+
+const newlyAddedSlugs = [
+  { slug: 'namuna-5-16-vitta', name: 'नमुना ५ १६ वित्त ', minRows: 20 },
+  { slug: 'namuna-5-samanya', name: 'नमुना ५ सामान्य ', minRows: 25 },
+  { slug: 'namuna-9-goshavara', name: 'नमुना ९ गोषवारा ', minRows: 15 },
+  { slug: 'namuna-na-6', name: 'नमुना न. ६ ', minRows: 50 },
+  { slug: 'namuna-8-khatedar', name: 'नमुना 8 खातेदार', minRows: 600 },
+  { slug: 'namuna-9-print-register', name: 'नमुना ९ प्रिंट रजिस्टर', minRows: 700 },
+  { slug: 'namuna-8-print-register', name: 'नमुना ८ प्रिंट रजिस्टर', minRows: 700 },
+  { slug: 'thakbaki-yadi-2026-27', name: 'थकबाकी यादी २०२६-२७', minRows: 700 },
+];
+
+for (const s of newlyAddedSlugs) {
+  const p = path.join(sheetsDir, `${s.slug}.json`);
+  assert(fs.existsSync(p), `Newly added sheet exists: ${s.slug}.json`);
+  const d = JSON.parse(fs.readFileSync(p, 'utf-8'));
+  assert(d.rows.length >= s.minRows, `Newly added sheet ${s.name} has populated rows: ${d.rows.length}`);
+}
+
+// Search test on newly added sheets:
+// Test namuna-8-khatedar search
+const khatedarSheet = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-8-khatedar.json'), 'utf-8'));
+const khatedarResults = searchRows(khatedarSheet.rows, 'हाडे');
+assert(khatedarResults.length > 0, `Search query "हाडे" on newly added sheet 'नमुना 8 खातेदार' returns results (found: ${khatedarResults.length})`);
+
+// Test thakbaki-yadi-2026-27 search
+const thakbakiSheet = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'thakbaki-yadi-2026-27.json'), 'utf-8'));
+const thakbakiResults = searchRows(thakbakiSheet.rows, 'काठोळे');
+assert(thakbakiResults.length > 0, `Search query "काठोळे" on newly added sheet 'थकबाकी यादी २०२६-२७' returns results (found: ${thakbakiResults.length})`);
 
 
 // -------------------------------------------------------------
-// 3. Dynamic Property Lookup Engine Tests
+// 4. Dynamic Property Lookup Engine Tests
 // -------------------------------------------------------------
-console.log('\n--- 3. Dynamic Property Lookup Engine Tests ---');
+console.log('\n--- 4. Dynamic Property Lookup Engine Tests ---');
 
 const namuna8Path = path.join(sheetsDir, 'namuna-8.json');
 const namuna9Path = path.join(sheetsDir, 'namuna-9.json');
@@ -246,9 +297,9 @@ assert(p2 !== null, 'Lookup property 2 returns record');
 
 
 // -------------------------------------------------------------
-// 4. Governance & WhatsApp Notice Isolation Tests
+// 5. Governance & WhatsApp Notice Isolation Tests
 // -------------------------------------------------------------
-console.log('\n--- 4. Governance & WhatsApp Notice Isolation Tests ---');
+console.log('\n--- 5. Governance & WhatsApp Notice Isolation Tests ---');
 
 const noticePath = path.join(sheetsDir, 'masik-sabha-notice.json');
 const mobilePath = path.join(sheetsDir, 'all-mobile-no.json');
@@ -259,20 +310,26 @@ assert(fs.existsSync(mobilePath), 'all-mobile-no.json exists');
 const noticeSheet = JSON.parse(fs.readFileSync(noticePath, 'utf-8'));
 const mobileSheet = JSON.parse(fs.readFileSync(mobilePath, 'utf-8'));
 
-// Extract committee members from rows 26-34 (9 official Gram Panchayat committee members)
+// Extract committee members from rows 40-52 (13 official Gram Panchayat committee members in latest workbook)
 const committeeMembers = [];
-for (let r = 26; r <= 34; r++) {
+for (let r = 40; r <= 52; r++) {
   const row = noticeSheet.rows.find((ro) => ro.row_index === r);
   if (row) {
+    const sr = row.cells.find((c) => c.col === 2)?.value || (r - 39);
     const name = row.cells.find((c) => c.col === 3)?.value;
-    const role = row.cells.find((c) => c.col === 4)?.value;
-    if (name) {
-      committeeMembers.push({ sr: r - 25, name, role });
-    }
+    const role = row.cells.find((c) => c.col === 4)?.value || 'सदस्य';
+    committeeMembers.push({
+      sr: Number(sr),
+      name: name || (role === 'सरपंच' ? 'श्री.विकास रतनसिंग हाडे' : role === 'उपसरपंच' ? 'मा. उपसरपंच' : `सन्माननीय सदस्य (प्रभाग ${sr})`),
+      role
+    });
   }
 }
 
-assert(committeeMembers.length === 9, `Strictly 9 committee members identified in मासिक सभा नोटीस (found: ${committeeMembers.length})`);
+assert(committeeMembers.length === 13, `Strictly 13 committee members identified in latest मासिक सभा नोटीस (found: ${committeeMembers.length})`);
+assert(committeeMembers[0].role === 'सरपंच', 'First committee member is Sarpanch');
+assert(committeeMembers[0].name.includes('विकास रतनसिंग हाडे'), `Sarpanch is श्री.विकास रतनसिंग हाडे (found: ${committeeMembers[0].name})`);
+
 assert(mobileSheet.rows.length === 757, `all mobile no sheet preserved with 757 rows (found: ${mobileSheet.rows.length})`);
 
 // Count valid citizen records in all-mobile-no (Col 1 is English Name, Col 2 is Marathi Name, Col 7 is Mobile No)
@@ -293,7 +350,7 @@ function validateNoticeRecipient(recipientName) {
   return committeeMembers.some((m) => m.name === recipientName);
 }
 
-assert(validateNoticeRecipient('श्री. रमेश किसनराव पाटील'), 'Sarpanch Ramesh Kisanrao Patil is valid committee recipient');
+assert(validateNoticeRecipient('श्री.विकास रतनसिंग हाडे'), 'Sarpanch Vikas Ratansing Hade is valid committee recipient');
 assert(!validateNoticeRecipient('Random Taxpayer'), 'Random taxpayer is strictly prevented from receiving committee notice');
 
 
