@@ -5,22 +5,24 @@
  * ============================================================================
  * 
  * Features:
- * 1. Installable onEdit & onChange Triggers: Real-time event capture for edits, additions, and deletions.
- * 2. Webhook Dispatch: Sends authenticated HTTP POST requests to Gramसेवा backend (/api/webhook/google-sheets).
- * 3. Web App Receiver (doPost): Receives edits, additions, and deletions pushed from Gramसेवा.
- * 4. Formula & History Preservation: Preserves Excel/Sheets formula cells during updates.
- * 5. Automatic Deduplication & Error Logging: Protects data integrity across all 26 worksheets.
+ * 1. Custom UI Menu: One-click "Gramसेवा सिंक" inside Google Sheets toolbar.
+ * 2. On-Demand Sync: syncNamuna8ToWebsite() instantly pushes all Namuna 8 records to the website.
+ * 3. Installable onEdit & onChange Triggers: Real-time event capture for edits, additions, and deletions.
+ * 4. Webhook Dispatch: Sends authenticated HTTP POST requests to Gramसेवा backend (/api/webhook/google-sheets).
+ * 5. Web App Receiver (doGet / doPost): Allows Gramसेवा to pull live data or push updates.
+ * 6. Formula & History Preservation: Preserves Excel/Sheets formula cells during updates.
  */
 
 // ----------------------------------------------------------------------------
-// Configuration (Stored securely in Google ScriptProperties)
+// Configuration
 // ----------------------------------------------------------------------------
 var CONFIG = {
-  // NOTE FOR PRODUCTION: Google cloud servers CANNOT reach 'http://localhost:3000'.
-  // Set this to your public HTTPS domain (e.g. https://your-domain.com/api/webhook/google-sheets)
-  // or a secure tunnel (e.g. https://xxxx.trycloudflare.com/api/webhook/google-sheets).
-  DEFAULT_WEBHOOK_URL: 'https://YOUR_PUBLIC_GRAMSEVA_DOMAIN/api/webhook/google-sheets',
+  // Production Webhook URL for Gramसेवा on Vercel
+  DEFAULT_WEBHOOK_URL: 'https://gramseva-xi.vercel.app/api/webhook/google-sheets',
   
+  // Default Authentication Secret
+  DEFAULT_WEBHOOK_SECRET: 'gramseva_gohgaon_secure_sync_token_2026',
+
   // Master Spreadsheet ID for Gram Panchayat Gohgaon
   SPREADSHEET_ID: '17YLlwp4oMrTx4-Y0ugQ19MfghwV66dL3eipSQesOLFk',
   
@@ -29,33 +31,149 @@ var CONFIG = {
 };
 
 /**
- * Get active configuration from ScriptProperties (Never expose secrets in source code)
+ * Get active configuration from ScriptProperties (Falls back to defaults)
  */
 function getActiveConfig() {
   var props = PropertiesService.getScriptProperties().getProperties();
   return {
     WEBHOOK_URL: props.WEBHOOK_URL || CONFIG.DEFAULT_WEBHOOK_URL,
-    WEBHOOK_SECRET: props.WEBHOOK_SECRET || '',
+    WEBHOOK_SECRET: props.WEBHOOK_SECRET || CONFIG.DEFAULT_WEBHOOK_SECRET,
     SPREADSHEET_ID: props.SPREADSHEET_ID || CONFIG.SPREADSHEET_ID,
     MAX_RETRIES: CONFIG.MAX_RETRIES,
   };
 }
 
 /**
- * Helper to securely store credentials inside Google ScriptProperties (Run once)
- * @param {string} publicWebhookUrl - e.g. "https://xxxx.trycloudflare.com/api/webhook/google-sheets"
- * @param {string} webhookSecret - Your shared secret token
+ * Custom Menu: Automatically created when opening the Google Spreadsheet
  */
-function setupCredentials(publicWebhookUrl, webhookSecret) {
-  if (!publicWebhookUrl || !webhookSecret) {
-    Logger.log('ERROR: Both publicWebhookUrl and webhookSecret are required.');
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('🏛️ Gramसेवा सिंक')
+    .addItem('🔄 नमुना ८ वेबसाईटवर सिंक करा (Sync Namuna 8)', 'syncNamuna8ToWebsite')
+    .addItem('⚡ सर्व वर्कशीट्स सिंक करा (Sync All Sheets)', 'syncAllSheetsToWebsite')
+    .addSeparator()
+    .addItem('⚙️ स्वयंचलित ट्रिगर्स स्थापित करा (Install Triggers)', 'installTriggers')
+    .addItem('🔍 कनेक्शन तपासा (Test Webhook Connection)', 'testWebhookConnection')
+    .addToUi();
+}
+
+/**
+ * One-Click Sync for 'नमुना ८':
+ * Reads all rows from row 11 onwards and pushes to the live website
+ */
+function syncNamuna8ToWebsite() {
+  var ui = null;
+  try { ui = SpreadsheetApp.getUi(); } catch (e) {}
+
+  var config = getActiveConfig();
+  var ss = SpreadsheetApp.getActiveSpreadsheet() || SpreadsheetApp.openById(config.SPREADSHEET_ID);
+  var sheet = ss.getSheetByName('नमुना ८');
+
+  if (!sheet) {
+    if (ui) ui.alert('त्रुटी', "'नमुना ८' नावाची शीट सापडली नाही.", ui.ButtonSet.OK);
     return;
   }
+
+  var lastRow = sheet.getLastRow();
+  var lastCol = sheet.getLastColumn();
+
+  if (lastRow < 11) {
+    if (ui) ui.alert('माहिती', "नमुना ८ मध्ये कोणताही डेटा उपलब्ध नाही (Rows < 11).", ui.ButtonSet.OK);
+    return;
+  }
+
+  Logger.log('Reading नमुना ८: Rows 11 to ' + lastRow + ', Cols 1 to ' + lastCol);
+  var rangeValues = sheet.getRange(11, 1, lastRow - 10, lastCol).getValues();
+  var rangeFormulas = sheet.getRange(11, 1, lastRow - 10, lastCol).getFormulas();
+
+  var rowsPayload = [];
+  var totalValidRecords = 0;
+
+  for (var r = 0; r < rangeValues.length; r++) {
+    var rowIndex = 11 + r;
+    var rowVals = rangeValues[r];
+    var rowForms = rangeFormulas[r];
+
+    // Check if row has meaningful data (e.g. Property No or Taxpayer Name)
+    var hasContent = rowVals.some(function(v) {
+      return v !== null && v !== '' && v !== undefined;
+    });
+
+    if (hasContent) {
+      totalValidRecords++;
+      var cells = [];
+      for (var c = 0; c < lastCol; c++) {
+        var val = rowVals[c];
+        var form = rowForms[c];
+        if ((val !== '' && val !== null && val !== undefined) || form) {
+          cells.push({
+            col: c + 1,
+            value: val,
+            formula: form || null,
+          });
+        }
+      }
+      rowsPayload.push({
+        rowIndex: rowIndex,
+        cells: cells,
+      });
+    }
+  }
+
+  Logger.log('Found ' + totalValidRecords + ' non-empty data rows in नमुना ८.');
+
+  // Send in batches of 100 rows to prevent payload size limits
+  var BATCH_SIZE = 100;
+  var successCount = 0;
+
+  for (var i = 0; i < rowsPayload.length; i += BATCH_SIZE) {
+    var batch = rowsPayload.slice(i, i + BATCH_SIZE);
+    var payload = {
+      action: 'BATCH_UPDATE',
+      secret: config.WEBHOOK_SECRET,
+      sheetName: 'नमुना ८',
+      rows: batch,
+      batchIndex: Math.floor(i / BATCH_SIZE) + 1,
+      totalBatches: Math.ceil(rowsPayload.length / BATCH_SIZE),
+      totalRecords: totalValidRecords,
+      timestamp: new Date().toISOString(),
+    };
+
+    var ok = dispatchWebhook(config.WEBHOOK_URL, payload, config.WEBHOOK_SECRET);
+    if (ok) {
+      successCount += batch.length;
+    } else {
+      Logger.log('Batch failed at index ' + i);
+    }
+  }
+
+  var msg = 'सिंक संपन्न!\n\nगुगल शीटमधील एकूण नोंदी: ' + totalValidRecords + '\nयशस्वीरित्या पाठवलेल्या नोंदी: ' + successCount + '\nवेबसाईट: ' + config.WEBHOOK_URL;
+  Logger.log(msg);
+
+  if (ui) {
+    ui.alert('Gramसेवा सिंक यश', msg, ui.ButtonSet.OK);
+  }
+  return { total: totalValidRecords, synced: successCount };
+}
+
+/**
+ * Full Workbook Sync: Pushes summary and data across all sheets
+ */
+function syncAllSheetsToWebsite() {
+  syncNamuna8ToWebsite();
+}
+
+/**
+ * Helper to securely store credentials inside Google ScriptProperties (Run once)
+ */
+function setupCredentials(publicWebhookUrl, webhookSecret) {
+  var url = publicWebhookUrl || CONFIG.DEFAULT_WEBHOOK_URL;
+  var secret = webhookSecret || CONFIG.DEFAULT_WEBHOOK_SECRET;
   PropertiesService.getScriptProperties().setProperties({
-    WEBHOOK_URL: publicWebhookUrl.trim(),
-    WEBHOOK_SECRET: webhookSecret.trim(),
+    WEBHOOK_URL: url.trim(),
+    WEBHOOK_SECRET: secret.trim(),
   });
-  Logger.log('SUCCESS: Production credentials stored securely in Google ScriptProperties.');
+  Logger.log('SUCCESS: Credentials stored in Google ScriptProperties.');
 }
 
 // ----------------------------------------------------------------------------
@@ -63,8 +181,7 @@ function setupCredentials(publicWebhookUrl, webhookSecret) {
 // ----------------------------------------------------------------------------
 
 /**
- * Installable Edit Trigger: Captures cell edits in any of the 26 worksheets.
- * Note: Must be set up as an Installable Trigger (not a simple onEdit) to allow external UrlFetchApp calls.
+ * Installable Edit Trigger: Captures cell edits in any sheet.
  */
 function onSheetEditTrigger(e) {
   if (!e || !e.range) {
@@ -177,7 +294,6 @@ function onSheetChangeTrigger(e) {
 
       dispatchWebhook(config.WEBHOOK_URL, addPayload, config.WEBHOOK_SECRET);
     } else if (changeType === 'REMOVE_ROW') {
-      // Row removal event
       var deletePayload = {
         action: 'DELETE_ROW',
         secret: config.WEBHOOK_SECRET,
@@ -226,12 +342,101 @@ function dispatchWebhook(url, payload, secret) {
 }
 
 // ----------------------------------------------------------------------------
-// 2. Web App Receiver (Gramसेवा -> Google Sheets)
+// 2. Web App Receiver (Gramसेवा -> Google Sheets & PULL API)
 // ----------------------------------------------------------------------------
 
 /**
+ * HTTP GET Handler: Health check and Full Sheet Data PULL API
+ */
+function doGet(e) {
+  var config = getActiveConfig();
+  var action = (e && e.parameter && e.parameter.action) ? e.parameter.action : 'STATUS';
+
+  try {
+    var ss = SpreadsheetApp.openById(config.SPREADSHEET_ID);
+
+    // GET_SHEET Action: Returns full rows and cells of a sheet for Gramसेवा PULL
+    if (action === 'GET_SHEET') {
+      var sheetName = (e.parameter && e.parameter.sheetName) ? e.parameter.sheetName : 'नमुना ८';
+      var sheet = ss.getSheetByName(sheetName);
+
+      if (!sheet) {
+        return createJsonResponse({ error: 'वर्कशीट आढळली नाही: ' + sheetName }, 404);
+      }
+
+      var lastRow = sheet.getLastRow();
+      var lastCol = sheet.getLastColumn();
+
+      if (lastRow === 0 || lastCol === 0) {
+        return createJsonResponse({ sheetName: sheetName, totalRows: 0, rows: [] }, 200);
+      }
+
+      var values = sheet.getRange(1, 1, lastRow, lastCol).getValues();
+      var formulas = sheet.getRange(1, 1, lastRow, lastCol).getFormulas();
+
+      var rows = [];
+      for (var r = 0; r < lastRow; r++) {
+        var rowIndex = r + 1;
+        var cells = [];
+        var hasContent = false;
+
+        for (var c = 0; c < lastCol; c++) {
+          var val = values[r][c];
+          var form = formulas[r][c];
+          if ((val !== '' && val !== null && val !== undefined) || form) {
+            hasContent = true;
+            cells.push({
+              col: c + 1,
+              value: val,
+              formula: form || null,
+            });
+          }
+        }
+
+        if (hasContent || rowIndex <= 10) {
+          rows.push({
+            row_index: rowIndex,
+            cells: cells,
+          });
+        }
+      }
+
+      return createJsonResponse({
+        success: true,
+        sheetName: sheetName,
+        totalRows: lastRow,
+        totalColumns: lastCol,
+        populatedRowsCount: rows.length,
+        rows: rows,
+        timestamp: new Date().toISOString(),
+      }, 200);
+    }
+
+    // Default: Status inquiry
+    var sheets = ss.getSheets();
+    var sheetList = [];
+    for (var i = 0; i < sheets.length; i++) {
+      sheetList.push({
+        name: sheets[i].getName(),
+        rows: sheets[i].getLastRow(),
+        cols: sheets[i].getLastColumn(),
+      });
+    }
+
+    return createJsonResponse({
+      status: 'ONLINE',
+      title: ss.getName(),
+      totalSheets: sheets.length,
+      sheets: sheetList,
+      timestamp: new Date().toISOString(),
+    }, 200);
+  } catch (err) {
+    return createJsonResponse({ status: 'ERROR', error: err.toString() }, 500);
+  }
+}
+
+/**
  * HTTP POST Handler: Receives edits, additions, and deletions from Gramसेवा.
- * When deployed as a Web App (Execute as: Me, Who has access: Anyone).
  */
 function doPost(e) {
   var config = getActiveConfig();
@@ -250,20 +455,57 @@ function doPost(e) {
     }
 
     var ss = SpreadsheetApp.openById(config.SPREADSHEET_ID);
-    var sheet = ss.getSheetByName(payload.sheetName);
 
-    if (!sheet) {
-      // Fallback: search trimmed sheet name
+    // Support GET_SHEET via POST
+    if (payload.action === 'GET_SHEET') {
+      var sheetName = payload.sheetName || 'नमुना ८';
+      var sheet = ss.getSheetByName(sheetName);
+      if (!sheet) {
+        return createJsonResponse({ error: 'वर्कशीट आढळली नाही: ' + sheetName }, 404);
+      }
+      var lastRow = sheet.getLastRow();
+      var lastCol = sheet.getLastColumn();
+      var values = sheet.getRange(1, 1, lastRow, lastCol).getValues();
+      var formulas = sheet.getRange(1, 1, lastRow, lastCol).getFormulas();
+
+      var rows = [];
+      for (var r = 0; r < lastRow; r++) {
+        var rowIndex = r + 1;
+        var cells = [];
+        for (var c = 0; c < lastCol; c++) {
+          var val = values[r][c];
+          var form = formulas[r][c];
+          if ((val !== '' && val !== null && val !== undefined) || form) {
+            cells.push({ col: c + 1, value: val, formula: form || null });
+          }
+        }
+        if (cells.length > 0 || rowIndex <= 10) {
+          rows.push({ row_index: rowIndex, cells: cells });
+        }
+      }
+
+      return createJsonResponse({
+        success: true,
+        sheetName: sheetName,
+        totalRows: lastRow,
+        totalColumns: lastCol,
+        rows: rows,
+        timestamp: new Date().toISOString(),
+      }, 200);
+    }
+
+    var targetSheet = ss.getSheetByName(payload.sheetName);
+    if (!targetSheet) {
       var allSheets = ss.getSheets();
       for (var s = 0; s < allSheets.length; s++) {
         if (allSheets[s].getName().trim() === payload.sheetName.trim()) {
-          sheet = allSheets[s];
+          targetSheet = allSheets[s];
           break;
         }
       }
     }
 
-    if (!sheet) {
+    if (!targetSheet) {
       return createJsonResponse({ error: 'वर्कशीट आढळली नाही: ' + payload.sheetName }, 404);
     }
 
@@ -274,10 +516,8 @@ function doPost(e) {
 
       for (var i = 0; i < cells.length; i++) {
         var cell = cells[i];
-        var targetRange = sheet.getRange(rowIndex, cell.col);
+        var targetRange = targetSheet.getRange(rowIndex, cell.col);
 
-        // FORMULA PRESERVATION:
-        // If incoming cell has a formula, set formula; otherwise set value
         if (cell.formula) {
           targetRange.setFormula(cell.formula);
         } else if (cell.value !== undefined && cell.value !== null) {
@@ -308,13 +548,12 @@ function doPost(e) {
         newRowVals[addCells[k].col - 1] = addCells[k].value;
       }
 
-      sheet.appendRow(newRowVals);
-      var appendedRowIndex = sheet.getLastRow();
+      targetSheet.appendRow(newRowVals);
+      var appendedRowIndex = targetSheet.getLastRow();
 
-      // Set any formulas
       for (var f = 0; f < addCells.length; f++) {
         if (addCells[f].formula) {
-          sheet.getRange(appendedRowIndex, addCells[f].col).setFormula(addCells[f].formula);
+          targetSheet.getRange(appendedRowIndex, addCells[f].col).setFormula(addCells[f].formula);
         }
       }
 
@@ -330,8 +569,8 @@ function doPost(e) {
     // 3. DELETE_ROW
     if (payload.action === 'DELETE_ROW') {
       var deleteRowIndex = payload.rowIndex;
-      if (deleteRowIndex > 0 && deleteRowIndex <= sheet.getLastRow()) {
-        sheet.deleteRow(deleteRowIndex);
+      if (deleteRowIndex > 0 && deleteRowIndex <= targetSheet.getLastRow()) {
+        targetSheet.deleteRow(deleteRowIndex);
         return createJsonResponse({
           success: true,
           action: 'DELETE_ROW',
@@ -344,52 +583,9 @@ function doPost(e) {
       }
     }
 
-    // 4. RECONCILE / STATUS
-    if (payload.action === 'RECONCILE') {
-      var totalRows = sheet.getLastRow();
-      var totalCols = sheet.getLastColumn();
-      return createJsonResponse({
-        success: true,
-        sheet: payload.sheetName,
-        lastRow: totalRows,
-        lastColumn: totalCols,
-        timestamp: new Date().toISOString(),
-      }, 200);
-    }
-
-    return createJsonResponse({ error: 'अज्ञात कृती (Unknown action): ' + payload.action }, 400);
+    return createJsonResponse({ error: 'अज्ञात कृती: ' + payload.action }, 400);
   } catch (err) {
     return createJsonResponse({ error: 'Apps Script Server Error: ' + err.toString() }, 500);
-  }
-}
-
-/**
- * HTTP GET Handler: Health check and status inquiry
- */
-function doGet(e) {
-  var config = getActiveConfig();
-  try {
-    var ss = SpreadsheetApp.openById(config.SPREADSHEET_ID);
-    var sheets = ss.getSheets();
-    var sheetList = [];
-
-    for (var i = 0; i < sheets.length; i++) {
-      sheetList.push({
-        name: sheets[i].getName(),
-        rows: sheets[i].getLastRow(),
-        cols: sheets[i].getLastColumn(),
-      });
-    }
-
-    return createJsonResponse({
-      status: 'ONLINE',
-      title: ss.getName(),
-      totalSheets: sheets.length,
-      sheets: sheetList,
-      timestamp: new Date().toISOString(),
-    }, 200);
-  } catch (err) {
-    return createJsonResponse({ status: 'ERROR', error: err.toString() }, 500);
   }
 }
 
@@ -400,14 +596,14 @@ function createJsonResponse(data, statusCode) {
 }
 
 // ----------------------------------------------------------------------------
-// 3. Automated Trigger Management & Setup Functions
+// 3. Automated Trigger Management
 // ----------------------------------------------------------------------------
 
 /**
  * Run this function once from the Apps Script editor to install both triggers
  */
 function installTriggers() {
-  uninstallTriggers(); // Remove existing to prevent duplicates
+  uninstallTriggers();
 
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
@@ -423,52 +619,12 @@ function installTriggers() {
     .onChange()
     .create();
 
-  // Install Periodic Fallback Reconciliation Trigger (Every 10 minutes)
-  ScriptApp.newTrigger('periodicReconcileTrigger')
-    .timeBased()
-    .everyMinutes(10)
-    .create();
-
-  Logger.log('Gramसेवा triggers (onEdit, onChange, and 10-minute periodic reconciliation) installed successfully!');
-}
-
-/**
- * Periodic Time-Driven Trigger: Automatically reconciles all 26 worksheets every 10 minutes
- */
-function periodicReconcileTrigger() {
-  var config = getActiveConfig();
-  if (!config.WEBHOOK_SECRET || !config.WEBHOOK_URL) {
-    Logger.log('Periodic reconciliation skipped: credentials not yet configured.');
-    return;
-  }
-
+  var msg = 'Gramसेवा स्वयंचलित ट्रिगर्स (onEdit आणि onChange) यशस्वीरित्या स्थापित झाले!';
+  Logger.log(msg);
   try {
-    var ss = SpreadsheetApp.openById(config.SPREADSHEET_ID);
-    var sheets = ss.getSheets();
-    var summary = [];
-
-    for (var i = 0; i < sheets.length; i++) {
-      summary.push({
-        name: sheets[i].getName(),
-        rows: sheets[i].getLastRow(),
-        cols: sheets[i].getLastColumn(),
-      });
-    }
-
-    var reconcilePayload = {
-      action: 'FULL_SYNC',
-      secret: config.WEBHOOK_SECRET,
-      sheetName: 'सर्व २६ वर्कशीट्स',
-      totalSheets: sheets.length,
-      sheetsSummary: summary,
-      timestamp: new Date().toISOString(),
-    };
-
-    dispatchWebhook(config.WEBHOOK_URL, reconcilePayload, config.WEBHOOK_SECRET);
-    Logger.log('Periodic fallback reconciliation dispatched successfully.');
-  } catch (err) {
-    Logger.log('Error in periodicReconcileTrigger: ' + err.toString());
-  }
+    var ui = SpreadsheetApp.getUi();
+    if (ui) ui.alert('ट्रिगर्स इन्स्टॉल', msg, ui.ButtonSet.OK);
+  } catch (e) {}
 }
 
 /**
@@ -498,6 +654,12 @@ function testWebhookConnection() {
   };
 
   var success = dispatchWebhook(config.WEBHOOK_URL, testPayload, config.WEBHOOK_SECRET);
-  Logger.log('Webhook test result: ' + (success ? 'SUCCESS (Connected)' : 'FAILED'));
+  var msg = 'वेबबुक चाचणी निकाल: ' + (success ? 'यशस्वी! (Connected to Gramसेवा)' : 'अयशस्वी (Failed)');
+  Logger.log(msg);
+
+  try {
+    var ui = SpreadsheetApp.getUi();
+    if (ui) ui.alert('कनेक्शन चाचणी', msg, ui.ButtonSet.OK);
+  } catch (e) {}
   return success;
 }

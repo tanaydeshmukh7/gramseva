@@ -6,6 +6,7 @@ import {
   getSyncLogsAsync,
   addSyncLogAsync,
   validateGasWebAppUrl,
+  pullAndReconcileFromGoogle,
   SyncSettings,
 } from '@/lib/googleSheetsSync';
 import { isSupabaseConfigured } from '@/lib/supabaseClient';
@@ -117,29 +118,59 @@ export async function POST(req: Request) {
       });
     }
 
-    // 2. Perform On-Demand Bidirectional Sync / Reconciliation
-    const direction = body.direction || currentSettings.sync_direction || 'two_way';
+    // 2. Perform Real Live Sync / Pull from Google Sheets
+    const targetSlug = body.sheetSlug || 'namuna-8';
     const totalRows = meta.sheets.reduce((acc, s) => acc + s.populated_rows_count, 0);
+
+    const reconcileResult = await pullAndReconcileFromGoogle({
+      sheetSlug: targetSlug,
+      gasUrl: body.gas_web_app_url || currentSettings.gas_web_app_url,
+    });
+
+    if (!reconcileResult.success) {
+      const warningLog = await addSyncLogAsync({
+        source: 'Google Sheets (Live Sync)',
+        action: 'थेट सिंक प्रतीक्षा (Awaiting Permissions / GAS URL)',
+        sheet: reconcileResult.sheetName || 'सर्व वर्कशीट्स',
+        records_processed: totalRows,
+        status: 'WARNING',
+        details: reconcileResult.details || reconcileResult.error || 'गुगल स्प्रेडशीट खाजगी आहे.',
+      });
+
+      return NextResponse.json({
+        success: false,
+        auth_blocked: reconcileResult.authBlocked || false,
+        error: reconcileResult.error,
+        details: reconcileResult.details,
+        action_required: reconcileResult.actionRequired,
+        sheet_slug: targetSlug,
+        sheet_name: reconcileResult.sheetName,
+        log: warningLog,
+        timestamp: warningLog.timestamp,
+      }, { status: 200 });
+    }
 
     const log = await addSyncLogAsync({
       source:
-        direction === 'two_way'
-          ? 'द्वि-मार्गी सिंक (Two-Way Sync)'
-          : direction === 'pull'
-          ? 'Google Sheets -> Gramसेवा (Pull)'
-          : 'Gramसेवा -> Google Sheets (Push)',
-      action: 'संपूर्ण डेटाबेस पडताळणी व सिंक (Full Reconciliation)',
-      sheet: 'सर्व २६ वर्कशीट्स',
-      records_processed: totalRows,
+        reconcileResult.source === 'GOOGLE_APPS_SCRIPT'
+          ? 'Google Apps Script (Live Sync)'
+          : 'Google Sheets Direct (Live Sync)',
+      action: 'थेट सिंक व पडताळणी (Live Sync & Reconciliation)',
+      sheet: reconcileResult.sheetName,
+      records_processed: reconcileResult.totalGoogleRecords || 0,
       status: 'SUCCESS',
-      details: `${meta.total_sheets} वर्कशीट्स व ${totalRows} नोंदींची पडताळणी पूर्ण झाली. सर्व १८,३४० सूत्रे सुरक्षित आहेत.`,
+      details: `गुगल शीटवरील ${reconcileResult.totalGoogleRecords} नोंदींची पडताळणी झाली. नवीन जोडलेल्या नोंदी: ${reconcileResult.newRecordsAdded}, अद्ययावत: ${reconcileResult.updatedRecords}.`,
     });
 
     return NextResponse.json({
       success: true,
       log,
+      reconciliation: reconcileResult,
+      message: `गुगल शीटवरील ${reconcileResult.totalGoogleRecords} नोंदींची पडताळणी झाली. नवीन जोडलेल्या नोंदी: ${reconcileResult.newRecordsAdded}, अद्ययावत: ${reconcileResult.updatedRecords}.`,
+      new_records_sample: reconcileResult.newRecordsSample,
+      total_records_before: reconcileResult.totalWebsiteRecordsBefore,
+      total_records_after: reconcileResult.totalWebsiteRecordsAfter,
       timestamp: log.timestamp,
-      message: 'गुगल शीट्स सिंक्रोनायझेशन व पडताळणी यशस्वी झाली.',
     });
   } catch (err: any) {
     return NextResponse.json({ error: err.message }, { status: 500 });

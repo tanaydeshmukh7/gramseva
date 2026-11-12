@@ -46,7 +46,7 @@ export interface SyncLogEntry {
 
 export interface InboundWebhookPayload {
   secret?: string;
-  action: 'EDIT' | 'UPDATE_ROW' | 'ADD_ROW' | 'INSERT_ROW' | 'DELETE_ROW' | 'FULL_SYNC';
+  action: 'EDIT' | 'UPDATE_ROW' | 'ADD_ROW' | 'INSERT_ROW' | 'DELETE_ROW' | 'FULL_SYNC' | 'BATCH_UPDATE' | 'SYNC_ROWS';
   sheetName: string;
   rowIndex?: number;
   colIndex?: number;
@@ -54,6 +54,10 @@ export interface InboundWebhookPayload {
   newValue?: any;
   formula?: string | null;
   cells?: Array<{ col: number; value: any; formula?: string | null }>;
+  rows?: Array<{ rowIndex: number; cells: Array<{ col: number; value: any; formula?: string | null }> }>;
+  batchIndex?: number;
+  totalBatches?: number;
+  totalRecords?: number;
   timestamp?: string;
   userEmail?: string;
 }
@@ -706,6 +710,77 @@ export async function processIncomingWebhook(
     };
   }
 
+  if (payload.action === 'BATCH_UPDATE' || payload.action === 'SYNC_ROWS') {
+    if (!payload.rows || !Array.isArray(payload.rows)) {
+      return { success: false, message: 'rows array आवश्यक आहे.', status: 400 };
+    }
+
+    let addedCount = 0;
+    let updatedCount = 0;
+
+    for (const incomingRow of payload.rows) {
+      const rowIndex = incomingRow.rowIndex;
+      const incomingCells = incomingRow.cells || [];
+
+      let existingRow = sheetData.rows.find((r) => r.row_index === rowIndex);
+
+      if (!existingRow) {
+        const convertedCells: SheetCell[] = incomingCells.map((c) =>
+          createSheetCell(c.col, rowIndex, c.value, c.formula)
+        );
+        const newRow: SheetRow = {
+          row_index: rowIndex,
+          cells: convertedCells.sort((a, b) => a.col - b.col),
+        };
+        sheetData.rows.push(newRow);
+        addedCount++;
+      } else {
+        const cellMap = new Map<number, SheetCell>();
+        existingRow.cells.forEach((c) => cellMap.set(c.col, { ...c }));
+
+        incomingCells.forEach((newCell) => {
+          const current = cellMap.get(newCell.col);
+          if (current && current.formula && !newCell.formula) {
+            cellMap.set(newCell.col, {
+              ...current,
+              value: newCell.value !== undefined ? newCell.value : current.value,
+            });
+          } else {
+            cellMap.set(
+              newCell.col,
+              createSheetCell(newCell.col, rowIndex, newCell.value, newCell.formula || current?.formula)
+            );
+          }
+        });
+
+        existingRow.cells = Array.from(cellMap.values()).sort((a, b) => a.col - b.col);
+        updatedCount++;
+      }
+    }
+
+    sheetData.rows.sort((a, b) => a.row_index - b.row_index);
+    sheetData.populated_rows_count = sheetData.rows.length;
+    sheetData.max_row = Math.max(sheetData.max_row, ...sheetData.rows.map((r) => r.row_index));
+
+    saveSheetData(slug, sheetData);
+
+    await addSyncLogAsync({
+      source: 'Google Sheets Webhook (Batch)',
+      action: 'बॅच अपडेट (Batch Sync)',
+      sheet: payload.sheetName,
+      records_processed: payload.rows.length,
+      status: 'SUCCESS',
+      details: `${payload.rows.length} नोंदी प्रक्रिया केल्या (नवीन: ${addedCount}, अद्ययावत: ${updatedCount}). बॅच ${payload.batchIndex || 1}/${payload.totalBatches || 1}`,
+    });
+
+    return {
+      success: true,
+      message: `बॅच सिंक यशस्वी: ${addedCount} नवीन समाविष्ट, ${updatedCount} अद्ययावत.`,
+      status: 200,
+      details: { added: addedCount, updated: updatedCount, totalInSheet: sheetData.rows.length },
+    };
+  }
+
   return { success: false, message: `अज्ञात ॲक्शन: ${payload.action}`, status: 400 };
 }
 
@@ -807,4 +882,272 @@ export async function pushToGoogleSheets(
       message: `गुगल स्प्रेडशीट सिंक अयशस्वी: ${err.message}`,
     };
   }
+}
+
+// ----------------------------------------------------------------------------
+// 6. Inbound Live Pull & Reconciliation (Google Sheets -> Gramसेवा)
+// ----------------------------------------------------------------------------
+
+export interface ReconcileResult {
+  success: boolean;
+  sheetSlug: string;
+  sheetName: string;
+  source?: 'GOOGLE_APPS_SCRIPT' | 'GOOGLE_DIRECT_EXPORT';
+  totalGoogleRecords?: number;
+  totalWebsiteRecordsBefore?: number;
+  totalWebsiteRecordsAfter?: number;
+  newRecordsAdded?: number;
+  updatedRecords?: number;
+  newRecordsSample?: Array<{ rowIndex: number; propertyNo: string; ownerName: string }>;
+  error?: string;
+  authBlocked?: boolean;
+  details?: string;
+  actionRequired?: string;
+}
+
+export async function pullAndReconcileFromGoogle(options?: {
+  sheetSlug?: string;
+  gasUrl?: string;
+}): Promise<ReconcileResult> {
+  const settings = await getSyncSettingsAsync();
+  const slug = options?.sheetSlug || 'namuna-8';
+  const sheetName = slugToSheetName(slug);
+  const gasUrl = (options?.gasUrl || settings.gas_web_app_url || '').trim();
+
+  const currentSheet = getSheetBySlug(slug);
+  if (!currentSheet) {
+    return {
+      success: false,
+      sheetSlug: slug,
+      sheetName,
+      error: `स्थानिक शीट आढळली नाही: ${slug}`,
+    };
+  }
+
+  const recordsBefore = currentSheet.rows.length;
+  let incomingRows: Array<{ rowIndex: number; cells: Array<{ col: number; value: any; formula?: string | null }> }> = [];
+  let syncSource: 'GOOGLE_APPS_SCRIPT' | 'GOOGLE_DIRECT_EXPORT' = 'GOOGLE_APPS_SCRIPT';
+
+  // 1. Try Google Apps Script Web App if URL is provided
+  if (gasUrl) {
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
+      const targetUrl = new URL(gasUrl);
+      targetUrl.searchParams.set('action', 'GET_SHEET');
+      targetUrl.searchParams.set('sheetName', sheetName);
+      if (settings.webhook_secret) {
+        targetUrl.searchParams.set('secret', settings.webhook_secret);
+      }
+
+      const res = await fetch(targetUrl.toString(), {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        signal: controller.signal,
+      });
+
+      clearTimeout(timeoutId);
+
+      if (res.ok) {
+        const json = await res.json();
+        if (json.success && Array.isArray(json.rows)) {
+          incomingRows = json.rows.map((r: any) => ({
+            rowIndex: r.row_index || r.rowIndex,
+            cells: (r.cells || []).map((c: any) => ({
+              col: c.col,
+              value: c.value,
+              formula: c.formula || null,
+            })),
+          }));
+          syncSource = 'GOOGLE_APPS_SCRIPT';
+        }
+      }
+    } catch (e: any) {
+      console.warn('[Sync] GAS fetch failed, trying direct export fallback:', e.message);
+    }
+  }
+
+  // 2. Fallback: Direct Google Sheets export (if spreadsheet has public/link sharing)
+  if (incomingRows.length === 0) {
+    try {
+      const exportUrl = `https://docs.google.com/spreadsheets/d/${settings.spreadsheet_id}/export?format=xlsx`;
+      const res = await fetch(exportUrl, {
+        method: 'GET',
+        redirect: 'follow',
+      });
+
+      if (res.status === 401 || res.status === 403) {
+        return {
+          success: false,
+          sheetSlug: slug,
+          sheetName,
+          authBlocked: true,
+          error: 'GOOGLE_SHEET_PERMISSIONS_RESTRICTED (HTTP 401)',
+          details: 'Google Spreadsheet प्रवेश नाकारला (401 Unauthorized). स्प्रेडशीट सध्या खाजगी आहे.',
+          actionRequired:
+            'गुगल स्प्रेडशीटमध्ये "Share" वर क्लिक करून "Anyone with the link can view" करा, किंवा Apps Script Web App URL Sync Center मध्ये जोडा.',
+        };
+      }
+
+      if (res.ok) {
+        const arrayBuffer = await res.arrayBuffer();
+        const buffer = Buffer.from(arrayBuffer);
+        const XLSX = require('xlsx');
+        const wb = XLSX.read(buffer, { type: 'buffer', cellFormula: true });
+        const targetWs = wb.Sheets[sheetName];
+
+        if (targetWs) {
+          syncSource = 'GOOGLE_DIRECT_EXPORT';
+          const range = XLSX.utils.decode_range(targetWs['!ref'] || 'A1:AM1500');
+          for (let R = range.s.r; R <= range.e.r; R++) {
+            const rowIndex = R + 1;
+            const cells: Array<{ col: number; value: any; formula?: string | null }> = [];
+            let hasContent = false;
+
+            for (let C = range.s.c; C <= range.e.c; C++) {
+              const cellAddress = XLSX.utils.encode_cell({ r: R, c: C });
+              const cell = targetWs[cellAddress];
+              if (cell && (cell.v !== undefined || cell.f)) {
+                hasContent = true;
+                cells.push({
+                  col: C + 1,
+                  value: cell.v !== undefined ? cell.v : null,
+                  formula: cell.f ? `=${cell.f}` : null,
+                });
+              }
+            }
+
+            if (hasContent || rowIndex <= 10) {
+              incomingRows.push({ rowIndex, cells });
+            }
+          }
+        }
+      }
+    } catch (e: any) {
+      console.warn('[Sync] Direct export fallback error:', e.message);
+    }
+  }
+
+  // If still no rows fetched, report exact reason
+  if (incomingRows.length === 0) {
+    const errorMsg = !gasUrl
+      ? 'गुगल स्प्रेडशीट खाजगी (HTTP 401) आहे आणि Apps Script Web App URL जोडलेली नाही.'
+      : 'गुगल स्प्रेडशीटवरून डेटा आणता आला नाही. Apps Script Web App URL व परवानग्या तपासा.';
+
+    await addSyncLogAsync({
+      source: 'Google Sheets (Pull)',
+      action: 'सिंक अयशस्वी (Pull Failed)',
+      sheet: sheetName,
+      records_processed: 0,
+      status: 'ERROR',
+      details: errorMsg,
+    });
+
+    return {
+      success: false,
+      sheetSlug: slug,
+      sheetName,
+      authBlocked: true,
+      error: errorMsg,
+      actionRequired:
+        '१. गुगल स्प्रेडशीटमध्ये Share -> Anyone with the link करा, किंवा\n२. Google Apps Script Web App Deploy करून त्याची URL Sync Center मध्ये सेव्ह करा.',
+    };
+  }
+
+  // 3. Reconcile incoming Google Sheets rows with local sheet
+  let newRecordsAdded = 0;
+  let updatedRecords = 0;
+  const newRecordsSample: Array<{ rowIndex: number; propertyNo: string; ownerName: string }> = [];
+
+  for (const incRow of incomingRows) {
+    const rowIndex = incRow.rowIndex;
+    let existing = currentSheet.rows.find((r) => r.row_index === rowIndex);
+
+    if (!existing) {
+      // New row!
+      const convertedCells = incRow.cells.map((c) =>
+        createSheetCell(c.col, rowIndex, c.value, c.formula)
+      );
+      currentSheet.rows.push({
+        row_index: rowIndex,
+        cells: convertedCells.sort((a, b) => a.col - b.col),
+      });
+      newRecordsAdded++;
+
+      const propNo = incRow.cells.find((c) => c.col === 5)?.value || incRow.cells.find((c) => c.col === 2)?.value || '';
+      const ownerName = incRow.cells.find((c) => c.col === 6)?.value || incRow.cells.find((c) => c.col === 3)?.value || '';
+      if (newRecordsSample.length < 10) {
+        newRecordsSample.push({
+          rowIndex,
+          propertyNo: String(propNo),
+          ownerName: String(ownerName),
+        });
+      }
+    } else {
+      // Existing row: merge cells and preserve formulas
+      let rowModified = false;
+      const cellMap = new Map<number, SheetCell>();
+      existing.cells.forEach((c) => cellMap.set(c.col, { ...c }));
+
+      for (const incCell of incRow.cells) {
+        const curCell = cellMap.get(incCell.col);
+        const newVal = incCell.value;
+        const newForm = incCell.formula;
+
+        if (!curCell) {
+          cellMap.set(incCell.col, createSheetCell(incCell.col, rowIndex, newVal, newForm));
+          rowModified = true;
+        } else {
+          const valChanged = String(curCell.value ?? '') !== String(newVal ?? '');
+          if (curCell.formula && !newForm) {
+            if (valChanged) {
+              curCell.value = newVal;
+              rowModified = true;
+            }
+          } else if (valChanged || (newForm && curCell.formula !== newForm)) {
+            curCell.value = newVal;
+            if (newForm) {
+              curCell.formula = newForm;
+              curCell.is_formula = true;
+            }
+            rowModified = true;
+          }
+        }
+      }
+
+      if (rowModified) {
+        existing.cells = Array.from(cellMap.values()).sort((a, b) => a.col - b.col);
+        updatedRecords++;
+      }
+    }
+  }
+
+  currentSheet.rows.sort((a, b) => a.row_index - b.row_index);
+  currentSheet.populated_rows_count = currentSheet.rows.length;
+  currentSheet.max_row = Math.max(currentSheet.max_row, ...currentSheet.rows.map((r) => r.row_index));
+
+  saveSheetData(slug, currentSheet);
+
+  await addSyncLogAsync({
+    source: syncSource === 'GOOGLE_APPS_SCRIPT' ? 'Google Apps Script (Pull)' : 'Google Sheets Direct Export (Pull)',
+    action: 'थेट सिंक व पडताळणी (Live Sync & Reconciliation)',
+    sheet: sheetName,
+    records_processed: incomingRows.length,
+    status: 'SUCCESS',
+    details: `गुगल शीटमधील एकूण नोंदी: ${incomingRows.length}, नवीन समाविष्ट: ${newRecordsAdded}, अद्ययावत: ${updatedRecords}. सर्व सूत्रे सुरक्षित ठेवली आहेत.`,
+  });
+
+  return {
+    success: true,
+    sheetSlug: slug,
+    sheetName,
+    source: syncSource,
+    totalGoogleRecords: incomingRows.length,
+    totalWebsiteRecordsBefore: recordsBefore,
+    totalWebsiteRecordsAfter: currentSheet.rows.length,
+    newRecordsAdded,
+    updatedRecords,
+    newRecordsSample,
+  };
 }

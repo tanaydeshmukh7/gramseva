@@ -141,7 +141,10 @@ export default function SyncPage() {
       });
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "सिंक्रोनायझेशन अयशस्वी.");
+        const fullMsg = data.action_required
+          ? `${data.error || 'सिंक अयशस्वी'}\n\n👉 काय करावे: ${data.action_required}`
+          : (data.error || 'सिंक्रोनायझेशन अयशस्वी.');
+        throw new Error(fullMsg);
       }
       const nowStr = new Date().toLocaleString("mr-IN");
       setLastSyncTime(nowStr);
