@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Devanagari } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
-import GlobalSearchModal from "@/components/GlobalSearchModal";
-import { UIProvider } from "@/context/UIContext";
+import AppShell from "@/components/AppShell";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -34,22 +31,8 @@ export default function RootLayout({
       lang="mr"
       className={`${inter.variable} ${notoSansDevanagari.variable} h-full antialiased light`}
     >
-      <body className="min-h-full flex flex-row bg-[#F6F7F5] text-[#252A27] overflow-hidden">
-        <UIProvider>
-          {/* Global Quick Search (Ctrl+K) */}
-          <GlobalSearchModal />
-
-          {/* Fixed Left Sidebar with all 34 worksheets */}
-          <Sidebar />
-
-          {/* Main Content Area */}
-          <div className="flex-1 flex flex-col h-screen overflow-hidden">
-            <Header />
-            <main className="flex-1 overflow-y-auto bg-[#F6F7F5]">
-              {children}
-            </main>
-          </div>
-        </UIProvider>
+      <body className="min-h-full flex flex-row bg-[#F7F8F5] text-[#202923] overflow-hidden">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );

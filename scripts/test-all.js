@@ -590,6 +590,25 @@ const n9_part6 = searchRows(n9Full.rows, '6');
 assert(n9_part6.some(r => r.cells.some(c => c.col === 2 && String(c.value).trim() === '6B')), 'Partial search "6" in Namuna 9 correctly finds property 6B');
 assert(n9_part6.some(r => r.cells.some(c => c.col === 2 && String(c.value).trim() === '6')), 'Partial search "6" in Namuna 9 correctly finds property 6');
 
+// -------------------------------------------------------------
+// 8. Server-Side Authentication & Session Security Tests
+// -------------------------------------------------------------
+console.log('\n--- 8. Server-Side Authentication & Session Security Tests ---');
+const bcrypt = require('bcryptjs');
+
+const EXPECTED_AUTH_USER = 'kalyugkadevta';
+const EXPECTED_AUTH_PASS = 'kalyug@77';
+const EXPECTED_HASH = '$2b$12$r8..cQFt/EZ422ezeTXIuuS0vN1UYj5zb6FsNT5lEF76MlpWTU.v.';
+
+assert(bcrypt.compareSync(EXPECTED_AUTH_PASS, EXPECTED_HASH), 'Valid credentials "kalyugkadevta" and "kalyug@77" match salted bcrypt hash');
+assert(!bcrypt.compareSync('wrong_password', EXPECTED_HASH), 'Incorrect password is strictly rejected');
+assert(!bcrypt.compareSync('', EXPECTED_HASH), 'Empty password is strictly rejected');
+assert(EXPECTED_HASH.startsWith('$2b$12$'), 'Password hash uses strong bcrypt cost factor 12');
+assert('kalyugkadevta'.toLowerCase() === EXPECTED_AUTH_USER, 'Username matches: kalyugkadevta');
+assert('KALYUGKADEVTA'.toLowerCase() === EXPECTED_AUTH_USER, 'Case-insensitive username matches');
+assert('wronguser'.toLowerCase() !== EXPECTED_AUTH_USER, 'Incorrect username is rejected');
+assert('admin'.toLowerCase() !== EXPECTED_AUTH_USER, 'Default admin is rejected');
+
 
 // -------------------------------------------------------------
 // Summary

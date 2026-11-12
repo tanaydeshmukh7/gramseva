@@ -23,6 +23,7 @@ import {
   X,
   CreditCard,
   FileCheck,
+  LogOut,
 } from "lucide-react";
 import { useUI } from "@/context/UIContext";
 import { normalizeSearchString } from "@/lib/searchUtils";
@@ -478,13 +479,28 @@ export default function Sidebar() {
           )}
         </div>
 
-        {/* Footer Info */}
+        {/* Footer Info & Logout */}
         <div className="p-3 border-t border-[#E6EAE5] bg-[#F7F8F5] text-xs text-[#68736C] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-[#2E7D32]" />
-            <span className="font-medium text-[#202923]">प्रशासक सक्रिय</span>
+            <span className="font-medium text-[#202923]">प्रशासक</span>
           </div>
-          <span className="font-mono text-[11px] text-[#68736C]">सन २०२६-२७</span>
+          <button
+            onClick={async () => {
+              try {
+                await fetch("/api/auth/logout", { method: "POST" });
+              } catch (e) {
+                console.error("Logout error:", e);
+              } finally {
+                window.location.href = "/login";
+              }
+            }}
+            className="flex items-center gap-1 text-[11px] font-semibold text-rose-600 hover:text-rose-700 hover:bg-rose-50 px-2 py-0.5 rounded transition-colors"
+            title="प्रणालीतून लॉगआउट करा"
+          >
+            <LogOut className="w-3 h-3" />
+            <span>लॉगआउट</span>
+          </button>
         </div>
       </aside>
     </>

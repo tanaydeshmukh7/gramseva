@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Shield,
   Home,
+  LogOut,
 } from "lucide-react";
 import { useUI } from "@/context/UIContext";
 
@@ -93,6 +94,16 @@ export default function Header() {
       console.error("Sync error:", e);
     } finally {
       setIsSyncing(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } catch (e) {
+      console.error("Logout error:", e);
+    } finally {
+      window.location.href = "/login";
     }
   };
 
@@ -215,6 +226,15 @@ export default function Header() {
             <span className="font-semibold text-[#202923] block">प्रशासक</span>
             <span className="text-[10px] text-[#68736C]">गोहगाव</span>
           </div>
+
+          {/* Logout Action Button */}
+          <button
+            onClick={handleLogout}
+            title="प्रणालीतून लॉगआउट करा (Logout)"
+            className="p-1.5 rounded-lg text-[#68736C] hover:text-rose-600 hover:bg-rose-50 transition-colors"
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </header>
