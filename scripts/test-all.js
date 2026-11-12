@@ -23,33 +23,86 @@ function assert(condition, testName, details = '') {
 // -------------------------------------------------------------
 console.log('\n--- 1. Unicode & Devanagari Search Engine Tests ---');
 
-function normalizeSearchString(val) {
-  if (val === null || val === undefined) return '';
-  let str = String(val).normalize('NFC').replace(/\u00A0/g, ' ').trim();
-  if (/^\d+\.0$/.test(str)) {
-    str = str.replace(/\.0$/, '');
-  }
-  return str.toLowerCase();
+function normalizeSearchString(text) {
+  if (text === null || text === undefined) return '';
+
+  let str = String(text);
+  str = str.normalize('NFC');
+  str = str.replace(/[\u200B-\u200D\uFEFF\u00A0]/g, ' ');
+  str = str.replace(/[०-९]/g, (d) => String('०१२३४५६७८९'.indexOf(d)));
+  str = str.replace(/[\r\n\t]+/g, ' ');
+  str = str.replace(/\s+/g, ' ');
+
+  str = str.replace(/(\d+)\.0+([a-zA-Z])/g, '$1$2');
+  str = str.replace(/([a-zA-Z])\.0+(\d*)/g, '$1$2');
+  str = str.replace(/(\b\d+)\.0+(\b)/g, '$1');
+
+  return str.trim().toLowerCase();
 }
 
-function cleanSearchTerm(term) {
-  return normalizeSearchString(term);
+function stripPunctuation(s) {
+  return s.replace(/[\s\-_/\\,.:;()]+/g, '');
+}
+
+function harmonizeMarathiVowels(s) {
+  return s
+    .replace(/ी/g, 'ि')
+    .replace(/ू/g, 'ु')
+    .replace(/ॅ/g, 'े')
+    .replace(/ॉ/g, 'ो');
+}
+
+function matchCellWithToken(cellNormalized, tokenNormalized) {
+  if (!cellNormalized || !tokenNormalized) return false;
+  if (cellNormalized.includes(tokenNormalized)) return true;
+
+  const strippedCell = stripPunctuation(cellNormalized);
+  const strippedToken = stripPunctuation(tokenNormalized);
+  if (strippedToken && strippedCell.includes(strippedToken)) return true;
+
+  const vCell = harmonizeMarathiVowels(cellNormalized);
+  const vToken = harmonizeMarathiVowels(tokenNormalized);
+  if (vCell.includes(vToken)) return true;
+
+  return false;
+}
+
+function matchRow(cells, query) {
+  if (!query || !query.trim()) return true;
+
+  const normalizedQuery = normalizeSearchString(query);
+  if (!normalizedQuery) return true;
+
+  const queryTerms = normalizedQuery.split(/\s+/).filter(Boolean);
+  const rowStrings = cells
+    .map((c) => normalizeSearchString(c.value))
+    .filter(Boolean);
+
+  if (rowStrings.length === 0) return false;
+
+  const combinedRowStr = rowStrings.join(' ');
+  const compactCombinedRowStr = stripPunctuation(combinedRowStr);
+
+  return queryTerms.every((term) => {
+    const strippedTerm = stripPunctuation(term);
+
+    const cellMatch = rowStrings.some((cellStr) => matchCellWithToken(cellStr, term));
+    if (cellMatch) return true;
+
+    if (combinedRowStr.includes(term)) return true;
+    if (strippedTerm && compactCombinedRowStr.includes(strippedTerm)) return true;
+
+    const vCombined = harmonizeMarathiVowels(combinedRowStr);
+    const vTerm = harmonizeMarathiVowels(term);
+    if (vCombined.includes(vTerm)) return true;
+
+    return false;
+  });
 }
 
 function searchRows(rows, query) {
-  const cleaned = cleanSearchTerm(query);
-  if (!cleaned) return rows;
-  const tokens = cleaned.split(/\s+/).filter(Boolean);
-  if (tokens.length === 0) return rows;
-
-  return rows.filter((row) => {
-    return row.cells.some((c) => {
-      const val = normalizeSearchString(c.value);
-      return tokens.every((token) => val.includes(token));
-    }) || tokens.every((token) => {
-      return row.cells.some((c) => normalizeSearchString(c.value).includes(token));
-    });
-  });
+  if (!query || !query.trim()) return rows;
+  return rows.filter((row) => matchRow(row.cells, query));
 }
 
 // Mock Rows for Testing Search Logic
@@ -83,6 +136,26 @@ const mockRows = [
       { col: 4, value: 'निवासी' },
       { col: 5, value: 750 }
     ]
+  },
+  {
+    row_index: 13,
+    cells: [
+      { col: 1, value: '7A' },
+      { col: 2, value: 'श्री. भास्कर भगवानसिंग हाडे' },
+      { col: 3, value: '9822112233' },
+      { col: 4, value: 'निवासी' },
+      { col: 5, value: 920 }
+    ]
+  },
+  {
+    row_index: 14,
+    cells: [
+      { col: 1, value: '15A' },
+      { col: 2, value: 'श्री. नामदेव परसराम हाडे' },
+      { col: 3, value: '9422556677' },
+      { col: 4, value: 'निवासी' },
+      { col: 5, value: 840 }
+    ]
   }
 ];
 
@@ -98,6 +171,10 @@ assert(r2.length === 1 && r2[0].row_index === 11, 'Search partial Marathi name: 
 const r3 = searchRows(mockRows, 'ऋषिकेश');
 assert(r3.length === 1 && r3[0].row_index === 12, 'Search Devanagari with vocalic r matra: ऋषिकेश');
 
+// Test 1.3b: Phonetic vowel tolerance (ऋषीकेश matches ऋषिकेश)
+const r3b = searchRows(mockRows, 'ऋषीकेश');
+assert(r3b.length === 1 && r3b[0].row_index === 12, 'Phonetic vowel tolerance: ऋषीकेश matches ऋषिकेश');
+
 // Test 1.4: Stripping trailing .0 from numeric property IDs
 const r4 = searchRows(mockRows, '1.0');
 assert(r4.some(r => r.row_index === 10), 'Search query "1.0" matches cell stored as "1.0"');
@@ -109,18 +186,44 @@ assert(r4b.some(r => r.row_index === 10), 'Search query "1" matches cell stored 
 const r5 = searchRows(mockRows, '9763944767');
 assert(r5.length === 1 && r5[0].row_index === 10, 'Search mobile "9763944767" matches "9763944767.0"');
 
-// Test 1.6: Alphanumeric property numbers (6B, 5A)
+// Test 1.6: Alphanumeric property numbers (6B, 6b, 5A, 5a)
 const r6 = searchRows(mockRows, '6B');
 assert(r6.length === 1 && r6[0].row_index === 11, 'Search alphanumeric property ID: 6B');
 
 const r6b = searchRows(mockRows, '6b');
 assert(r6b.length === 1 && r6b[0].row_index === 11, 'Search case-insensitive alphanumeric ID: 6b');
 
-// Test 1.7: Leading and trailing spaces ignored
+const r6c = searchRows(mockRows, '६B');
+assert(r6c.length === 1 && r6c[0].row_index === 11, 'Search Devanagari numeral alphanumeric ID: ६B matches 6B');
+
+// Test 1.7: 7A and 7a return exact same results
+const r7A = searchRows(mockRows, '7A');
+const r7a = searchRows(mockRows, '7a');
+assert(r7A.length === 1 && r7A[0].row_index === 13, 'Search property number: 7A');
+assert(r7a.length === 1 && r7a[0].row_index === 13, 'Search lowercase: 7a finds 7A');
+assert(r7A.length === r7a.length && r7A[0].row_index === r7a[0].row_index, '7A and 7a return identical results');
+
+const r7A_spaced = searchRows(mockRows, '  7A  ');
+assert(r7A_spaced.length === 1 && r7A_spaced[0].row_index === 13, 'Search "  7A  " with leading/trailing spaces finds 7A');
+
+const r7_marathi = searchRows(mockRows, '७A');
+assert(r7_marathi.length === 1 && r7_marathi[0].row_index === 13, 'Search Marathi digit "७A" finds 7A');
+
+// Test 1.8: 15A and 15a return exact same results
+const r15A = searchRows(mockRows, '15A');
+const r15a = searchRows(mockRows, '15a');
+assert(r15A.length === 1 && r15A[0].row_index === 14, 'Search property number: 15A');
+assert(r15a.length === 1 && r15a[0].row_index === 14, 'Search lowercase: 15a finds 15A');
+assert(r15A.length === r15a.length && r15A[0].row_index === r15a[0].row_index, '15A and 15a return identical results');
+
+const r15_marathi = searchRows(mockRows, '१५A');
+assert(r15_marathi.length === 1 && r15_marathi[0].row_index === 14, 'Search Marathi digits "१५A" finds 15A');
+
+// Test 1.9: Leading and trailing spaces ignored
 const r7 = searchRows(mockRows, '   काठोळे   ');
 assert(r7.length === 1 && r7[0].row_index === 11, 'Search ignores leading and trailing whitespace');
 
-// Test 1.8: Non-breaking space (\u00A0) query
+// Test 1.10: Non-breaking space (\u00A0) query
 const r8 = searchRows(mockRows, 'प्रल्हाद\u00A0गोविंदा');
 assert(r8.length === 1 && r8[0].row_index === 10, 'Search handles non-breaking space (\\u00A0)');
 
@@ -240,6 +343,10 @@ assert(fs.existsSync(namuna8Path) && fs.existsSync(namuna9Path), 'Namuna 8 and N
 
 const namuna8 = JSON.parse(fs.readFileSync(namuna8Path, 'utf-8'));
 const namuna9 = JSON.parse(fs.readFileSync(namuna9Path, 'utf-8'));
+
+function cleanSearchTerm(term) {
+  return normalizeSearchString(term);
+}
 
 function lookupPropertyRecord(propNo) {
   const cleanQuery = cleanSearchTerm(propNo);
@@ -420,6 +527,68 @@ assert(p6BTax !== null, 'Property 6B taxpayer found in Namuna 9');
 assert(p6BTax.owner === 'ऋषिकेश मिलिंद हाडे', `Property 6B owner matches: ऋषिकेश मिलिंद हाडे (found: ${p6BTax.owner})`);
 assert(p6BTax.houseTotal === 816, `Property 6B House Tax is ₹816 (found: ${p6BTax.houseTotal})`);
 assert(p6BTax.grandTotal === 876, `Property 6B Grand Total is ₹876 (found: ${p6BTax.grandTotal})`);
+
+// -------------------------------------------------------------
+// 7. Cross-Module Real Data Search Engine Verification
+// -------------------------------------------------------------
+console.log('\n--- 7. Cross-Module Real Data Search Engine Verification ---');
+
+const n8Full = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-8.json'), 'utf8'));
+const n9Full = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-9.json'), 'utf8'));
+const thakbakiFull = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'thakbaki-yadi-2026-27.json'), 'utf8'));
+const khatedarFull = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-8-khatedar.json'), 'utf8'));
+const mobileFull = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'all-mobile-no.json'), 'utf8'));
+const n9PrintFull = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-9-print-register.json'), 'utf8'));
+
+// 7.1 Search 6B vs 6b across modules
+const n9_6B = searchRows(n9Full.rows, '6B');
+const n9_6b = searchRows(n9Full.rows, '6b');
+assert(n9_6B.length > 0, `Search 6B in Namuna 9 returns real record (found: ${n9_6B.length})`);
+assert(n9_6B.length === n9_6b.length, `Search 6B and 6b in Namuna 9 return identical result counts (${n9_6B.length} === ${n9_6b.length})`);
+
+const thak_6B = searchRows(thakbakiFull.rows, '6B');
+const thak_6b = searchRows(thakbakiFull.rows, '6b');
+assert(thak_6B.length > 0, `Search 6B in थकबाकी यादी returns real record (found: ${thak_6B.length})`);
+assert(thak_6B.length === thak_6b.length, `Search 6B and 6b in थकबाकी यादी return identical count (${thak_6B.length})`);
+
+// 7.2 Search 5A vs 5a across modules
+const n9_5A = searchRows(n9Full.rows, '5A');
+const n9_5a = searchRows(n9Full.rows, '5a');
+assert(n9_5A.length > 0, `Search 5A in Namuna 9 returns real record (found: ${n9_5A.length})`);
+assert(n9_5A.length === n9_5a.length, `Search 5A and 5a in Namuna 9 return identical count (${n9_5A.length})`);
+
+// 7.3 Search 7A and 7a consistency on dynamically synced records
+const testDynRows = [
+  { row_index: 100, cells: [{ col: 2, value: '7A' }, { col: 3, value: 'श्री. भास्कर भगवानसिंग हाडे' }] },
+  { row_index: 101, cells: [{ col: 2, value: '15A' }, { col: 3, value: 'श्री. नामदेव परसराम हाडे' }] },
+];
+const dyn_7A = searchRows(testDynRows, '7A');
+const dyn_7a = searchRows(testDynRows, '7a');
+assert(dyn_7A.length === 1 && dyn_7a.length === 1, '7A and 7a both match dynamic property 7A');
+assert(dyn_7A[0].row_index === dyn_7a[0].row_index, '7A and 7a match exact same record');
+
+const dyn_15A = searchRows(testDynRows, '15A');
+const dyn_15a = searchRows(testDynRows, '15a');
+assert(dyn_15A.length === 1 && dyn_15a.length === 1, '15A and 15a both match dynamic property 15A');
+assert(dyn_15A[0].row_index === dyn_15a[0].row_index, '15A and 15a match exact same record');
+
+// 7.4 Marathi Name searches across all main modules
+const n8_pralhad = searchRows(n8Full.rows, 'प्रल्हाद');
+assert(n8_pralhad.length === 15, `Search "प्रल्हाद" in Namuna 8 returns exact 15 records (found: ${n8_pralhad.length})`);
+
+const n9_pralhad = searchRows(n9Full.rows, 'प्रल्हाद');
+assert(n9_pralhad.length === 15, `Search "प्रल्हाद" in Namuna 9 returns exact 15 records (found: ${n9_pralhad.length})`);
+
+const khatedar_pralhad = searchRows(khatedarFull.rows, 'प्रल्हाद');
+assert(khatedar_pralhad.length === 15, `Search "प्रल्हाद" in नमुना 8 खातेदार returns exact 15 records (found: ${khatedar_pralhad.length})`);
+
+const mob_pralhad = searchRows(mobileFull.rows, 'प्रल्हाद');
+assert(mob_pralhad.length === 15, `Search "प्रल्हाद" in all mobile no returns exact 15 records (found: ${mob_pralhad.length})`);
+
+// 7.5 Partial Property Number search (e.g. "6" finds 6 and 6B)
+const n9_part6 = searchRows(n9Full.rows, '6');
+assert(n9_part6.some(r => r.cells.some(c => c.col === 2 && String(c.value).trim() === '6B')), 'Partial search "6" in Namuna 9 correctly finds property 6B');
+assert(n9_part6.some(r => r.cells.some(c => c.col === 2 && String(c.value).trim() === '6')), 'Partial search "6" in Namuna 9 correctly finds property 6');
 
 
 // -------------------------------------------------------------

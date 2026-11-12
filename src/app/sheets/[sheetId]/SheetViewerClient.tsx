@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   Search,
@@ -63,6 +63,8 @@ export default function SheetViewerClient({ sheetData }: Props) {
   const [selectedPropertyNo, setSelectedPropertyNo] = useState(
     sheetData.slug === "namuna-10-pavati" ? "1" : "6B"
   );
+  const [debouncedPropertyNo, isPropertyDebouncing] = useDebounce(selectedPropertyNo.trim(), 200);
+  const propertyCacheRef = useRef<Map<string, any>>(new Map());
   const [propertyData, setPropertyData] = useState<any>(null);
   const [isPropertyLoading, setIsPropertyLoading] = useState(false);
   const [propertyLookupError, setPropertyLookupError] = useState<string | null>(null);
@@ -118,38 +120,49 @@ export default function SheetViewerClient({ sheetData }: Props) {
     setCurrentPage(1);
   }, [debouncedSearch]);
 
-  // Fetch real property details when in document view
+  // Fetch real property details when in document view with debounce, caching, and abort controller
   useEffect(() => {
-    if (["utara", "magani-bill", "namuna-10-pavati"].includes(sheetData.slug) && selectedPropertyNo.trim()) {
-      let isMounted = true;
+    if (["utara", "magani-bill", "namuna-10-pavati"].includes(sheetData.slug) && debouncedPropertyNo) {
+      const cacheKey = debouncedPropertyNo.toLowerCase();
+      if (propertyCacheRef.current.has(cacheKey)) {
+        setPropertyData(propertyCacheRef.current.get(cacheKey));
+        setIsPropertyLoading(false);
+        setPropertyLookupError(null);
+        return;
+      }
+
+      const controller = new AbortController();
       setIsPropertyLoading(true);
       setPropertyLookupError(null);
 
-      fetch(`/api/lookup/property/${encodeURIComponent(selectedPropertyNo.trim())}`)
+      fetch(`/api/lookup/property/${encodeURIComponent(debouncedPropertyNo)}`, {
+        signal: controller.signal,
+      })
         .then((res) => {
           if (!res.ok) {
-            throw new Error(`मालमत्ता क्रमांक '${selectedPropertyNo}' आढळला नाही.`);
+            throw new Error(`मालमत्ता क्रमांक किंवा करदाता '${debouncedPropertyNo}' आढळला नाही.`);
           }
           return res.json();
         })
         .then((json) => {
-          if (isMounted) {
+          if (json.data) {
+            propertyCacheRef.current.set(cacheKey, json.data);
             setPropertyData(json.data);
             setIsPropertyLoading(false);
           }
         })
         .catch((err) => {
-          if (isMounted) {
+          if (err.name !== "AbortError") {
             setPropertyLookupError(err.message);
             setIsPropertyLoading(false);
           }
         });
 
       return () => {
-        isMounted = false;
+        controller.abort();
       };
     }
-  }, [selectedPropertyNo, sheetData.slug]);
+  }, [debouncedPropertyNo, sheetData.slug]);
 
   // Filter rows using the Unicode / Devanagari normalized search engine
   const filteredRows = useMemo(() => {
@@ -401,30 +414,59 @@ export default function SheetViewerClient({ sheetData }: Props) {
           {sheetData.slug === "utara" && (
             <div className="space-y-6">
               {/* Selector / Search Property Input */}
-              <div className="no-print bg-[#F6F7F5] p-3 rounded-lg border border-[#E1E5E1] flex items-center gap-3">
-                <span className="text-xs font-semibold text-[#252A27]">
-                  🔍 मालमत्ता क्र. टाका :
-                </span>
-                <input
-                  type="text"
-                  value={selectedPropertyNo}
-                  onChange={(e) => setSelectedPropertyNo(e.target.value)}
-                  placeholder="उदा. 1, 2, 5A, 6B"
-                  className="bg-white border border-[#E1E5E1] rounded px-3 py-1 text-xs font-mono font-bold text-[#245C45] w-36 focus:outline-none focus:border-[#245C45]"
-                />
-                {isPropertyLoading && (
-                  <span className="text-xs text-[#245C45] flex items-center gap-1">
-                    <Loader2 className="w-3 h-3 animate-spin" /> शोधत आहे...
+              <div className="no-print bg-[#F6F7F5] p-3.5 rounded-lg border border-[#E1E5E1] space-y-2.5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-semibold text-[#252A27]">
+                    🔍 मालमत्ता क्र. किंवा नाव :
                   </span>
-                )}
-                {propertyLookupError && (
-                  <span className="text-xs text-rose-600 font-medium">
-                    ⚠️ {propertyLookupError}
+                  <input
+                    type="text"
+                    value={selectedPropertyNo}
+                    onChange={(e) => setSelectedPropertyNo(e.target.value)}
+                    placeholder="उदा. 1, 2, 5A, 6B, 7A, 15A"
+                    className="bg-white border border-[#E1E5E1] rounded px-3 py-1.5 text-xs font-mono font-bold text-[#245C45] w-44 focus:outline-none focus:border-[#245C45]"
+                  />
+                  {isPropertyLoading && (
+                    <span className="text-xs text-[#245C45] flex items-center gap-1 font-medium">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" /> शोधत आहे...
+                    </span>
+                  )}
+                  {propertyLookupError && (
+                    <span className="text-xs text-rose-600 font-medium">
+                      ⚠️ {propertyLookupError}
+                    </span>
+                  )}
+                  <span className="text-xs text-[#747C76] ml-auto hidden sm:block">
+                    (नमुना ८ मधील कोणत्याही मिळकतीचा खरा डेटा लगेच भरला जातो)
                   </span>
-                )}
-                <span className="text-xs text-[#747C76] ml-auto">
-                  (नमुना ८ मधील कोणत्याही मिळकतीचा खरा डेटा लगेच भरला जातो)
-                </span>
+                </div>
+
+                {/* Quick Taxpayer Badges */}
+                <div className="flex flex-wrap items-center gap-1.5 text-xs pt-1 border-t border-[#E1E5E1]">
+                  <span className="text-[11px] font-semibold text-[#747C76] mr-1">त्वरित निवडा:</span>
+                  {[
+                    { no: "1", label: "१ (प्रल्हाद हाडे)" },
+                    { no: "2", label: "२ (अशोक काठोळे)" },
+                    { no: "3", label: "३ (सुदाम हाडे)" },
+                    { no: "4", label: "४ (सौ रेखा हाडे)" },
+                    { no: "5A", label: "५A (सुभाष हाडे)" },
+                    { no: "6B", label: "६B (ऋषिकेश हाडे)" },
+                    { no: "9", label: "९ (मुरलीधर हाडे)" },
+                  ].map((item) => (
+                    <button
+                      key={item.no}
+                      type="button"
+                      onClick={() => setSelectedPropertyNo(item.no)}
+                      className={`px-2 py-0.5 rounded text-[11px] font-medium border transition-colors ${
+                        selectedPropertyNo === item.no
+                          ? "bg-[#245C45] text-white border-[#245C45]"
+                          : "bg-white text-[#252A27] border-[#E1E5E1] hover:bg-[#EAF1EC]"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Printable Namuna 8 Extract Sheet */}
@@ -567,27 +609,59 @@ export default function SheetViewerClient({ sheetData }: Props) {
           {/* 2. MAGANI BILL */}
           {sheetData.slug === "magani-bill" && (
             <div className="space-y-6">
-              <div className="no-print bg-[#F6F7F5] p-3 rounded-lg border border-[#E1E5E1] flex items-center gap-3">
-                <span className="text-xs font-semibold text-[#252A27]">
-                  🔍 मिळकत क्र. बदला :
-                </span>
-                <input
-                  type="text"
-                  value={selectedPropertyNo}
-                  onChange={(e) => setSelectedPropertyNo(e.target.value)}
-                  placeholder="उदा. 6B"
-                  className="bg-white border border-[#E1E5E1] rounded px-3 py-1 text-xs font-mono font-bold text-[#245C45] w-28 focus:outline-none focus:border-[#245C45]"
-                />
-                {isPropertyLoading && (
-                  <span className="text-xs text-[#245C45] flex items-center gap-1">
-                    <Loader2 className="w-3 h-3 animate-spin" /> शोधत आहे...
+              <div className="no-print bg-[#F6F7F5] p-3.5 rounded-lg border border-[#E1E5E1] space-y-2.5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-xs font-semibold text-[#252A27]">
+                    🔍 मिळकत क्र. किंवा नाव :
                   </span>
-                )}
-                {propertyLookupError && (
-                  <span className="text-xs text-rose-600 font-medium">
-                    ⚠️ {propertyLookupError}
+                  <input
+                    type="text"
+                    value={selectedPropertyNo}
+                    onChange={(e) => setSelectedPropertyNo(e.target.value)}
+                    placeholder="उदा. 1, 2, 5A, 6B, 7A, 15A"
+                    className="bg-white border border-[#E1E5E1] rounded px-3 py-1.5 text-xs font-mono font-bold text-[#245C45] w-44 focus:outline-none focus:border-[#245C45]"
+                  />
+                  {isPropertyLoading && (
+                    <span className="text-xs text-[#245C45] flex items-center gap-1 font-medium">
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" /> शोधत आहे...
+                    </span>
+                  )}
+                  {propertyLookupError && (
+                    <span className="text-xs text-rose-600 font-medium">
+                      ⚠️ {propertyLookupError}
+                    </span>
+                  )}
+                  <span className="text-xs text-[#747C76] ml-auto hidden sm:block">
+                    (नमुना ९ कर मागणी नोंदवहीतून थेट बिल जनरेट होते)
                   </span>
-                )}
+                </div>
+
+                {/* Quick Taxpayer Badges */}
+                <div className="flex flex-wrap items-center gap-1.5 text-xs pt-1 border-t border-[#E1E5E1]">
+                  <span className="text-[11px] font-semibold text-[#747C76] mr-1">त्वरित निवडा:</span>
+                  {[
+                    { no: "1", label: "१ (प्रल्हाद हाडे)" },
+                    { no: "2", label: "२ (अशोक काठोळे)" },
+                    { no: "3", label: "३ (सुदाम हाडे)" },
+                    { no: "4", label: "४ (सौ रेखा हाडे)" },
+                    { no: "5A", label: "५A (सुभाष हाडे)" },
+                    { no: "6B", label: "६B (ऋषिकेश हाडे)" },
+                    { no: "9", label: "९ (मुरलीधर हाडे)" },
+                  ].map((item) => (
+                    <button
+                      key={item.no}
+                      type="button"
+                      onClick={() => setSelectedPropertyNo(item.no)}
+                      className={`px-2 py-0.5 rounded text-[11px] font-medium border transition-colors ${
+                        selectedPropertyNo === item.no
+                          ? "bg-[#245C45] text-white border-[#245C45]"
+                          : "bg-white text-[#252A27] border-[#E1E5E1] hover:bg-[#EAF1EC]"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Printable Demand Bill */}
@@ -1323,7 +1397,7 @@ export default function SheetViewerClient({ sheetData }: Props) {
                 <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#747C76]" />
                 <input
                   type="text"
-                  placeholder="नोंद, नाव, मिळकत क्र. किंवा मूल्य शोधा..."
+                  placeholder="नोंद, नाव, मिळकत क्र. (उदा. 7A, 15A, 6B) किंवा मूल्य शोधा..."
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   className="w-full pl-8 pr-8 py-1.5 text-xs bg-white border border-[#E1E5E1] rounded focus:outline-none focus:border-[#245C45]"
@@ -1396,7 +1470,11 @@ export default function SheetViewerClient({ sheetData }: Props) {
                       className="py-12 text-center text-[#747C76]"
                     >
                       <div className="space-y-2">
-                        <p className="font-medium text-sm">कोणतीही नोंद सापडली नाही.</p>
+                        <p className="font-medium text-sm">
+                          {debouncedSearch
+                            ? `"${debouncedSearch}" साठी कोणतीही नोंद सापडली नाही.`
+                            : "कोणतीही नोंद सापडली नाही."}
+                        </p>
                         {debouncedSearch && (
                           <button
                             onClick={() => setSearchInput("")}
