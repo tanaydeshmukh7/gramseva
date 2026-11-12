@@ -255,16 +255,16 @@ export default function SyncPage() {
       </div>
 
       {/* Top Header */}
-      <div className="bg-white border border-[#E1E5E1] rounded-lg p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs">
+      <div className="bg-white border border-[#E6EAE5] rounded-xl p-5 sm:p-6 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-xs">
         <div>
           <div className="flex items-center gap-2 text-xs font-semibold text-[#245C45] uppercase tracking-wider mb-1">
             <span className="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse" />
             <span>गुगल शीट्स द्वि-मार्गी सिंक्रोनायझेशन केंद्र</span>
           </div>
-          <h2 className="text-xl font-bold text-[#252A27]">
+          <h2 className="text-xl sm:text-2xl font-bold text-[#202923]">
             Google Sheets Real-Time Bidirectional Sync
           </h2>
-          <p className="text-xs text-[#747C76] mt-0.5">
+          <p className="text-xs text-[#68736C] mt-0.5">
             स्प्रेडशीट आणि Gramसेवा मधील डेटा सदैव एकसमान (Real-Time Synced) ठेवण्याची अधिकृत प्रणाली
           </p>
         </div>
@@ -273,7 +273,7 @@ export default function SyncPage() {
           <button
             onClick={handleTestWebhook}
             disabled={isTestingWebhook}
-            className="flex items-center gap-1.5 px-3 py-2 rounded bg-white border border-[#E1E5E1] text-[#252A27] hover:bg-[#F6F7F5] text-xs font-medium shadow-xs disabled:opacity-75"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-white border border-[#E6EAE5] text-[#202923] hover:bg-[#F7F8F5] text-xs font-medium shadow-2xs disabled:opacity-75 transition-colors"
           >
             <Radio className={`w-3.5 h-3.5 text-[#245C45] ${isTestingWebhook ? "animate-pulse" : ""}`} />
             <span>{isTestingWebhook ? "तपासणी..." : "वेबबुक चाचणी"}</span>
@@ -282,7 +282,7 @@ export default function SyncPage() {
           <button
             onClick={handleRunSync}
             disabled={isSyncing}
-            className="flex items-center gap-2 px-4 py-2 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-semibold shadow-xs disabled:opacity-75 shrink-0 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#245C45] text-white hover:bg-[#1D4B38] text-xs font-semibold shadow-xs disabled:opacity-75 shrink-0 transition-colors"
           >
             <RefreshCw className={`w-4 h-4 ${isSyncing ? "animate-spin" : ""}`} />
             <span>{isSyncing ? "डेटा सिंक होत आहे..." : "आत्ताच संपूर्ण सिंक करा (Sync Now)"}</span>

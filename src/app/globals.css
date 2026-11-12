@@ -5,17 +5,21 @@
     --primary: #245C45;
     --primary-foreground: #FFFFFF;
     --primary-light: #EAF1EC;
-    --primary-hover: #1b4534;
+    --primary-hover: #1D4B38;
     
-    --background: #F6F7F5;
+    --secondary: #3D795F;
+    --secondary-foreground: #FFFFFF;
+    --secondary-light: #F0F5F2;
+    
+    --background: #F7F8F5;
     --surface: #FFFFFF;
     --surface-secondary: #F0F2EF;
     
-    --text-main: #252A27;
-    --text-muted: #747C76;
+    --text-main: #202923;
+    --text-muted: #68736C;
     --text-light: #9DA39F;
     
-    --border: #E1E5E1;
+    --border: #E6EAE5;
     --border-light: #ECEFEA;
     --border-accent: #245C45;
     

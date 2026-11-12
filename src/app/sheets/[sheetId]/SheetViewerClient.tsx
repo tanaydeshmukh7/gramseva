@@ -323,11 +323,11 @@ export default function SheetViewerClient({ sheetData }: Props) {
   };
 
   return (
-    <div className="p-6 max-w-7xl mx-auto space-y-4">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-4">
       {/* Toast Notification */}
       {notification && (
         <div
-          className={`fixed top-16 right-6 z-50 px-4 py-2.5 rounded shadow-lg text-xs flex items-center gap-2 animate-in fade-in ${
+          className={`fixed top-16 right-6 z-50 px-4 py-2.5 rounded-lg shadow-lg text-xs flex items-center gap-2 animate-in fade-in ${
             notification.type === "success"
               ? "bg-[#245C45] text-white"
               : "bg-rose-700 text-white"
@@ -343,17 +343,17 @@ export default function SheetViewerClient({ sheetData }: Props) {
       )}
 
       {/* Top Header of Sheet */}
-      <div className="bg-white border border-[#E1E5E1] rounded-lg p-4 flex flex-col md:flex-row md:items-center justify-between gap-4 no-print shadow-xs">
+      <div className="bg-white border border-[#E6EAE5] rounded-xl p-4 sm:p-5 flex flex-col md:flex-row md:items-center justify-between gap-4 no-print shadow-xs">
         <div>
           <div className="flex items-center gap-2">
-            <span className="text-[11px] bg-[#EAF1EC] text-[#245C45] font-semibold px-2 py-0.5 rounded">
+            <span className="text-[11px] bg-[#EAF1EC] text-[#245C45] font-semibold px-2 py-0.5 rounded border border-[#245C45]/15">
               वर्कशीट #{sheetData.index} • {sheetData.category}
             </span>
           </div>
-          <h2 className="text-xl font-bold text-[#252A27] mt-1 flex items-center gap-2">
+          <h2 className="text-xl font-bold text-[#202923] mt-1 flex items-center gap-2">
             <span>{sheetData.name}</span>
           </h2>
-          <p className="text-xs text-[#747C76] mt-0.5">
+          <p className="text-xs text-[#68736C] mt-0.5">
             एकूण नोंदवही: <strong>{rowsState.length}</strong> ओळी •{" "}
             <strong>{sheetData.max_col}</strong> कॉलम्स
           </p>
@@ -362,23 +362,23 @@ export default function SheetViewerClient({ sheetData }: Props) {
         {/* View Switcher & Action Buttons */}
         <div className="flex items-center gap-2 flex-wrap">
           {isDocumentSheet && (
-            <div className="flex rounded-md bg-[#F6F7F5] p-1 border border-[#E1E5E1] text-xs">
+            <div className="flex rounded-lg bg-[#F7F8F5] p-1 border border-[#E6EAE5] text-xs">
               <button
                 onClick={() => setActiveTab("document")}
-                className={`px-3 py-1 rounded font-medium transition-colors ${
+                className={`px-3 py-1.5 rounded-md font-medium transition-colors ${
                   activeTab === "document"
-                    ? "bg-white text-[#245C45] font-semibold shadow-xs"
-                    : "text-[#747C76] hover:text-[#252A27]"
+                    ? "bg-white text-[#245C45] font-semibold shadow-2xs"
+                    : "text-[#68736C] hover:text-[#202923]"
                 }`}
               >
                 दस्तावेज / प्रिंट फॉरमॅट
               </button>
               <button
                 onClick={() => setActiveTab("table")}
-                className={`px-3 py-1 rounded font-medium transition-colors ${
+                className={`px-3 py-1.5 rounded-md font-medium transition-colors ${
                   activeTab === "table"
-                    ? "bg-white text-[#245C45] font-semibold shadow-xs"
-                    : "text-[#747C76] hover:text-[#252A27]"
+                    ? "bg-white text-[#245C45] font-semibold shadow-2xs"
+                    : "text-[#68736C] hover:text-[#202923]"
                 }`}
               >
                 स्प्रेडशीट तक्ता दृश्य
@@ -388,7 +388,7 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
           <button
             onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-white border border-[#E1E5E1] hover:bg-[#F6F7F5] text-xs font-medium text-[#252A27] shadow-xs"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#E6EAE5] hover:bg-[#F7F8F5] text-xs font-semibold text-[#202923] shadow-2xs transition-colors"
           >
             <Printer className="w-3.5 h-3.5 text-[#245C45]" />
             <span>प्रिंट / PDF (A4)</span>
@@ -399,7 +399,7 @@ export default function SheetViewerClient({ sheetData }: Props) {
               setNewRowValues({});
               setIsAddModalOpen(true);
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-[#245C45] text-white hover:bg-[#1b4534] text-xs font-medium shadow-xs"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#245C45] text-white hover:bg-[#1D4B38] text-xs font-semibold shadow-xs transition-colors"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>नवीन नोंद जोडा</span>
@@ -1389,23 +1389,23 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
       {/* SPREADSHEET TABLE GRID VIEW */}
       {activeTab === "table" && (
-        <div className="bg-white border border-[#E1E5E1] rounded-lg overflow-hidden shadow-xs">
+        <div className="bg-white border border-[#E6EAE5] rounded-xl overflow-hidden shadow-xs">
           {/* Controls Bar: Search & Pagination Selector */}
-          <div className="p-3 border-b border-[#E1E5E1] bg-[#F6F7F5] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="p-3.5 border-b border-[#E6EAE5] bg-[#F7F8F5] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="relative flex-1 max-w-md flex items-center gap-2">
               <div className="relative flex-1">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#747C76]" />
+                <Search className="w-3.5 h-3.5 absolute left-3 top-2.5 text-[#68736C]" />
                 <input
                   type="text"
                   placeholder="नोंद, नाव, मिळकत क्र. (उदा. 7A, 15A, 6B) किंवा मूल्य शोधा..."
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
-                  className="w-full pl-8 pr-8 py-1.5 text-xs bg-white border border-[#E1E5E1] rounded focus:outline-none focus:border-[#245C45]"
+                  className="w-full pl-8 pr-8 py-1.5 text-xs bg-white border border-[#E6EAE5] rounded-lg text-[#202923] placeholder-[#9DA39F] focus:outline-none focus:border-[#245C45] focus:ring-1 focus:ring-[#245C45]/20 transition-all"
                 />
                 {searchInput && (
                   <button
                     onClick={() => setSearchInput("")}
-                    className="absolute right-2.5 top-2 text-[#747C76] hover:text-[#252A27]"
+                    className="absolute right-2.5 top-2 text-[#68736C] hover:text-[#202923] transition-colors"
                     title="शोध क्लिअर करा"
                   >
                     <X className="w-3.5 h-3.5" />
@@ -1417,9 +1417,9 @@ export default function SheetViewerClient({ sheetData }: Props) {
               )}
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-[#747C76]">
+            <div className="flex items-center gap-2 text-xs text-[#68736C]">
               {debouncedSearch.trim() && (
-                <span className="font-semibold text-[#245C45] bg-[#EAF1EC] px-2 py-0.5 rounded text-[11px]">
+                <span className="font-semibold text-[#245C45] bg-[#EAF1EC] px-2.5 py-1 rounded-md text-[11px] border border-[#245C45]/15">
                   {filteredRows.length} नोंदी सापडल्या
                 </span>
               )}
@@ -1430,47 +1430,47 @@ export default function SheetViewerClient({ sheetData }: Props) {
                   setPageSize(Number(e.target.value));
                   setCurrentPage(1);
                 }}
-                className="bg-white border border-[#E1E5E1] rounded px-2 py-1 text-xs focus:outline-none"
+                className="bg-white border border-[#E6EAE5] rounded-md px-2.5 py-1 text-xs text-[#202923] focus:outline-none focus:border-[#245C45]"
               >
                 <option value={25}>२५ नोंदी</option>
                 <option value={50}>५० नोंदी</option>
                 <option value={100}>१०० नोंदी</option>
                 <option value={-1}>सर्व नोंदी</option>
               </select>
-              <span>(एकूण: {rowsState.length})</span>
+              <span className="text-[11px] text-[#9DA39F]">(एकूण: {rowsState.length})</span>
             </div>
           </div>
 
           {/* Table Container */}
           <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
             <table className="w-full text-left text-xs border-collapse">
-              <thead className="bg-[#F0F2EF] sticky top-0 z-10 border-b border-[#E1E5E1] text-[#252A27] font-semibold">
+              <thead className="bg-[#F7F8F5] sticky top-0 z-10 border-b border-[#E6EAE5] text-[#202923] font-semibold">
                 <tr>
-                  <th className="py-2 px-3 border-r border-[#E1E5E1] w-14 text-center">
+                  <th className="py-2.5 px-3 border-r border-[#E6EAE5] w-14 text-center">
                     ओळ
                   </th>
                   {colHeaders.map((col) => (
                     <th
                       key={col.col}
-                      className="py-2 px-3 border-r border-[#E1E5E1] whitespace-nowrap min-w-[120px]"
+                      className="py-2.5 px-3 border-r border-[#E6EAE5] whitespace-nowrap min-w-[120px]"
                     >
                       {col.label}
                     </th>
                   ))}
-                  <th className="py-2 px-3 text-center w-20 sticky right-0 bg-[#F0F2EF]">
+                  <th className="py-2.5 px-3 text-center w-20 sticky right-0 bg-[#F7F8F5] border-l border-[#E6EAE5]">
                     कृती
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#E1E5E1]">
+              <tbody className="divide-y divide-[#E6EAE5]">
                 {paginatedRows.length === 0 ? (
                   <tr>
                     <td
                       colSpan={colHeaders.length + 2}
-                      className="py-12 text-center text-[#747C76]"
+                      className="py-12 text-center text-[#68736C]"
                     >
                       <div className="space-y-2">
-                        <p className="font-medium text-sm">
+                        <p className="font-medium text-sm text-[#202923]">
                           {debouncedSearch
                             ? `"${debouncedSearch}" साठी कोणतीही नोंद सापडली नाही.`
                             : "कोणतीही नोंद सापडली नाही."}
@@ -1478,7 +1478,7 @@ export default function SheetViewerClient({ sheetData }: Props) {
                         {debouncedSearch && (
                           <button
                             onClick={() => setSearchInput("")}
-                            className="px-3 py-1 bg-[#EAF1EC] text-[#245C45] rounded text-xs font-semibold hover:bg-[#d8e7dc]"
+                            className="px-3.5 py-1.5 bg-[#EAF1EC] text-[#245C45] rounded-md text-xs font-semibold hover:bg-[#d8e7dc] transition-colors"
                           >
                             शोध क्लिअर करा आणि सर्व नोंदी पहा
                           </button>
@@ -1490,9 +1490,9 @@ export default function SheetViewerClient({ sheetData }: Props) {
                   paginatedRows.map((row) => (
                     <tr
                       key={row.row_index}
-                      className="hover:bg-[#F6F7F5] transition-colors group"
+                      className="hover:bg-[#F7F8F5] transition-colors group"
                     >
-                      <td className="py-1.5 px-3 border-r border-[#E1E5E1] text-center font-mono text-[11px] text-[#747C76] bg-[#FAFBFA]">
+                      <td className="py-2 px-3 border-r border-[#E6EAE5] text-center font-mono text-[11px] text-[#68736C] bg-white group-hover:bg-[#F7F8F5]">
                         {row.row_index}
                       </td>
                       {colHeaders.map((col) => {
@@ -1502,7 +1502,7 @@ export default function SheetViewerClient({ sheetData }: Props) {
                         return (
                           <td
                             key={col.col}
-                            className="py-1.5 px-3 border-r border-[#E1E5E1] whitespace-nowrap font-sans text-[12px] text-[#252A27]"
+                            className="py-2 px-3 border-r border-[#E6EAE5] whitespace-nowrap font-sans text-[12px] text-[#202923]"
                             title={
                               hasFormula
                                 ? `सूत्र: ${cell.formula}`
@@ -1523,18 +1523,18 @@ export default function SheetViewerClient({ sheetData }: Props) {
                           </td>
                         );
                       })}
-                      <td className="py-1.5 px-3 text-center sticky right-0 bg-white group-hover:bg-[#F6F7F5]">
+                      <td className="py-2 px-3 text-center sticky right-0 bg-white group-hover:bg-[#F7F8F5] border-l border-[#E6EAE5]">
                         <div className="flex items-center justify-center gap-1">
                           <button
                             onClick={() => setEditingRow(row)}
-                            className="p-1 text-[#747C76] hover:text-[#245C45] rounded"
+                            className="p-1 text-[#68736C] hover:text-[#245C45] hover:bg-[#EAF1EC] rounded transition-colors"
                             title="संपादित करा"
                           >
                             <Edit2 className="w-3.5 h-3.5" />
                           </button>
                           <button
                             onClick={() => setDeleteConfirmRowIndex(row.row_index)}
-                            className="p-1 text-[#747C76] hover:text-rose-600 rounded"
+                            className="p-1 text-[#68736C] hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
                             title="हटवा"
                           >
                             <Trash2 className="w-3.5 h-3.5" />
@@ -1550,22 +1550,23 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
           {/* Pagination Controls */}
           {pageSize !== -1 && totalPages > 1 && (
-            <div className="p-3 border-t border-[#E1E5E1] bg-white flex items-center justify-between text-xs text-[#747C76]">
+            <div className="p-3.5 border-t border-[#E6EAE5] bg-white flex items-center justify-between text-xs text-[#68736C]">
               <span>
-                पान <strong>{currentPage}</strong> पैकी <strong>{totalPages}</strong>
+                पान <strong className="text-[#202923]">{currentPage}</strong> पैकी{" "}
+                <strong className="text-[#202923]">{totalPages}</strong>
               </span>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-1.5">
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="px-2.5 py-1 rounded border border-[#E1E5E1] hover:bg-[#F6F7F5] disabled:opacity-40"
+                  className="px-3 py-1.5 rounded-md border border-[#E6EAE5] hover:bg-[#F7F8F5] text-[#202923] disabled:opacity-40 transition-colors"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="px-2.5 py-1 rounded border border-[#E1E5E1] hover:bg-[#F6F7F5] disabled:opacity-40"
+                  className="px-3 py-1.5 rounded-md border border-[#E6EAE5] hover:bg-[#F7F8F5] text-[#202923] disabled:opacity-40 transition-colors"
                 >
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
@@ -1577,27 +1578,27 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
       {/* COMPLETE EDIT ROW MODAL (All Columns Supported) */}
       {editingRow && (
-        <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg border border-[#E1E5E1] max-w-3xl w-full p-5 space-y-4 max-h-[90vh] flex flex-col shadow-xl">
-            <div className="flex items-center justify-between border-b border-[#E1E5E1] pb-3">
-              <h3 className="text-sm font-bold text-[#252A27]">
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
+          <div className="bg-white rounded-xl border border-[#E6EAE5] max-w-3xl w-full p-5 sm:p-6 space-y-4 max-h-[90vh] flex flex-col shadow-2xl">
+            <div className="flex items-center justify-between border-b border-[#E6EAE5] pb-3.5">
+              <h3 className="text-sm font-bold text-[#202923]">
                 नोंद संपादित करा (ओळ #{editingRow.row_index} • {sheetData.name})
               </h3>
               <button
                 onClick={() => setEditingRow(null)}
-                className="text-[#747C76] hover:text-[#252A27]"
+                className="p-1 rounded-md text-[#68736C] hover:bg-[#F7F8F5] hover:text-[#202923] transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <form onSubmit={handleSaveEdit} className="flex-1 overflow-y-auto space-y-3 pr-2">
+            <form onSubmit={handleSaveEdit} className="flex-1 overflow-y-auto space-y-3.5 pr-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {colHeaders.map((col) => {
                   const cell = editingRow.cells.find((c) => c.col === col.col);
                   return (
                     <div key={col.col} className="space-y-1">
-                      <label className="text-[11px] font-semibold text-[#747C76] block truncate" title={col.label}>
+                      <label className="text-[11px] font-semibold text-[#68736C] block truncate" title={col.label}>
                         {col.label} {cell?.is_formula && "(=सूत्र)"}
                       </label>
                       <input
@@ -1620,25 +1621,25 @@ export default function SheetViewerClient({ sheetData }: Props) {
                           }
                           setEditingRow({ ...editingRow, cells: updatedCells });
                         }}
-                        className="w-full px-2.5 py-1.5 border border-[#E1E5E1] rounded text-xs focus:outline-none focus:border-[#245C45]"
+                        className="w-full px-3 py-1.5 border border-[#E6EAE5] rounded-lg text-xs text-[#202923] focus:outline-none focus:border-[#245C45] focus:ring-1 focus:ring-[#245C45]/20"
                       />
                     </div>
                   );
                 })}
               </div>
 
-              <div className="pt-4 border-t border-[#E1E5E1] flex justify-end gap-2">
+              <div className="pt-4 border-t border-[#E6EAE5] flex justify-end gap-2.5">
                 <button
                   type="button"
                   onClick={() => setEditingRow(null)}
-                  className="px-3 py-1.5 rounded border border-[#E1E5E1] text-xs font-medium text-[#747C76] hover:bg-[#F6F7F5]"
+                  className="px-3.5 py-1.5 rounded-lg border border-[#E6EAE5] text-xs font-semibold text-[#68736C] hover:bg-[#F7F8F5] transition-colors"
                 >
                   रद्द करा
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-4 py-1.5 rounded bg-[#245C45] text-white text-xs font-medium hover:bg-[#1b4534] disabled:opacity-75 flex items-center gap-1.5"
+                  className="px-4 py-1.5 rounded-lg bg-[#245C45] text-white text-xs font-semibold hover:bg-[#1D4B38] disabled:opacity-75 flex items-center gap-1.5 shadow-xs transition-colors"
                 >
                   {isSaving && <Loader2 className="w-3 h-3 animate-spin" />}
                   <span>बदल जतन करा (Save)</span>
@@ -1651,25 +1652,25 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
       {/* WORKING ADD RECORD MODAL */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg border border-[#E1E5E1] max-w-3xl w-full p-5 space-y-4 max-h-[90vh] flex flex-col shadow-xl">
-            <div className="flex items-center justify-between border-b border-[#E1E5E1] pb-3">
-              <h3 className="text-sm font-bold text-[#252A27]">
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
+          <div className="bg-white rounded-xl border border-[#E6EAE5] max-w-3xl w-full p-5 sm:p-6 space-y-4 max-h-[90vh] flex flex-col shadow-2xl">
+            <div className="flex items-center justify-between border-b border-[#E6EAE5] pb-3.5">
+              <h3 className="text-sm font-bold text-[#202923]">
                 नवीन नोंद जोडा ({sheetData.name})
               </h3>
               <button
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-[#747C76] hover:text-[#252A27]"
+                className="p-1 rounded-md text-[#68736C] hover:bg-[#F7F8F5] hover:text-[#202923] transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
 
-            <form onSubmit={handleSaveAdd} className="flex-1 overflow-y-auto space-y-3 pr-2">
+            <form onSubmit={handleSaveAdd} className="flex-1 overflow-y-auto space-y-3.5 pr-2">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                 {colHeaders.map((col) => (
                   <div key={col.col} className="space-y-1">
-                    <label className="text-[11px] font-semibold text-[#747C76] block truncate" title={col.label}>
+                    <label className="text-[11px] font-semibold text-[#68736C] block truncate" title={col.label}>
                       {col.label}
                     </label>
                     <input
@@ -1679,24 +1680,24 @@ export default function SheetViewerClient({ sheetData }: Props) {
                       onChange={(e) =>
                         setNewRowValues({ ...newRowValues, [col.col]: e.target.value })
                       }
-                      className="w-full px-2.5 py-1.5 border border-[#E1E5E1] rounded text-xs focus:outline-none focus:border-[#245C45]"
+                      className="w-full px-3 py-1.5 border border-[#E6EAE5] rounded-lg text-xs text-[#202923] placeholder-[#9DA39F] focus:outline-none focus:border-[#245C45] focus:ring-1 focus:ring-[#245C45]/20"
                     />
                   </div>
                 ))}
               </div>
 
-              <div className="pt-4 border-t border-[#E1E5E1] flex justify-end gap-2">
+              <div className="pt-4 border-t border-[#E6EAE5] flex justify-end gap-2.5">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-3 py-1.5 rounded border border-[#E1E5E1] text-xs font-medium text-[#747C76] hover:bg-[#F6F7F5]"
+                  className="px-3.5 py-1.5 rounded-lg border border-[#E6EAE5] text-xs font-semibold text-[#68736C] hover:bg-[#F7F8F5] transition-colors"
                 >
                   रद्द करा
                 </button>
                 <button
                   type="submit"
                   disabled={isSaving}
-                  className="px-4 py-1.5 rounded bg-[#245C45] text-white text-xs font-medium hover:bg-[#1b4534] disabled:opacity-75 flex items-center gap-1.5"
+                  className="px-4 py-1.5 rounded-lg bg-[#245C45] text-white text-xs font-semibold hover:bg-[#1D4B38] disabled:opacity-75 flex items-center gap-1.5 shadow-xs transition-colors"
                 >
                   {isSaving && <Loader2 className="w-3 h-3 animate-spin" />}
                   <span>नोंद जतन करा (Add Record)</span>
@@ -1709,24 +1710,24 @@ export default function SheetViewerClient({ sheetData }: Props) {
 
       {/* DELETE CONFIRMATION MODAL */}
       {deleteConfirmRowIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg border border-[#E1E5E1] max-w-sm w-full p-5 space-y-3 shadow-xl">
-            <h3 className="text-sm font-bold text-[#252A27]">नोंद हटवण्याची पुष्टी करा</h3>
-            <p className="text-xs text-[#747C76]">
+        <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in duration-150">
+          <div className="bg-white rounded-xl border border-[#E6EAE5] max-w-sm w-full p-5 space-y-3.5 shadow-2xl">
+            <h3 className="text-sm font-bold text-[#202923]">नोंद हटवण्याची पुष्टी करा</h3>
+            <p className="text-xs text-[#68736C] leading-relaxed">
               तुम्हाला ओळ <strong>#{deleteConfirmRowIndex}</strong> कायमस्वरूपी हटवायची आहे का?
               हा बदल डेटाबेसमध्ये जतन होईल.
             </p>
-            <div className="pt-2 flex justify-end gap-2">
+            <div className="pt-2 flex justify-end gap-2.5">
               <button
                 onClick={() => setDeleteConfirmRowIndex(null)}
-                className="px-3 py-1.5 rounded border border-[#E1E5E1] text-xs font-medium text-[#747C76] hover:bg-[#F6F7F5]"
+                className="px-3.5 py-1.5 rounded-lg border border-[#E6EAE5] text-xs font-semibold text-[#68736C] hover:bg-[#F7F8F5] transition-colors"
               >
                 रद्द करा
               </button>
               <button
                 onClick={() => handleDelete(deleteConfirmRowIndex)}
                 disabled={isSaving}
-                className="px-3.5 py-1.5 rounded bg-rose-600 text-white text-xs font-medium hover:bg-rose-700 disabled:opacity-75 flex items-center gap-1"
+                className="px-4 py-1.5 rounded-lg bg-rose-600 text-white text-xs font-semibold hover:bg-rose-700 disabled:opacity-75 flex items-center gap-1 shadow-xs transition-colors"
               >
                 {isSaving && <Loader2 className="w-3 h-3 animate-spin" />}
                 <span>होय, हटवा</span>
