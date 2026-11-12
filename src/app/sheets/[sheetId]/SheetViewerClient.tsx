@@ -25,6 +25,7 @@ import {
   Loader2,
   AlertCircle,
   RefreshCw,
+  Eye,
 } from "lucide-react";
 import { SheetData, SheetRow } from "@/lib/types";
 import { normalizeSearchString, searchRows } from "@/lib/searchUtils";
@@ -59,10 +60,32 @@ export default function SheetViewerClient({ sheetData }: Props) {
   const [notification, setNotification] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   // Document Generator Lookup State
-  const [selectedPropertyNo, setSelectedPropertyNo] = useState("6B");
+  const [selectedPropertyNo, setSelectedPropertyNo] = useState(
+    sheetData.slug === "namuna-10-pavati" ? "1" : "6B"
+  );
   const [propertyData, setPropertyData] = useState<any>(null);
   const [isPropertyLoading, setIsPropertyLoading] = useState(false);
   const [propertyLookupError, setPropertyLookupError] = useState<string | null>(null);
+
+  // Namuna 10 Pavati Specific State
+  const [n10ReceiptDate, setN10ReceiptDate] = useState<string>("10/11/2026 09:04 AM");
+  const [n10ReceiptNo, setN10ReceiptNo] = useState<string>("");
+  const [n10PaymentMode, setN10PaymentMode] = useState<string>("रोख (Cash) / ऑनलाइन");
+  const [n10IsPrintPreview, setN10IsPrintPreview] = useState<boolean>(false);
+
+  useEffect(() => {
+    const d = new Date();
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    let hours = d.getHours();
+    const minutes = String(d.getMinutes()).padStart(2, "0");
+    const ampm = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const strHours = String(hours).padStart(2, "0");
+    setN10ReceiptDate(`${day}/${month}/${year} ${strHours}:${minutes} ${ampm}`);
+  }, []);
 
   // Namuna 7 Specific State
   const [namuna7Data, setNamuna7Data] = useState({
@@ -697,135 +720,331 @@ export default function SheetViewerClient({ sheetData }: Props) {
           )}
 
           {/* 3. NAMUNA 10 PAVATI */}
-          {sheetData.slug === "namuna-10-pavati" && (
-            <div className="space-y-6">
-              <div className="no-print bg-[#F6F7F5] p-3 rounded-lg border border-[#E1E5E1] flex items-center gap-3">
-                <span className="text-xs font-semibold text-[#252A27]">
-                  🔍 मिळकत क्र. टाका :
-                </span>
-                <input
-                  type="text"
-                  value={selectedPropertyNo}
-                  onChange={(e) => setSelectedPropertyNo(e.target.value)}
-                  placeholder="उदा. 6B"
-                  className="bg-white border border-[#E1E5E1] rounded px-3 py-1 text-xs font-mono font-bold text-[#245C45] w-28 focus:outline-none focus:border-[#245C45]"
-                />
-                {isPropertyLoading && (
-                  <span className="text-xs text-[#245C45] flex items-center gap-1">
-                    <Loader2 className="w-3 h-3 animate-spin" /> शोधत आहे...
-                  </span>
-                )}
-              </div>
+          {sheetData.slug === "namuna-10-pavati" && (() => {
+            const effectiveReceiptNo = n10ReceiptNo.trim() || propertyData?.property_no || selectedPropertyNo || "1";
+            const effectiveReceiptDate = n10ReceiptDate || "10/11/2026 09:04 AM";
+            const taxpayerName = propertyData?.owner_name || (isPropertyLoading ? "माहिती शोधत आहे..." : "प्रल्हाद गोविंदा हाडे");
+            const propNo = propertyData?.property_no || selectedPropertyNo || "1";
 
-              {/* Receipt Body */}
-              <div className="border-2 border-[#252A27] p-6 space-y-4 bg-white text-[#252A27]">
-                <div className="text-center border-b border-[#252A27] pb-3 space-y-1">
-                  <h3 className="text-base font-bold">ग्रामपंचायत कार्यालय, गोहगाव</h3>
-                  <p className="text-xs font-semibold">
-                    नमुना १० (नियम २२ (१२) पहा) - कर व फी वसुली पावती
+            const houseArrears = propertyData?.house_tax_arrears ?? 0;
+            const houseCurrent = propertyData?.house_tax_current ?? 33;
+            const houseTotal = propertyData?.house_tax_total ?? (houseArrears + houseCurrent);
+
+            const lightArrears = propertyData?.light_tax_arrears ?? 0;
+            const lightCurrent = propertyData?.light_tax_current ?? 30;
+            const lightTotal = propertyData?.light_tax_total ?? (lightArrears + lightCurrent);
+
+            const healthArrears = propertyData?.health_tax_arrears ?? 0;
+            const healthCurrent = propertyData?.health_tax_current ?? 30;
+            const healthTotal = propertyData?.health_tax_total ?? (healthArrears + healthCurrent);
+
+            const waterArrears = propertyData?.water_tax_arrears ?? 0;
+            const waterCurrent = propertyData?.water_tax_current ?? 0;
+            const waterTotal = propertyData?.water_tax_total ?? (waterArrears + waterCurrent);
+
+            const totalArrears = propertyData?.total_arrears ?? (houseArrears + lightArrears + healthArrears + waterArrears);
+            const totalCurrent = propertyData?.total_current ?? (houseCurrent + lightCurrent + healthCurrent + waterCurrent);
+            const grandTotal = propertyData?.grand_total ?? (houseTotal + lightTotal + healthTotal + waterTotal);
+
+            const renderReceiptCopy = (copyType: "मूळ प्रत" | "कार्यालयीन प्रत (OC)") => (
+              <div className="border-2 border-black p-3.5 space-y-2 bg-white text-black text-[11px] leading-tight select-text rounded-xs">
+                {/* 1. Header */}
+                <div className="text-center border-b border-black pb-2 space-y-0.5">
+                  <h3 className="text-base font-bold tracking-wide">ग्रामपंचायत कार्यालय, गोहगाव</h3>
+                  <p className="text-[11px] font-semibold text-neutral-900">
+                    नमुना १० (नियम २२ (१२) पहा) - कर व फी वसुली पावती [ {copyType} ]
                   </p>
-                  <p className="text-xs">आर्थिक वर्ष : २०२६ - २०२७</p>
+                  <p className="text-[10px] text-neutral-700">आर्थिक वर्ष : २०२६ - २०२७</p>
                 </div>
 
-                <div className="flex justify-between text-xs font-medium border-b border-[#E1E5E1] pb-2">
-                  <div>
+                {/* 2. Metadata 2x2 Grid */}
+                <div className="flex justify-between items-start text-[11px] border-b border-black pb-1.5 px-0.5">
+                  <div className="space-y-0.5">
                     <p>
-                      पावती क्रमांक : <strong>पा-{propertyData?.property_no || selectedPropertyNo}</strong>
+                      पावती क्रमांक : <strong className="font-mono">{effectiveReceiptNo}</strong>
                     </p>
-                    <p className="mt-1">
-                      करदात्याचे नाव : <strong>{propertyData?.owner_name || "शोधत आहे..."}</strong>
+                    <p>
+                      करदात्याचे नाव : <strong>{taxpayerName}</strong>
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-right space-y-0.5">
                     <p>
-                      पावती दिनांक : <strong>१०/११/२०२६</strong>
+                      पावती दिनांक : <strong>{effectiveReceiptDate}</strong>
                     </p>
-                    <p className="mt-1">
-                      मिळकत क्रमांक : <strong>{propertyData?.property_no || selectedPropertyNo}</strong>
+                    <p>
+                      मिळकत क्रमांक : <strong className="font-mono">{propNo}</strong>
                     </p>
                   </div>
                 </div>
 
-                <table className="w-full border-collapse border border-[#252A27] text-xs">
-                  <thead className="bg-[#F6F7F5] border-b border-[#252A27]">
-                    <tr>
-                      <th className="p-2 border-r border-[#252A27] w-12 text-center">अ.क्र.</th>
-                      <th className="p-2 border-r border-[#252A27] text-left">कराचा तपशील</th>
-                      <th className="p-2 border-r border-[#252A27] text-right">देय कर (₹)</th>
-                      <th className="p-2 text-right">वसूल रक्कम (₹)</th>
+                {/* 3. Statutory 6-Column Tax Table */}
+                <table className="w-full border-collapse border border-black text-[10.5px]">
+                  <thead>
+                    <tr className="bg-[#F6F7F5] border-b border-black font-bold">
+                      <th className="p-1 border-r border-black w-10 text-center">अ.क्र.</th>
+                      <th className="p-1 border-r border-black text-left">कराचा तपशील / बाबी</th>
+                      <th className="p-1 border-r border-black text-right w-24">मागील थकीत (₹)</th>
+                      <th className="p-1 border-r border-black text-right w-24">चालू मागणी (₹)</th>
+                      <th className="p-1 border-r border-black text-right w-24">एकूण देय कर (₹)</th>
+                      <th className="p-1 text-right w-24">वसूल रक्कम (₹)</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-[#E1E5E1]">
-                      <td className="p-2 text-center border-r border-[#252A27]">१</td>
-                      <td className="p-2 border-r border-[#252A27]">इमारत व जमीन कर (घरकर)</td>
-                      <td className="p-2 text-right border-r border-[#252A27] font-mono">
-                        {propertyData?.house_tax_total || 0}
-                      </td>
-                      <td className="p-2 text-right font-mono font-bold">
-                        {propertyData?.house_tax_total || 0}
-                      </td>
+                    <tr className="border-b border-black">
+                      <td className="p-1 text-center border-r border-black font-mono">1</td>
+                      <td className="p-1 border-r border-black">इमारत व जमीन कर (घरकर)</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{houseArrears}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{houseCurrent}</td>
+                      <td className="p-1 text-right border-r border-black font-mono font-medium">{houseTotal}</td>
+                      <td className="p-1 text-right font-mono font-bold">{houseTotal}</td>
                     </tr>
-                    <tr className="border-b border-[#E1E5E1]">
-                      <td className="p-2 text-center border-r border-[#252A27]">२</td>
-                      <td className="p-2 border-r border-[#252A27]">दिवाबत्ती कर (दिवाकर)</td>
-                      <td className="p-2 text-right border-r border-[#252A27] font-mono">
-                        {propertyData?.light_tax_total || 30}
-                      </td>
-                      <td className="p-2 text-right font-mono font-bold">
-                        {propertyData?.light_tax_total || 30}
-                      </td>
+                    <tr className="border-b border-black">
+                      <td className="p-1 text-center border-r border-black font-mono">2</td>
+                      <td className="p-1 border-r border-black">दिवाबत्ती कर (दिवाकर)</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{lightArrears}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{lightCurrent}</td>
+                      <td className="p-1 text-right border-r border-black font-mono font-medium">{lightTotal}</td>
+                      <td className="p-1 text-right font-mono font-bold">{lightTotal}</td>
                     </tr>
-                    <tr className="border-b border-[#E1E5E1]">
-                      <td className="p-2 text-center border-r border-[#252A27]">३</td>
-                      <td className="p-2 border-r border-[#252A27]">आरोग्य कर (सफाई कर)</td>
-                      <td className="p-2 text-right border-r border-[#252A27] font-mono">
-                        {propertyData?.health_tax_total || 30}
-                      </td>
-                      <td className="p-2 text-right font-mono font-bold">
-                        {propertyData?.health_tax_total || 30}
-                      </td>
+                    <tr className="border-b border-black">
+                      <td className="p-1 text-center border-r border-black font-mono">3</td>
+                      <td className="p-1 border-r border-black">सामान्य आरोग्य कर (सफाई कर)</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{healthArrears}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{healthCurrent}</td>
+                      <td className="p-1 text-right border-r border-black font-mono font-medium">{healthTotal}</td>
+                      <td className="p-1 text-right font-mono font-bold">{healthTotal}</td>
                     </tr>
-                    <tr className="bg-[#F6F7F5] font-bold border-b border-[#252A27]">
-                      <td className="p-2 text-center border-r border-[#252A27]" colSpan={2}>
-                        एकूण वसूल रक्कम
-                      </td>
-                      <td className="p-2 text-right border-r border-[#252A27] font-mono">
-                        ₹{propertyData?.grand_total || 0}
-                      </td>
-                      <td className="p-2 text-right font-mono text-[#2E7D32] text-sm">
-                        ₹{propertyData?.grand_total || 0}/-
+                    <tr className="border-b border-black">
+                      <td className="p-1 text-center border-r border-black font-mono">4</td>
+                      <td className="p-1 border-r border-black">सामान्य पाणीपट्टी कर</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{waterArrears}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{waterCurrent}</td>
+                      <td className="p-1 text-right border-r border-black font-mono font-medium">{waterTotal}</td>
+                      <td className="p-1 text-right font-mono font-bold">{waterTotal}</td>
+                    </tr>
+                    <tr className="bg-[#F6F7F5] font-bold border-t border-black">
+                      <td className="p-1 text-center border-r border-black">एकूण</td>
+                      <td className="p-1 border-r border-black">एकूण देय व वसूल कर रक्कम</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{totalArrears}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{totalCurrent}</td>
+                      <td className="p-1 text-right border-r border-black font-mono">{grandTotal}</td>
+                      <td className="p-1 text-right font-mono text-emerald-800 print:text-black font-black text-xs">
+                        {grandTotal}
                       </td>
                     </tr>
                   </tbody>
                 </table>
 
-                <div className="flex justify-between items-center text-xs bg-[#F6F7F5] p-2.5 rounded border border-[#E1E5E1]">
-                  <span>
-                    <strong>अक्षरी :</strong> रुपये {propertyData?.grand_total || 0} /- फक्त
-                  </span>
-                  <span className="font-semibold text-[#2E7D32] bg-[#E8F5E9] px-2 py-0.5 rounded">
-                    पूर्ण भरणा (PAID)
-                  </span>
+                {/* 4. Post-Table Summary Lines */}
+                <div className="flex justify-between items-center text-[10.5px] border-b border-black pb-1 px-0.5">
+                  <div>
+                    अक्षरी रक्कम : <strong>रुपये {grandTotal} /- फक्त (Rupees {grandTotal} Only)</strong>
+                  </div>
+                  <div>
+                    भरणा प्रकार : <strong>{n10PaymentMode}</strong>
+                  </div>
                 </div>
 
-                <div className="pt-8 flex items-center justify-between text-xs font-semibold px-4">
-                  <div className="text-center">
-                    <p>कर वसुली लिपिक</p>
-                    <p className="text-[10px] text-[#747C76]">ग्रामपंचायत गोहगाव</p>
+                <div className="flex justify-between items-center text-[10px] border-b border-black pb-1 px-0.5">
+                  <div>
+                    शिल्लक बाकी : <strong className="font-mono">0</strong>
                   </div>
-                  <div className="text-center">
-                    <p>ग्रामसेवक / ग्रा.वि.अ.</p>
-                    <p className="text-[10px] text-[#747C76]">ग्रामपंचायत गोहगाव</p>
-                  </div>
-                  <div className="text-center">
-                    <p>सरपंच / उपसरपंच</p>
-                    <p className="text-[10px] text-[#747C76]">ग्रामपंचायत गोहगाव</p>
+                  <div className="flex items-center gap-1.5">
+                    <span>पावती स्थिती :</span>
+                    <span className="font-bold text-emerald-800 print:text-black">
+                      पूर्ण भरणा (PAID)
+                    </span>
                   </div>
                 </div>
+
+                {/* 5. Statutory Terms & Instructions */}
+                <div className="pt-0.5 space-y-0.5 text-[9px] text-neutral-800 print:text-black">
+                  <p className="font-bold">महत्त्वाच्या सूचना व अटी :</p>
+                  <p className="leading-tight">
+                    १. ही पावती अधिकृत संगणकीकृत पावती असून ग्रामपंचायत गोहगावच्या मागणी नोंदवहीशी (नमुना ९) थेट संलग्न आहे.
+                  </p>
+                  <p className="leading-tight">
+                    २. धनादेश / ऑनलाईन व्यवहाराच्या बाबतीत रक्कम ग्रामपंचायत बँक खात्यात जमा झाल्यावरच ही पावती वैध राहील.
+                  </p>
+                </div>
+
+                {/* 6. Three Signature Blocks */}
+                <div className="pt-3 pb-1 flex items-center justify-between text-[10px] font-semibold px-4 text-center">
+                  <div>
+                    <p>कर वसुली लिपिक</p>
+                    <p className="text-[9px] text-neutral-600 print:text-black font-normal">ग्रामपंचायत गोहगाव</p>
+                  </div>
+                  <div>
+                    <p>ग्रामसेवक / ग्रा.वि.अ.</p>
+                    <p className="text-[9px] text-neutral-600 print:text-black font-normal">ग्रामपंचायत गोहगाव</p>
+                  </div>
+                  <div>
+                    <p>सरपंच / उपसरपंच</p>
+                    <p className="text-[9px] text-neutral-600 print:text-black font-normal">ग्रामपंचायत गोहगाव</p>
+                  </div>
+                </div>
+
+                {/* 7. Footer */}
+                <div className="border-t border-dotted border-neutral-400 pt-0.5 text-center text-[8.5px] text-neutral-500 print:text-black">
+                  संगणकीकृत कर पावती - ग्रामपंचायत गोहगाव | स्वच्छ गाव, सुंदर गाव, समृद्ध गाव !
+                </div>
               </div>
-            </div>
-          )}
+            );
+
+            return (
+              <div className="space-y-6">
+                {/* Interactive Controls Bar (Hidden during printing) */}
+                <div className="no-print space-y-3 bg-[#F6F7F5] p-4 rounded-xl border border-[#E1E5E1]">
+                  {/* Row 1: Property input, lookup loader/error, Print Preview toggle & Print button */}
+                  <div className="flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-xs font-semibold text-[#252A27]">
+                        🔍 मिळकत क्र. किंवा करदाता नाव :
+                      </span>
+                      <input
+                        type="text"
+                        value={selectedPropertyNo}
+                        onChange={(e) => setSelectedPropertyNo(e.target.value)}
+                        placeholder="उदा. 1, 2, 5A, 6B..."
+                        className="bg-white border border-[#E1E5E1] rounded px-3 py-1.5 text-xs font-mono font-bold text-[#245C45] w-36 focus:outline-none focus:border-[#245C45] shadow-xs"
+                      />
+                      {isPropertyLoading && (
+                        <span className="text-xs text-[#245C45] flex items-center gap-1 font-medium">
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" /> शोधत आहे...
+                        </span>
+                      )}
+                      {propertyLookupError && (
+                        <span className="text-xs text-red-600 flex items-center gap-1 font-medium">
+                          <AlertCircle className="w-3.5 h-3.5" /> {propertyLookupError}
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        onClick={() => setN10IsPrintPreview(!n10IsPrintPreview)}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded border transition-colors ${
+                          n10IsPrintPreview
+                            ? "bg-[#245C45] text-white border-[#245C45]"
+                            : "bg-white text-[#245C45] border-[#E1E5E1] hover:bg-[#EAF1EC]"
+                        }`}
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>{n10IsPrintPreview ? "संवादी दृश्य (Interactive)" : "🖨️ A4 प्रिंट पूर्वावलोकन (Preview)"}</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={handlePrint}
+                        className="flex items-center gap-1.5 px-4 py-1.5 bg-[#245C45] text-white hover:bg-[#1b4534] rounded text-xs font-bold shadow-xs transition-colors"
+                      >
+                        <Printer className="w-3.5 h-3.5" />
+                        <span>पावती प्रिंट करा (Print A4 PDF)</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Row 2: Quick Taxpayer Badges */}
+                  <div className="flex flex-wrap items-center gap-1.5 text-xs">
+                    <span className="text-[11px] font-semibold text-[#747C76] mr-1">त्वरित निवडा (Quick Select):</span>
+                    {[
+                      { no: "1", label: "१ (प्रल्हाद हाडे - ₹९३)" },
+                      { no: "2", label: "२ (अशोक काठोळे - ₹४००)" },
+                      { no: "3", label: "३ (सुदाम हाडे - ₹२८९)" },
+                      { no: "4", label: "४ (सौ रेखा हाडे - ₹६४)" },
+                      { no: "5A", label: "५A (सुभाष हाडे - ₹२२६)" },
+                      { no: "6B", label: "६B (ऋषिकेश हाडे - ₹८७६)" },
+                      { no: "9", label: "९ (मुरलीधर हाडे - ₹२१३)" },
+                      { no: "10", label: "१० (सुदाम हाडे - ₹२२६)" },
+                    ].map((item) => (
+                      <button
+                        key={item.no}
+                        type="button"
+                        onClick={() => setSelectedPropertyNo(item.no)}
+                        className={`px-2 py-0.5 rounded text-[11px] font-medium border transition-colors ${
+                          selectedPropertyNo === item.no
+                            ? "bg-[#245C45] text-white border-[#245C45]"
+                            : "bg-white text-[#252A27] border-[#E1E5E1] hover:bg-[#EAF1EC] hover:border-[#245C45]"
+                        }`}
+                      >
+                        {item.label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Row 3: Editable Receipt Options */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-[#E1E5E1]">
+                    <div>
+                      <label className="text-[11px] font-semibold text-[#747C76] block mb-1">
+                        पावती दिनांक :
+                      </label>
+                      <input
+                        type="text"
+                        value={n10ReceiptDate}
+                        onChange={(e) => setN10ReceiptDate(e.target.value)}
+                        className="w-full bg-white border border-[#E1E5E1] rounded px-2.5 py-1 text-xs font-mono focus:outline-none focus:border-[#245C45]"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[11px] font-semibold text-[#747C76] block mb-1">
+                        पावती क्रमांक (ऐच्छिक) :
+                      </label>
+                      <input
+                        type="text"
+                        value={n10ReceiptNo}
+                        onChange={(e) => setN10ReceiptNo(e.target.value)}
+                        placeholder={`उदा. पा-${selectedPropertyNo}`}
+                        className="w-full bg-white border border-[#E1E5E1] rounded px-2.5 py-1 text-xs font-mono focus:outline-none focus:border-[#245C45]"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-[11px] font-semibold text-[#747C76] block mb-1">
+                        भरणा प्रकार :
+                      </label>
+                      <select
+                        value={n10PaymentMode}
+                        onChange={(e) => setN10PaymentMode(e.target.value)}
+                        className="w-full bg-white border border-[#E1E5E1] rounded px-2.5 py-1 text-xs focus:outline-none focus:border-[#245C45]"
+                      >
+                        <option value="रोख (Cash) / ऑनलाइन">रोख (Cash) / ऑनलाइन</option>
+                        <option value="रोख (Cash)">रोख (Cash)</option>
+                        <option value="ऑनलाइन (UPI / NetBanking)">ऑनलाइन (UPI / NetBanking)</option>
+                        <option value="धनादेश (Cheque)">धनादेश (Cheque)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Print Container: Dual-Receipt Layout on Single A4 Sheet */}
+                <div
+                  id="namuna-10-print-container"
+                  className={`namuna-10-print-page w-full ${
+                    n10IsPrintPreview
+                      ? "max-w-[210mm] mx-auto bg-white p-4 sm:p-6 shadow-2xl border border-neutral-300 rounded-sm"
+                      : ""
+                  }`}
+                >
+                  {/* Top Copy: मूळ प्रत (Original Copy for citizen) */}
+                  {renderReceiptCopy("मूळ प्रत")}
+
+                  {/* Cut Divider: ✂️ - - - - - - - - - ✂️ */}
+                  <div className="py-2.5 text-center text-[10px] text-neutral-500 font-mono tracking-widest flex items-center justify-center gap-2 select-none">
+                    <span>✂️</span>
+                    <span className="border-b border-dashed border-neutral-400 w-full" />
+                    <span className="shrink-0 px-2 font-sans font-medium text-neutral-600 text-[10px]">
+                      येथून कापा (Cut Here)
+                    </span>
+                    <span className="border-b border-dashed border-neutral-400 w-full" />
+                    <span>✂️</span>
+                  </div>
+
+                  {/* Bottom Copy: कार्यालयीन प्रत (OC) (Office Copy for Panchayat) */}
+                  {renderReceiptCopy("कार्यालयीन प्रत (OC)")}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* 4. NAMUNA 7 PAVATI (General Receipt) */}
           {sheetData.slug === "namuna-7-pavati" && (

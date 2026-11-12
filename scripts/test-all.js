@@ -353,6 +353,74 @@ function validateNoticeRecipient(recipientName) {
 assert(validateNoticeRecipient('श्री.विकास रतनसिंग हाडे'), 'Sarpanch Vikas Ratansing Hade is valid committee recipient');
 assert(!validateNoticeRecipient('Random Taxpayer'), 'Random taxpayer is strictly prevented from receiving committee notice');
 
+// -------------------------------------------------------------
+// 6. Namuna 10 Pavati (Tax Receipt) Print Perfection Tests
+// -------------------------------------------------------------
+console.log('\n--- 6. Namuna 10 Pavati Print Perfection Tests ---');
+
+const n10Sheet = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-10-pavati.json'), 'utf8'));
+assert(n10Sheet && n10Sheet.rows.length >= 40, `Namuna 10 Pavati sheet has at least 40 template rows (found: ${n10Sheet?.rows?.length})`);
+
+// Verify Property 1 real tax calculation against Namuna 9
+const n9ForN10 = JSON.parse(fs.readFileSync(path.join(sheetsDir, 'namuna-9.json'), 'utf8'));
+function getN9TaxDetails(propId) {
+  const cleanId = normalizeSearchString(propId);
+  const row = n9ForN10.rows.find(r => {
+    if (r.row_index < 7) return false;
+    const c2 = r.cells.find(c => c.col === 2);
+    return c2 && normalizeSearchString(c2.value) === cleanId;
+  });
+  if (!row) return null;
+  const getC = (colNum) => {
+    const c = row.cells.find(ce => ce.col === colNum);
+    return c && c.value !== undefined ? c.value : 0;
+  };
+  const getNum = (colNum) => {
+    const v = getC(colNum);
+    if (typeof v === 'number') return v;
+    const p = parseFloat(String(v).replace(/[^0-9.-]+/g, ''));
+    return isNaN(p) ? 0 : p;
+  };
+  const houseA = Math.round(getNum(4));
+  const houseC = Math.round(getNum(5));
+  const lightA = Math.round(getNum(8));
+  const lightC = Math.round(getNum(9));
+  const healthA = Math.round(getNum(11));
+  const healthC = Math.round(getNum(12));
+  const waterA = Math.round(getNum(15));
+  const waterC = Math.round(getNum(16));
+  return {
+    owner: getC(3),
+    houseA, houseC, houseTotal: houseA + houseC,
+    lightA, lightC, lightTotal: lightA + lightC,
+    healthA, healthC, healthTotal: healthA + healthC,
+    waterA, waterC, waterTotal: waterA + waterC,
+    totalArrears: houseA + lightA + healthA + waterA,
+    totalCurrent: houseC + lightC + healthC + waterC,
+    grandTotal: (houseA + houseC) + (lightA + lightC) + (healthA + healthC) + (waterA + waterC),
+  };
+}
+
+const p1Tax = getN9TaxDetails('1');
+assert(p1Tax !== null, 'Property 1 taxpayer found in Namuna 9');
+assert(p1Tax.owner === 'प्रल्हाद गोविंदा हाडे', `Property 1 owner matches: प्रल्हाद गोविंदा हाडे (found: ${p1Tax.owner})`);
+assert(p1Tax.houseTotal === 33, `Property 1 House Tax is ₹33 (found: ${p1Tax.houseTotal})`);
+assert(p1Tax.lightTotal === 30, `Property 1 Light Tax is ₹30 (found: ${p1Tax.lightTotal})`);
+assert(p1Tax.healthTotal === 30, `Property 1 Health Tax is ₹30 (found: ${p1Tax.healthTotal})`);
+assert(p1Tax.waterTotal === 0, `Property 1 Water Tax is ₹0 (found: ${p1Tax.waterTotal})`);
+assert(p1Tax.grandTotal === 93, `Property 1 Grand Total is ₹93 (found: ${p1Tax.grandTotal})`);
+
+const p2Tax = getN9TaxDetails('2');
+assert(p2Tax !== null, 'Property 2 taxpayer found in Namuna 9');
+assert(p2Tax.houseTotal === 340, `Property 2 House Tax is ₹340 (found: ${p2Tax.houseTotal})`);
+assert(p2Tax.grandTotal === 400, `Property 2 Grand Total is ₹400 (found: ${p2Tax.grandTotal})`);
+
+const p6BTax = getN9TaxDetails('6B');
+assert(p6BTax !== null, 'Property 6B taxpayer found in Namuna 9');
+assert(p6BTax.owner === 'ऋषिकेश मिलिंद हाडे', `Property 6B owner matches: ऋषिकेश मिलिंद हाडे (found: ${p6BTax.owner})`);
+assert(p6BTax.houseTotal === 816, `Property 6B House Tax is ₹816 (found: ${p6BTax.houseTotal})`);
+assert(p6BTax.grandTotal === 876, `Property 6B Grand Total is ₹876 (found: ${p6BTax.grandTotal})`);
+
 
 // -------------------------------------------------------------
 // Summary

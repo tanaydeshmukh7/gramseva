@@ -51,18 +51,37 @@ export async function GET(req: Request, context: RouteContext) {
       return normalizeSearchString(cell.value) === cleanQuery;
     });
 
-    if (!matchedN8Row && !matchedN9Row) {
-      return NextResponse.json(
-        { error: `मालमत्ता क्रमांक '${propertyNo}' सापडला नाही.` },
-        { status: 404 }
-      );
-    }
-
     // Helper to safely extract cell values
     const getC = (row: any, colNum: number) => {
       const c = row?.cells.find((ce: any) => ce.col === colNum);
       return c?.value !== undefined && c?.value !== null ? c.value : '';
     };
+
+    // Fallback: match by owner name if no property number matched
+    if (!matchedN8Row && !matchedN9Row) {
+      matchedN9Row = n9?.rows.find((r) => {
+        if (r.row_index < 7) return false;
+        const cell = r.cells.find((c) => c.col === 3);
+        if (!cell || cell.value === null) return false;
+        return normalizeSearchString(cell.value).includes(cleanQuery);
+      });
+      if (matchedN9Row) {
+        const pNo = getC(matchedN9Row, 2);
+        const pClean = normalizeSearchString(pNo);
+        matchedN8Row = n8.rows.find((r) => {
+          if (r.row_index < 11) return false;
+          const cell = r.cells.find((c) => c.col === 5);
+          return cell && normalizeSearchString(cell.value) === pClean;
+        });
+      }
+    }
+
+    if (!matchedN8Row && !matchedN9Row) {
+      return NextResponse.json(
+        { error: `मालमत्ता क्रमांक किंवा करदाता '${propertyNo}' सापडला नाही.` },
+        { status: 404 }
+      );
+    }
 
     const getNum = (row: any, colNum: number) => {
       const val = getC(row, colNum);
@@ -91,17 +110,17 @@ export async function GET(req: Request, context: RouteContext) {
       capital_value: getNum(matchedN8Row, 19) || 68000,
       tax_rate_paise: getNum(matchedN8Row, 20) || 1.2,
 
-      // Current annual taxes from Namuna 8
-      house_tax_current: Math.round(getNum(matchedN8Row, 21) || getNum(matchedN9Row, 5) || 816),
-      light_tax_current: Math.round(getNum(matchedN8Row, 22) || getNum(matchedN9Row, 9) || 30),
-      health_tax_current: Math.round(getNum(matchedN8Row, 23) || getNum(matchedN9Row, 12) || 30),
-      water_tax_current: Math.round(getNum(matchedN8Row, 24) || getNum(matchedN9Row, 15) || 0),
+      // Current annual taxes from Namuna 8 / Namuna 9
+      house_tax_current: Math.round(getNum(matchedN9Row, 5) || getNum(matchedN8Row, 21) || 0),
+      light_tax_current: Math.round(getNum(matchedN9Row, 9) || getNum(matchedN8Row, 22) || 30),
+      health_tax_current: Math.round(getNum(matchedN9Row, 12) || getNum(matchedN8Row, 23) || 30),
+      water_tax_current: Math.round(getNum(matchedN9Row, 16) || getNum(matchedN8Row, 24) || 0),
 
       // Arrears taxes from Namuna 9
-      house_tax_arrears: Math.round(getNum(matchedN9Row, 4)),
-      light_tax_arrears: Math.round(getNum(matchedN9Row, 8)),
-      health_tax_arrears: Math.round(getNum(matchedN9Row, 11)),
-      water_tax_arrears: Math.round(getNum(matchedN9Row, 14)),
+      house_tax_arrears: Math.round(getNum(matchedN9Row, 4) || 0),
+      light_tax_arrears: Math.round(getNum(matchedN9Row, 8) || 0),
+      health_tax_arrears: Math.round(getNum(matchedN9Row, 11) || 0),
+      water_tax_arrears: Math.round(getNum(matchedN9Row, 15) || 0),
 
       // Boundaries from Namuna 8
       east: String(getC(matchedN8Row, 32) || 'शेतजमीन'),
@@ -116,6 +135,8 @@ export async function GET(req: Request, context: RouteContext) {
     const healthTotal = propertyRecord.health_tax_arrears + propertyRecord.health_tax_current;
     const waterTotal = propertyRecord.water_tax_arrears + propertyRecord.water_tax_current;
     const grandTotal = houseTotal + lightTotal + healthTotal + waterTotal;
+    const totalArrears = propertyRecord.house_tax_arrears + propertyRecord.light_tax_arrears + propertyRecord.health_tax_arrears + propertyRecord.water_tax_arrears;
+    const totalCurrent = propertyRecord.house_tax_current + propertyRecord.light_tax_current + propertyRecord.health_tax_current + propertyRecord.water_tax_current;
 
     return NextResponse.json({
       success: true,
@@ -125,6 +146,8 @@ export async function GET(req: Request, context: RouteContext) {
         light_tax_total: lightTotal,
         health_tax_total: healthTotal,
         water_tax_total: waterTotal,
+        total_arrears: totalArrears,
+        total_current: totalCurrent,
         grand_total: grandTotal,
       },
     });
