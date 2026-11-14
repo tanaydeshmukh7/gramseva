@@ -70,6 +70,12 @@
     size: A4 portrait;
     margin: 6mm 8mm;
   }
+
+  /* Specific A4 Landscape orientation for wide 27-column Utara register */
+  @page landscape-document {
+    size: A4 landscape;
+    margin: 5mm 6mm;
+  }
   
   html, body {
     background: #FFFFFF !important;
@@ -79,9 +85,10 @@
     padding: 0 !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    font-family: var(--font-marathi), "Noto Sans Devanagari", sans-serif !important;
   }
 
-  .no-print, header, nav, aside {
+  .no-print, header, nav, aside, .sidebar, .header-bar, button:not(.printable-btn) {
     display: none !important;
   }
 
@@ -93,7 +100,18 @@
     width: 100% !important;
   }
 
-  /* Specific A4 single-page container constraint for dual receipts */
+  /* Container for 27-column Utara in Landscape mode */
+  .utara-document-container {
+    page: landscape-document !important;
+    width: 100% !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Single-page container constraints for dual documents (Bill & Receipts) */
+  .magani-bill-document-container,
+  .namuna-10-document-container,
+  .namuna-7-document-container,
   .namuna-10-print-page {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
@@ -102,5 +120,16 @@
     width: 100% !important;
     max-height: 284mm !important;
     box-sizing: border-box !important;
+  }
+
+  /* Ensure table borders and backgrounds remain crisp in print */
+  table {
+    border-collapse: collapse !important;
+    page-break-inside: avoid !important;
+  }
+
+  th, td {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }

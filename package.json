@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "node scripts/test-all.js",
+    "test": "node scripts/test-all.js && npx tsx scripts/test-all-documents.js",
+    "test:docs": "npx tsx scripts/test-all-documents.js",
     "test:sync": "node scripts/test-sync-bidirectional.js",
     "test:persistence": "node scripts/test-supabase-persistence.js",
     "lint": "eslint"
